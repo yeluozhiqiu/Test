@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8"UTF-8">
+<script>
+/*不同分辨率手机加载*/
+var userScalable = "no";
+(function(){
+	if (window.devicePixelRatio === 1.5){
+		userScalable = "yes";
+	}
+	var text = "<meta content='target-densitydpi=device-dpi, width=640, user-scalable=" + userScalable + "' name='viewport'>";
+	document.write(text);
+})();
+</script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="图鉴,非官方,紫岩" />
+<!--qq抓取-->
+<meta itemprop="name" content="开船图鉴（简约版）"/>
+<meta itemprop="image" content="images/image606.png" />
+<meta name="description" itemprop="description" content="非官方图鉴，有问题请群内搜索并@紫岩" />
+<title>开船图鉴 - 【非官方】</title>
+<!--<title>【非官方】</title>-->
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<!--ios抓取-->
+<!--<link rel="apple-touch-icon-precomposed" href="images/logo.png" />-->
+<link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+<link rel="stylesheet" type="text/css" href="base.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/base.css" />
+<link rel="stylesheet" type="text/css" href="style.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/style.css" />
+<script type="text/javascript" src="jquery-1.7.2.min.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="scrolltopcontrol.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/scrolltopcontrol.js"></script>
+<script>
+$(document).ready(function(){
+	/*默认图片*/
+	$(".content table img").each(function(){
+		$(this).attr("onerror","this.src='spirit.png'/*tpa=https://ziyan2017.gitee.io/ygsz/images/spirit.png*/");
+	});
+	//隐藏详情展示
+	$(".content table tr.title").click(function(){
+		$(this).next("https://ziyan2017.gitee.io/ygsz/tr.info").toggle();
+	});
+	//开船图片点击
+	$(".content table tr.info td img,img.monster").click(function(){
+		var pics = $(this).attr("tag"),
+			names = $(this).attr("alt"),
+			temp = '',
+			temp1 = '',
+			temp2 = '';
+		pics = pics.split(",");
+		names = names.split(",");
+		var num = pics.length;
+		for(i=0; i<num; i++){
+			//做四阶标注
+			if(i==3){
+				temp1 += '<td class="focus"><img src="image'+pics[i]+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/image'+pics[i]+'.png*/ /></td>';
+				temp2 += '<td class="focus" width="100">'+names[i]+'</td>';
+			}else{
+				temp1 += '<td><img src="image'+pics[i]+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/image'+pics[i]+'.png*/ /></td>';
+				temp2 += '<td width="100">'+names[i]+'</td>';
+			}
+		}
+		temp = '<table><tr>'+temp1+'</tr><tr>'+temp2+'</tr></table><a class="close" href="javascript:void(0)"></a>';
+		if(num==2){
+			$(".picinfo").html(temp).css({ width:'56%', left:'22%' }).show();
+		}else{
+			$(".picinfo").html(temp).css({ width:'', left:'' }).show();			
+		}
+		return false;
+	});
+	$(".content table tr.title td img:not(.monster)").click(function(){
+		var pic = $(this).attr("src"),
+			name = $(this).attr("alt"),
+			temp = '';
+		temp = '<table><tr><td><img src="'+pic+'" /></td></tr><tr><td>'+name+'</td></tr></table><a class="close" href="javascript:void(0)"></a>';
+		$(".picinfo").html(temp).css({ width:'30%', left:'35%' }).show();
+		return false;
+	});
+	$(".picinfo a.close").live("click",function(){
+		$(".picinfo").hide();
+	});
+	refresh();
+});
+$(window).resize(function(){refresh();});
+function refresh(){
+};
+</script>
+</head>
+
+<body>
+<div class="wrap">
+	<h1><a href="javascript:if(confirm('https://ziyan2017.gitee.io/ygsz/ziyan/sailboat1.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������������ļ�δ�ҵ���  \n\n�����ڷ������ϴ���?'))window.location='https://ziyan2017.gitee.io/ygsz/ziyan/sailboat1.html'" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/sailboat1.html">紫岩专属</a>开船图鉴（简约版）</h1>
+	<!--导航 开始-->
+	<script>
+	$(document).ready(function(){
+		$("https://ziyan2017.gitee.io/ygsz/.nav a.menu").click(function(){
+			$(".nav .navbox").addClass("show");
+			$("https://ziyan2017.gitee.io/ygsz/body,.wrap").addClass("fullscreen");
+		});
+		$(".nav .navbox a.close").click(function(){
+			$(".nav .navbox").removeClass("show");
+			$("https://ziyan2017.gitee.io/ygsz/body,.wrap").removeClass("fullscreen");
+		});
+	});
+	</script>
+	<div class="nav">
+		<a class="menu" href="javascript:void(0)"></a>
+		<div class="navbox">
+			<a class="close" href="javascript:void(0)"></a>
+			<dl>
+				<dt>图鉴相关<span>【厚颜无耻的放到了最前面】</span></dt>
+				<dd>
+					<a href="index.html" tppabs="https://ziyan2017.gitee.io/ygsz/index.html">-&gt; 图鉴索引</a>
+					<a href="bb.html" tppabs="https://ziyan2017.gitee.io/ygsz/bb.html">-&gt; 部分说明</a>
+				</dd>
+				<dt>妖怪参数</dt>
+				<dd>
+					<a href="index1.html" tppabs="https://ziyan2017.gitee.io/ygsz/index1.html">-&gt; 属性图鉴</a>
+					<a href="skill.html" tppabs="https://ziyan2017.gitee.io/ygsz/skill.html">-&gt; 技能图鉴</a>
+					<a href="loveship.html" tppabs="https://ziyan2017.gitee.io/ygsz/loveship.html">-&gt; 情缘图鉴</a>
+					<a href="test.html" tppabs="https://ziyan2017.gitee.io/ygsz/test.html">-&gt; 整合图鉴（测试）</a>
+					<a href="material.html" tppabs="https://ziyan2017.gitee.io/ygsz/material.html">-&gt; 素材一览</a>
+					<a href="food.html" tppabs="https://ziyan2017.gitee.io/ygsz/food.html">-&gt; 神庙的各种饭</a>
+				</dd>
+				<dt>秘店奖池</dt>
+				<dd>
+					<a href="secretbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/secretbox.html">-&gt; 秘店图鉴</a>
+					<a href="goldbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/goldbox.html">-&gt; 金币池</a>
+					<a href="jadebox.html" tppabs="https://ziyan2017.gitee.io/ygsz/jadebox.html">-&gt; 玉璧池</a>
+					<!--<a href="package.html">-&gt; 礼包怪</a>-->
+					<a href="newbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/newbox.html">-&gt; 属性奖池</a>
+					<a href="hop.html" tppabs="https://ziyan2017.gitee.io/ygsz/hop.html">-&gt; 妖王特效怪</a>
+					<a href="month.html" tppabs="https://ziyan2017.gitee.io/ygsz/month.html">-&gt; 月签到记录</a>
+				</dd>
+				<dt>开船探险</dt>
+				<dd>
+					<a href="sailboat.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat.html">-&gt; 开船图鉴-条件</a>
+					<a href="sailboat1.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat1.html">-&gt; 开船图鉴-素材</a>
+				</dd>
+				<dt>科普娱乐</dt>
+				<dd>
+					<a href="kepu01.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu01.html">-&gt; 二十八星宿</a>
+					<a class="short" href="kepu02.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu02.html">-&gt; 麻将</a>
+					<a class="short" href="kepu03.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu03.html">-&gt; 象棋</a>
+					<a href="kepu04.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu04.html">-&gt; 水浒一百单八将</a>
+					<a href="kepu05.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu05.html">-&gt; 北斗七星</a>
+					<a href="kepu06.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu06.html">-&gt; 天龙八部</a>
+					<a href="kepu07.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu07.html">-&gt; 龙生九子</a>
+					<a href="kepu08.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu08.html">-&gt; 二十四节气</a>
+					<a href="kepu09.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu09.html">-&gt; 十二星座</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<!--导航 结束-->
+	<p>
+		<a href="test.html" tppabs="https://ziyan2017.gitee.io/ygsz/test.html">整合图鉴</a>
+		<a href="loveship.html" tppabs="https://ziyan2017.gitee.io/ygsz/loveship.html">情缘图鉴</a>
+		<a href="secretbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/secretbox.html">秘店图鉴</a>
+		<a href="skill.html" tppabs="https://ziyan2017.gitee.io/ygsz/skill.html">技能图鉴</a>
+		<a href="sailboat.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat.html">开船图鉴-条件</a>
+		<a class="cur" href="sailboat1.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat1.html">开船图鉴-素材</a>
+	</p>
+	<div class="picinfo bt2"></div>
+	<div class="content">
+		<p class="plbtn kptip">
+			<span>一个[假装]成熟的建议：<br>开船时，时间可以<i>超过保底天数几个小时</i>，比较稳妥！</span>
+			<span style="float:right;">[来自一个不成熟大佬的不成熟建议 ◐▽◑]</span>
+		</p>
+		<table class="boat boat2">
+			<tr>
+				<th>ID</th><th>名称</th><th>时间</th><th>保底掉落</th>
+			</tr>
+			<tr class="title">
+				<td>1</td><td>鬼鬼鬼鬼</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" /><!--
+					--><img src="sc_hun4k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun4k.png" alt="4000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image604.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image604.png" tag="604,605,606" alt="结魄,布芳,魑魅" /><!--
+					--><img src="image637.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image637.png" tag="637,638,639" alt="万两,金来,魍魉" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>2</td><td>多塔世界</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc049.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc049.png" alt="昊天塔" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image337.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image337.png" tag="337,338,339" alt="弦仔,慈悲琴,持国天王" /><!--
+					--><img src="image340.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image340.png" tag="340,341,342" alt="伞灵,伞不离,多闻天王" /><!--
+					--><img src="image343.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image343.png" tag="343,344,345" alt="火烧,赤仔,广目天王" /><!--
+					--><img src="image346.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image346.png" tag="346,347,348" alt="众生剑,琉璃埵护者,增长天王" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>3</td><td>艺术团汇演</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc050.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc050.png" alt="伏羲琴" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image241.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image241.png" tag="241,242,243" alt="弦女,琴娃,魔音" /><!--
+					--><img src="image244.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image244.png" tag="244,245,246" alt="棋灵,棋妖,棋魂" /><!--
+					--><img src="image247.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image247.png" tag="247,248,249" alt="墨悬,笔支,笔仙" /><!--
+					--><img src="image250.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image250.png" tag="250,251,252" alt="画精,画童,神笔马良" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>4</td><td>桃园</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc046.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc046.png" alt="轩辕剑" /><!--
+					--><img src="sc047.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc047.png" alt="盘古斧" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image304.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image304.png" tag="304,305,306" alt="小草鞋,鞋匠,刘备" /><!--
+					--><img src="image55.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image55.png" tag="55,56,57" alt="蛇带,关羽,神将关云长" /><!--
+					--><img src="image307.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image307.png" tag="307,308,309" alt="狡兔,蓑笠翁,张飞" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>5</td><td>飙车现场</td><td><!--<nobr style="color:#cc2525;">不保底</nobr>-->6天</td>
+				<td>
+					<nobr>
+					<img src="sc045.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc045.png" alt="东皇钟" /><!--
+					--><img src="sc046.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc046.png" alt="轩辕剑" /><!--
+					--><img src="sc047.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc047.png" alt="盘古斧" /><!--
+					--><img src="sc048.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc048.png" alt="炼妖壶" />
+					</nobr>
+					<nobr>
+					<img src="sc049.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc049.png" alt="昊天塔" /><!--
+					--><img src="sc050.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc050.png" alt="伏羲琴" /><!--
+					--><img src="sc051.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc051.png" alt="神农鼎" /><!--
+					--><img src="sc052.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc052.png" alt="崆峒印" />
+					</nobr>
+					<img src="sc053.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc053.png" alt="昆仑镜" /><!--
+					--><img src="sc054.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc054.png" alt="女娲石" /><!--
+					--><img src="sc055.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc055.png" alt="太一之轮" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image202.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image202.png" tag="202,203,204" alt="葫芦妖,葫芦侠,铁拐李" /><!--
+					--><img src="image187.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image187.png" tag="187,188,189" alt="神棍,不倒翁,曹国舅" /><!--
+					--><img src="image190.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image190.png" tag="190,191,192" alt="大宝剑,小道童,吕洞宾" /><!--
+					--><img src="image208.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image208.png" tag="208,209,210" alt="洞箫,寒仙子,韩湘子" /><!--
+					--><img src="image211.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image211.png" tag="211,212,213" alt="芭蕉叶,枫叶渡,汉钟离" /><!--
+					--><img src="image214.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image214.png" tag="214,215,216" alt="莲灵,藕仙子,何仙姑" /><!--
+					--><img src="image217.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image217.png" tag="217,218,219" alt="莲精,采花小君,蓝采和" /><!--
+					--><img src="image232.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image232.png" tag="232,233,234" alt="锤子,锤丸君,张果老" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>6</td><td>时空裂痕</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc054.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc054.png" alt="女娲石" /><!--
+					--><img src="sc047.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc047.png" alt="盘古斧" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image820.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image820.png" tag="820,821,822" alt="五色石,阴女,创世女娲" /><!--
+					--><img src="image823.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image823.png" tag="823,824,825" alt="绳仙,风义,创世伏羲" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>7</td><td>神仙酒厂</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc095.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc095.png" alt="桂花酒" /><!--
+					--><img src="sc098.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc098.png" alt="桂花" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image652.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image652.png" tag="652,653,654" alt="碟作,姮娥,嫦娥" /><!--
+					--><img src="image655.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image655.png" tag="655,656,657" alt="后,后羿,箭神后羿" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>8</td><td>龙舟大会</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc056.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc056.png" alt="粽叶" /><!--
+					--><img src="sc057.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc057.png" alt="糯米" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image316.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image316.png" tag="316,317,318" alt="粽妮,白白,白美甜" /><!--
+					--><img src="image319.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image319.png" tag="319,320,321" alt="粽仔,小鲜肉,腹黑仔" /><!--
+					--><img src="image322.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image322.png" tag="322,323,324" alt="离卷,骚年,屈原" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>9</td><td>灯，等灯等灯</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc097.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc097.png" alt="灯笼" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image688.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image688.png" tag="688,689,690" alt="灯形,黑仔,及时雨宋江" /><!--
+					--><img src="image226.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image226.png" tag="226,227,228" alt="玄火,秘灯,黄泉引路姬" /><!--
+					--><img src="image46.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image46.png" tag="46,47,48,835,1447" alt="羽妖仔,小诸葛,诸葛孔明,神算诸葛亮,运筹帷幄卧龙诸葛孔明" /><!--
+					--><img src="image184.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image184.png" tag="184,185,186" alt="夜叉,夜游鬼,夜神月" /><!--
+					--><img src="image31.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image31.png" tag="31,32,33" alt="玄阴火,青行灯,般若娘" /><!--
+					<img src="images/image187.png" tag="187,188,189,866" alt="神棍,不倒翁,曹国舅,八仙曹国舅" />-->
+				</td>
+			</tr>
+			<tr class="title">
+				<td>10</td><td>比武大会</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc001.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc001.png" alt="弃刃" /><!--
+					--><img src="sc007.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc007.png" alt="长矛" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image126.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image126.png" tag="126,127,128" alt="巨剑,狗头铡,王四" /><!--
+					--><img src="image158.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image158.png" tag="158,159,160" alt="尖刹,罗刹,湿罗刹" /><!--
+					--><img src="image170.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image170.png" tag="170,171,172,1504,1505" alt="剑灵,诗娃,李白,心剑合一李小白,诗仙剑圣李太白" /><!--
+					--><img src="image129.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image129.png" tag="129,130,131" alt="戟虫,戟甲虫,稳重斯基" /><!--
+					--><img src="image109.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image109.png" tag="109,110,111" alt="斧尾,石墩,石敢当" /><!--
+					--><img src="image176.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image176.png" tag="176,177,178,1506,1507" alt="戟月,钺娃,洪玉儿,双戟洪少侠,烈火焚天洪小仙" /><!--
+					--><img src="image132.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image132.png" tag="132,133" alt="勾鬼,勾屠" /><!--
+					--><img src="image184.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image184.png" tag="184,185,186" alt="夜叉,夜游鬼,夜神月" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>11</td><td>三人行</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc020.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc020.png" alt="时间符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image91.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image91.png" tag="91,92,93" alt="云儿,福神,紫微大帝" /><!--
+					--><img src="image94.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image94.png" tag="94,95,96" alt="元宝君,禄神,文昌帝君" /><!--
+					--><img src="image97.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image97.png" tag="97,98,99" alt="桃儿,寿神,南极老人星" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>12</td><td>气象大厅</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc024.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc024.png" alt="生命符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image103.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image103.png" tag="103,104,105" alt="凡锦,龙门山,某海龙王" /><!--
+					--><img src="image82.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image82.png" tag="82,83,84" alt="糯米滋,雪鼬,镰鼬" /><!--
+					--><img src="image64.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image64.png" tag="64,65,66" alt="鸡卒,雷坊主,金光雷公" /><!--
+					--><img src="image22.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image22.png" tag="22,23,24" alt="悦鸣,天灵鸟,九天夸父" /><!--
+					--><img src="image301.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image301.png" tag="301,302,303" alt="电符,电锣,电母" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>13</td><td>四季轮回</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc110.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc110.png" alt="枫叶" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image7.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image7.png" tag="7,8,9" alt="绿灵,叶魅,春丽" /><!--
+					--><img src="image10.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image10.png" tag="10,11,12" alt="火印,夏雨荷,丽娜" /><!--
+					--><img src="image13.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image13.png" tag="13,14,15" alt="枯妖,秋波,秋香" /><!--
+					--><img src="image16.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image16.png" tag="16,17,18" alt="玄冰,呆萌姬,幽兰雪魅" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>14</td><td>邪恶秘穴</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc022.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc022.png" alt="邪恶符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image253.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image253.png" tag="253,254,255" alt="小手铐,手铐侠,白无常" /><!--
+					--><img src="image256.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image256.png" tag="256,257,258" alt="令牌君,令牌使,黑无常" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>15</td><td>赏花大会</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc106.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc106.png" alt="艳花" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image259.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image259.png" tag="259,260,261" alt="菊花,菊少年,菊爷" /><!--
+					--><img src="image262.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image262.png" tag="262,263,264" alt="竹苗,林绿儿,林呆呆" /><!--
+					--><img src="image265.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image265.png" tag="265,266,267" alt="梅妃,梅澜,梅鹤鸣" /><!--
+					--><img src="image268.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image268.png" tag="268,269,270" alt="月光兰,月光士,名将森兰丸" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>16</td><td>海贼王在哪</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc021.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc021.png" alt="善良符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image352.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image352.png" tag="352,353,354" alt="捆柴桑,柴犬酱,柴可夫司机" /><!--
+					--><img src="image370.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image370.png" tag="370,371,372" alt="米迷,饭小团,咩咩魅" /><!--
+					--><img src="image373.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image373.png" tag="373,374,375" alt="矮油,油条条,油条兄弟" /><!--
+					--><img src="image355.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image355.png" tag="355,356,357" alt="盐灰坨,盐查令,地狱盐王" /><!--
+					--><img src="image376.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image376.png" tag="376,377,378" alt="酱仔,狸弯,酱军" /><!--
+					--><img src="image385.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image385.png" tag="385,386,387" alt="黑塔匣,杜康女,醋母" /><!--
+					--><img src="image394.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image394.png" tag="394,395,396" alt="绿幽,绿茶魅,绿茶姬" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>17</td><td>阳澄湖</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc096.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc096.png" alt="螃蟹" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image517.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image517.png" tag="517,518,519" alt="兰灵,斗虾,游瓦虾" /><!--
+					--><img src="image520.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image520.png" tag="520,521,522" alt="气圆,钳甲,蟹将" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>18</td><td>政治婚姻</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc023.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc023.png" alt="真爱符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image298.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image298.png" tag="298,299,300" alt="鱼粥,海军都督,周瑜" /><!--
+					--><img src="image685.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image685.png" tag="685,686,687" alt="荞似,荞静,萌萌小乔" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>19</td><td>打豆腐</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="fan07.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/fan07.png" alt="力量之神的眷顾" /><!--
+					--><img src="sc_jin1.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1.png" alt="1金币" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image193.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image193.png" tag="193,194,195" alt="豆附,杜甫,很忙的杜甫" /><!--
+					--><img src="image565.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image565.png" tag="565,566,567" alt="袋仔,拳鼠,拳王" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>20</td><td>烈焰岛</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc028.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc028.png" alt="火焰符文" /><!--
+					--><img src="sc029.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc029.png" alt="烈焰之心" /><!--
+					--><img src="sc_jin3w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin3w.png" alt="30000金币" /><br>
+					<img src="sc_hun1k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k.png" alt="1000魂" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：5火怪含1金</td></tr>
+			<tr class="title">
+				<td>21</td><td>烈焰岛-禁区</td><td><nobr>3天</nobr></td>
+				<td>
+					<img src="sc029.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc029.png" alt="烈焰之心" /><!--
+					--><img src="sc119.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc119.png" alt="赤焰十字星" /><!--
+					--><img src="sc_jin8w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin8w.png" alt="80000金币" /><br>
+					<img src="sc_hun1k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k5.png" alt="1500魂" /><!--
+					--><img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8火怪含2金</td></tr>
+			<tr class="title">
+				<td>22</td><td>寒冰池</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc031.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc031.png" alt="寒冰符文" /><!--
+					--><img src="sc032.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc032.png" alt="千年玄冰" /><!--
+					--><img src="sc_jin3w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin3w.png" alt="30000金币" /><br>
+					<img src="sc_hun1k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k.png" alt="1000魂" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：5水怪含1金</td></tr>
+			<tr class="title">
+				<td>23</td><td>寒冰池-禁区</td><td><nobr>3天</nobr></td>
+				<td>
+					<img src="sc032.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc032.png" alt="千年玄冰" /><!--
+					--><img src="sc120.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc120.png" alt="秘窟冰晶卵" /><!--
+					--><img src="sc_jin8w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin8w.png" alt="80000金币" /><br>
+					<img src="sc_hun1k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k5.png" alt="1500魂" /><!--
+					--><img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8水怪含2金</td></tr>
+			<tr class="title">
+				<td>24</td><td>艳阳域</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc040.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc040.png" alt="光辉符文" /><!--
+					--><img src="sc041.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc041.png" alt="辉耀之星" /><!--
+					--><img src="sc_jin3w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin3w.png" alt="30000金币" /><br>
+					<img src="sc_hun1k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k.png" alt="1000魂" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：5光怪含1金</td></tr>
+			<tr class="title">
+				<td>25</td><td>艳阳域-禁区</td><td><nobr>3天</nobr></td>
+				<td>
+					<img src="sc041.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc041.png" alt="辉耀之星" /><!--
+					--><img src="sc123.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc123.png" alt="六方天运骰" /><!--
+					--><img src="sc_jin8w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin8w.png" alt="80000金币" /><br>
+					<img src="sc_hun1k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k5.png" alt="1500魂" /><!--
+					--><img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8光怪含2金</td></tr>
+			<tr class="title">
+				<td>26</td><td>幽暗礁</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc043.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc043.png" alt="黯灭符文" /><!--
+					--><img src="sc044.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc044.png" alt="月明珠" /><!--
+					--><img src="sc_jin3w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin3w.png" alt="30000金币" /><br>
+					<img src="sc_hun1k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k.png" alt="1000魂" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：5暗怪含1金</td></tr>
+			<tr class="title">
+				<td>27</td><td>幽暗礁-禁区</td><td><nobr>3天</nobr></td>
+				<td>
+					<img src="sc044.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc044.png" alt="月明珠" /><!--
+					--><img src="sc124.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc124.png" alt="月冕霓睛符" /><!--
+					--><img src="sc_jin8w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin8w.png" alt="80000金币" /><br>
+					<img src="sc_hun1k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k5.png" alt="1500魂" /><!--
+					--><img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8暗怪含2金</td></tr>
+			<tr class="title">
+				<td>28</td><td>黄秃岩</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc034.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc034.png" alt="大地符文" /><!--
+					--><img src="sc035.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc035.png" alt="远古神石" /><!--
+					--><img src="sc_jin3w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin3w.png" alt="30000金币" /><br>
+					<img src="sc_hun1k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k.png" alt="1000魂" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：5土怪含1金</td></tr>
+			<tr class="title">
+				<td>29</td><td>黄秃岩-禁区</td><td><nobr>3天</nobr></td>
+				<td>
+					<img src="sc035.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc035.png" alt="远古神石" /><!--
+					--><img src="sc121.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc121.png" alt="愚山乾坤石" /><!--
+					--><img src="sc_jin8w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin8w.png" alt="80000金币" /><br>
+					<img src="sc_hun1k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k5.png" alt="1500魂" /><!--
+					--><img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8土怪含2金</td></tr>
+			<tr class="title">
+				<td>30</td><td>极木地</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc037.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc037.png" alt="自然符文" /><!--
+					--><img src="sc038.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc038.png" alt="上古神杖" /><!--
+					--><img src="sc_jin3w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin3w.png" alt="30000金币" /><br>
+					<img src="sc_hun1k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k.png" alt="1000魂" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：5木怪含1金</td></tr>
+			<tr class="title">
+				<td>31</td><td>极木地-禁区</td><td><nobr>3天</nobr></td>
+				<td>
+					<img src="sc038.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc038.png" alt="上古神杖" /><!--
+					--><img src="sc122.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc122.png" alt="龙灵不朽腾" /><!--
+					--><img src="sc_jin8w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin8w.png" alt="80000金币" /><br>
+					<img src="sc_hun1k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k5.png" alt="1500魂" /><!--
+					--><img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8木怪含2金</td></tr>
+			<tr class="title">
+				<td>32</td><td>战士试炼</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc058.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc058.png" alt="力量符文·小" /><!--
+					--><img src="sc059.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc059.png" alt="力量符文·中" /><!--
+					--><img src="sc007.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc007.png" alt="长矛" /><!--
+					--><img src="sc_hun1k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k5.png" alt="1500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8战士银怪</td></tr>
+			<tr class="title">
+				<td>33</td><td>勇士试炼</td><td><nobr>3天</nobr></td>
+				<td>
+					<img src="sc060.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc060.png" alt="力量符文·大" /><!--
+					--><img src="sc113.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc113.png" alt="力量符文·叉大" /><!--
+					--><img src="sc001.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc001.png" alt="弃刃" /><br>
+					<img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8神勇金怪</td></tr>
+			<tr class="title">
+				<td>34</td><td>极速试炼</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc061.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc061.png" alt="速度符文·小" /><!--
+					--><img src="sc062.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc062.png" alt="速度符文·中" /><!--
+					--><img src="sc_hun500.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun500.png" alt="500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8怪含6神速</td></tr>
+			<tr class="title">
+				<td>35</td><td>疾速试炼</td><td><nobr>3天</nobr></td>
+				<td>
+					<img src="sc063.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc063.png" alt="速度符文·大" /><!--
+					--><img src="sc114.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc114.png" alt="速度符文·叉大" /><!--
+					--><img src="sc109.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc109.png" alt="惊雷" /><br>
+					<img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8神速含4金</td></tr>
+			<tr class="title">
+				<td>36</td><td>人性试炼</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc064.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc064.png" alt="智力符文·小" /><!--
+					--><img src="sc065.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc065.png" alt="智力符文·中" /><!--
+					--><img src="sc100.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc100.png" alt="旧布" /><!--
+					--><img src="sc_hun1k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k5.png" alt="1500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8人形银怪</td></tr>
+			<tr class="title">
+				<td>37</td><td>知性试炼</td><td><nobr>3天</nobr></td>
+				<td>
+					<img src="sc066.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc066.png" alt="智力符文·大" /><!--
+					--><img src="sc115.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc115.png" alt="智力符文·叉大" /><br>
+					<img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8谋略含5金</td></tr>
+			<tr class="title">
+				<td>38</td><td>呆萌试炼</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc067.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc067.png" alt="魅力符文·小" /><!--
+					--><img src="sc068.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc068.png" alt="魅力符文·中" /><!--
+					--><img src="sc104.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc104.png" alt="布娃" /><!--
+					--><img src="sc_hun1k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k5.png" alt="1500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8呆萌银怪</td></tr>
+			<tr class="title">
+				<td>39</td><td>卖萌试炼</td><td><nobr>3天</nobr></td>
+				<td>
+					<img src="sc069.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc069.png" alt="魅力符文·大" /><!--
+					--><img src="sc116.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc116.png" alt="魅力符文·叉大" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8妹纸金怪</td></tr>
+			<tr class="title">
+				<td>40</td><td>神秘试炼</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc070.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc070.png" alt="幸运符文·小" /><!--
+					--><img src="sc071.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc071.png" alt="幸运符文·中" /><!--
+					--><img src="sc108.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc108.png" alt="方帽" /><!--
+					--><img src="sc_hun1k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k5.png" alt="1500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8神秘含7银</td></tr>
+			<tr class="title">
+				<td>41</td><td>极运试炼</td><td><nobr>3天</nobr></td>
+				<td>
+					<img src="sc072.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc072.png" alt="幸运符文·大" /><!--
+					--><img src="sc117.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc117.png" alt="幸运符文·叉大" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8吉祥含2金</td></tr>
+			<tr class="title">
+				<td>42</td><td>美食试炼</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc073.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc073.png" alt="技巧符文·小" /><!--
+					--><img src="sc074.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc074.png" alt="技巧符文·中" /><!--
+					--><img src="sc009.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc009.png" alt="兽血" /><br>
+					<img src="sc003.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc003.png" alt="火腿" /><br>
+					<img src="sc_hun1k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k5.png" alt="1500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8美食银怪</td></tr>
+			<tr class="title">
+				<td>43</td><td>调音试炼</td><td><nobr>3天</nobr></td>
+				<td>
+					<img src="sc075.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc075.png" alt="技巧符文·大" /><!--
+					--><img src="sc118.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc118.png" alt="技巧符文·叉大" /><!--
+					--><img src="sc102.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc102.png" alt="听符" /><br>
+					<img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8乐器含5金</td></tr>
+			<tr class="title">
+				<td>44</td><td>特技厨师考场</td><td><nobr style="color:#cc2525;">不保底</nobr></td>
+				<td>
+					<img src="fan01.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/fan01.png" alt="大力饭" /><!--
+					--><img src="fan02.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/fan02.png" alt="脑白饭" /><!--
+					--><img src="fan04.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/fan04.png" alt="帅气不过三碗饭" /><br>
+					<img src="fan03.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/fan03.png" alt="神速炒饭" /><!--
+					--><img src="fan05.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/fan05.png" alt="好运金坷垃" /><!--
+					--><img src="fan06.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/fan06.png" alt="技巧炒饭" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8美食不少于3金</td></tr>
+			<tr class="title">
+				<td>45</td><td>神刀刀的料理</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="fan15.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/fan15.png" alt="神之祝福" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8神仙金怪</td></tr>
+			<tr class="title">
+				<td>46</td><td>上古法阵-小</td><td><!--<nobr style="color:#cc2525;">不保底--><nobr>5.4天</nobr></td>
+				<td>
+					<img src="sc080.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc080.png" alt="庄家令牌·小" /><!--
+					--><img src="sc083.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc083.png" alt="筹码·小" /><!--
+					--><img src="sc086.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc086.png" alt="钱袋·小" /><br>
+					<img src="sc089.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc089.png" alt="欠条·小" /><!--
+					--><img src="sc092.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc092.png" alt="骰子·小" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8法器铜怪</td></tr>
+			<tr class="title">
+				<td>47</td><td>上古法阵-全</td><td><!--<nobr style="color:#cc2525;">不保底--><nobr>6天</nobr></td>
+				<td>
+					<img src="sc081.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc081.png" alt="庄家令牌·中" /><!--
+					--><img src="sc084.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc084.png" alt="筹码·中" /><!--
+					--><img src="sc087.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc087.png" alt="钱袋·中" /><br>
+					<img src="sc090.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc090.png" alt="欠条·中" /><!--
+					--><img src="sc093.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc093.png" alt="骰子·中" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8法器银怪</td></tr>
+			<tr class="title">
+				<td>48</td><td>上古法阵-极</td><td><!--<nobr style="color:#cc2525;">不保底--><nobr>7.5天</nobr></td>
+				<td>
+					<img src="sc082.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc082.png" alt="庄家令牌·大" /><!--
+					--><img src="sc085.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc085.png" alt="筹码·大" /><!--
+					--><img src="sc088.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc088.png" alt="钱袋·大" /><br>
+					<img src="sc091.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc091.png" alt="欠条·大" /><!--
+					--><img src="sc094.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc094.png" alt="骰子·大" /><!--
+					--><img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8法器金怪</td></tr>
+			<tr class="title">
+				<td>49</td><td>武器店</td><td><nobr>6天</nobr></td>
+				<td>
+					<img src="sc007.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc007.png" alt="长矛" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：6武器任意怪</td></tr>
+			<tr class="title">
+				<td>50</td><td>妖葬山</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc_hun500.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun500.png" alt="500魂" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8妖怪任意怪</td></tr>
+			<tr class="title">
+				<td>51</td><td>炼丹炉</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc099.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc099.png" alt="仙丹" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8神仙任意怪</td></tr>
+			<tr class="title">
+				<td>52</td><td>奥运大会</td><td><nobr>6天</nobr></td>
+				<td><img src="sc079.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc079.png" alt="奖牌" /></td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8怪含3奥运</td></tr>
+			<tr class="title">
+				<td>53</td><td>神秘的宝箱-小</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun100.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun100.png" alt="100魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：1财迷任意怪</td></tr>
+			<tr class="title">
+				<td>54</td><td>神秘的宝箱-大</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc_jin15w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin15w.png" alt="150000金币" /><!--
+					--><img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：3财迷任意怪</td></tr>
+			<tr class="title">
+				<td>55</td><td>神秘的宝箱-叉大</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc_jin30w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin30w.png" alt="300000金币" /><!--
+					--><img src="sc_hun5k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun5k.png" alt="5000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：5财迷任意怪</td></tr>
+			<tr class="title">
+				<td>56</td><td>NB工作室门口</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc076.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc076.png" alt="金甲虫" /><!--
+					--><img src="sc105.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc105.png" alt="怪蛋" /><!--
+					--><img src="sc_jin1.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1.png" alt="1金币" /><!--
+					--><img src="sc_hun1.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1.png" alt="1魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8怪含2彩蛋</td></tr>
+			<tr class="title">
+				<td>57</td><td>当铺后门</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun500.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun500.png" alt="500魂" /><!--
+					--><img src="sc_hun1k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k.png" alt="1000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8任意铜怪</td></tr>
+			<tr class="title">
+				<td>58</td><td>白银圣地</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc_jin2w5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin2w5.png" alt="25000金币" /><!--
+					--><img src="sc_hun1k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k.png" alt="1000魂" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8任意银怪</td></tr>
+			<tr class="title">
+				<td>59</td><td>黄金城</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc_jin5w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin5w.png" alt="50000金币" /><!--
+					--><img src="sc_jin5w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin5w.png" alt="50000金币" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8任意金怪</td></tr>
+			<tr class="title">
+				<td>60</td><td>五行之地</td><td><nobr>6天</nobr></td>
+				<td>
+					<img src="sc027.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc027.png" alt="火元素" /><!--
+					--><img src="sc030.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc030.png" alt="水元素" /><!--
+					--><img src="sc033.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc033.png" alt="土元素" /><br>
+					<img src="sc036.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc036.png" alt="木元素" /><!--
+					--><img src="sc039.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc039.png" alt="光元素" /><!--
+					--><img src="sc042.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc042.png" alt="暗元素" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8个任意怪</td></tr>
+			<tr class="title">
+				<td>61</td><td>孤岛</td><td><nobr>6天</nobr></td>
+				<td>
+					<img src="sc058.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc058.png" alt="力量符文·小" /><!--
+					--><img src="sc061.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc061.png" alt="速度符文·小" /><!--
+					--><img src="sc064.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc064.png" alt="智力符文·小" /><br>
+					<img src="sc067.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc067.png" alt="魅力符文·小" /><!--
+					--><img src="sc070.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc070.png" alt="幸运符文·小" /><!--
+					--><img src="sc073.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc073.png" alt="技巧符文·小" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：3到7个任意怪</td></tr>
+			<tr class="title">
+				<td>62</td><td>触礁</td><td><nobr>6天</nobr></td>
+				<td>
+					<img src="sc_jin1k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1k.png" alt="1000金币" /><!--
+					--><img src="sc_jin5k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin5k.png" alt="5000金币" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><br>
+					<img src="sc_hun100.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun100.png" alt="100魂" /><!--
+					--><img src="sc_hun250.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun250.png" alt="250魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：1到2个任意怪</td></tr>
+			<tr class="title">
+				<td>63</td><td>不知火舞</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc013.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc013.png" alt="火焰" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image10.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image10.png" tag="10,11,12" alt="火印,夏雨荷,丽娜" /><!--
+					--><img src="image149.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image149.png" tag="149,150,151" alt="肉痴,肉炬,豚燕" /><!--
+					--><img src="image161.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image161.png" tag="161,162,163" alt="帘卷精,纤毛兽,黄呱呱" /><!--
+					--><img src="image391.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image391.png" tag="391,392,393" alt="玄鸟,七宿仙人,南七宿朱雀" /><!--
+					--><img src="image472.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image472.png" tag="472,473,474" alt="付炬,极炎,敖钦" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>64</td><td>民间养老院</td><td><nobr>6天</nobr></td>
+				<td>
+					<img src="sc020.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc020.png" alt="时间符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun500.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun500.png" alt="500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：4老人家任意怪</td></tr>
+			<tr class="title">
+				<td>65</td><td>品牌养老院</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc020.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc020.png" alt="时间符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun1k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k.png" alt="1000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8老人家任意怪</td></tr>
+			<tr class="title">
+				<td>66</td><td>富豪养老院</td><td><nobr>2天</nobr></td>
+				<td>
+					<img src="sc020.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc020.png" alt="时间符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8老人家含2金</td></tr>
+			<tr class="title">
+				<td>67</td><td>自然祭坛</td><td><nobr>6天</nobr></td>
+				<td>
+					<img src="sc024.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc024.png" alt="生命符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun500.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun500.png" alt="500魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：4自然任意怪</td></tr>
+			<tr class="title">
+				<td>68</td><td>生灵庙</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc024.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc024.png" alt="生命符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun1k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k.png" alt="1000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8自然任意怪</td></tr>
+			<tr class="title">
+				<td>69</td><td>万物神殿</td><td><nobr>2天</nobr></td>
+				<td>
+					<img src="sc024.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc024.png" alt="生命符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun2k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k.png" alt="2000魂" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="4">触发条件：8自然含2金</td></tr>
+			<tr class="title">
+				<td>70</td><td>初恋</td><td><nobr>6天</nobr></td>
+				<td>
+					<img src="sc023.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc023.png" alt="真爱符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun1k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k5.png" alt="1500魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image85.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image85.png" tag="85,86,87" alt="小青梅,小美梅,青梅公举" /><!--
+					--><img src="image88.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image88.png" tag="88,89,90" alt="小竹笋,竹马君,竹马王子" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>71</td><td>金婚</td><td><nobr>2天</nobr></td>
+				<td>
+					<img src="sc023.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc023.png" alt="真爱符文" /><!--
+					--><img src="sc_jin1w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin1w.png" alt="10000金币" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image280.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image280.png" tag="280,281,282" alt="吕布,吕奉先,名将吕布威登" /><!--
+					--><img src="image283.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image283.png" tag="283,284,285" alt="迷你貂,貂女,倾国美女貂蝉" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>72</td><td>公主病</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc077.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc077.png" alt="金钗" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image220.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image220.png" tag="220,221,222" alt="方中,方串,方元姬" /><!--
+					--><img src="image499.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image499.png" tag="499,500,501" alt="金钗子,女侍,王母娘娘" /><!--
+					--><img src="image466.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image466.png" tag="466,467,468" alt="艳灵,玫瑰女仆,玫瑰夫人" /><!--
+					--><img src="image292.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image292.png" tag="292,293,294" alt="白奶精,白蛇魅,白娘子" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>73</td><td>远方的星星</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc078.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc078.png" alt="彗星" /><!--
+					--><img src="sc_hun1k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun1k.png" alt="1000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image310.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image310.png" tag="310,311,312" alt="小金星,星道士,太白金星" /><!--
+					--><img src="image496.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image496.png" tag="496,497,498" alt="芒星,银鹤,银河" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>74</td><td>NB工作室机房</td><td><nobr>6天</nobr></td>
+				<td>
+					<img src="sc042.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc042.png" alt="暗元素" /><!--
+					--><img src="sc022.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc022.png" alt="邪恶符文" /><!--
+					--><img src="sc076.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc076.png" alt="金甲虫" /><br>
+					<img src="sc_jin110.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin110.png" alt="110金币" /><!--
+					--><img src="sc_hun233.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun233.png" alt="233魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image911.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image911.png" tag="911,912,913" alt="污鸡,键盘侠,黑客公鸡" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>75</td><td>圣诞星空</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc125.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc125.png" alt="圣诞袜" /><!--
+					--><img src="sc126.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc126.png" alt="金狗杯" /><!--
+					--><img src="sc127.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc127.png" alt="红糖" /><!--
+					--><img src="sc_hun2k5.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun2k5.png" alt="2500魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image914.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image914.png" tag="914,915,916" alt="礼方,送礼仔,圣诞老人" /><!--
+					--><img src="image917.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image917.png" tag="917,918,919" alt="兔兔,兔耳,讹兽" /><!--
+					--><img src="image920.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image920.png" tag="920,921,922" alt="松果,松鼠,圣诞树" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>76</td><td>夏日节气</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="sc136.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc136.png" alt="节气素材春" /><!--
+					--><img src="sc137.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc137.png" alt="节气素材夏" /><!--
+					--><img src="sc138.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc138.png" alt="节气素材秋" /><!--
+					--><img src="sc139.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc139.png" alt="节气素材冬" /><!--
+					--><img src="sc_jin5w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin5w.png" alt="50000金币" /><!--
+					--><img src="sc_hun3k.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_hun3k.png" alt="3000魂" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image1375.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1375.png" tag="1375,1376,1377" alt="瓜瓜儿,夏娃瓜,西瓜小太郎" /><!--
+					--><img src="image1378.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1378.png" tag="1378,1379,1380" alt="小穗穗,小穗儿,穗儿姑娘" /><!--
+					--><img src="image1381.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1381.png" tag="1381,1382,1383" alt="绿苗芒,芒来芒去,芒父芒儿" /><!--
+					--><img src="image1384.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1384.png" tag="1384,1385,1386" alt="火苗儿,夏火小鬼,火火崩地儿" /><!--
+					--><img src="image1387.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1387.png" tag="1387,1388,1389" alt="小鼠,哈姆太鼠,冰箱哈姆鼠妹" /><!--
+					--><img src="image1390.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1390.png" tag="1390,1391,1392" alt="锄灵,小锄,大暑" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>77</td><td>弯道超车</td><td><nobr>4天</nobr></td>
+				<td>
+					<nobr>
+					<img src="sc045.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc045.png" alt="东皇钟" /><!--
+					--><img src="sc046.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc046.png" alt="轩辕剑" /><!--
+					--><img src="sc047.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc047.png" alt="盘古斧" /><!--
+					--><img src="sc048.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc048.png" alt="炼妖壶" />
+					</nobr>
+					<nobr>
+					<img src="sc049.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc049.png" alt="昊天塔" /><!--
+					--><img src="sc050.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc050.png" alt="伏羲琴" /><!--
+					--><img src="sc051.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc051.png" alt="神农鼎" /><!--
+					--><img src="sc052.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc052.png" alt="崆峒印" />
+					</nobr>
+					<img src="sc053.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc053.png" alt="昆仑镜" /><!--
+					--><img src="sc054.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc054.png" alt="女娲石" /><!--
+					--><img src="sc055.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc055.png" alt="太一之轮" /><!--
+					--><img src="sc_yu88.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_yu88.png" alt="88玉璧" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image852.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image852.png" tag="202,203,204,852" alt="葫芦妖,葫芦侠,铁拐李,八仙铁拐李" /><!--
+					--><img src="image866.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image866.png" tag="187,188,189,866" alt="神棍,不倒翁,曹国舅,八仙曹国舅" /><!--
+					--><img src="image853.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image853.png" tag="190,191,192,853" alt="大宝剑,小道童,吕洞宾,八仙吕洞宾" /><!--
+					--><img src="image868.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image868.png" tag="208,209,210,868" alt="洞箫,寒仙子,韩湘子,八仙韩湘子" /><!--
+					--><img src="image851.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image851.png" tag="211,212,213,851" alt="芭蕉叶,枫叶渡,汉钟离,八仙汉钟离" /><!--
+					--><img src="image850.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image850.png" tag="214,215,216,850" alt="莲灵,藕仙子,何仙姑,八仙何仙姑" /><!--
+					--><img src="image861.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image861.png" tag="217,218,219,861" alt="莲精,采花小君,蓝采和,八仙蓝采和" /><!--
+					--><img src="image867.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image867.png" tag="232,233,234,867" alt="锤子,锤丸君,张果老,八仙张果老" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>78</td><td>火相星座</td><td><nobr>5天</nobr></td>
+				<td>
+					<img src="sc027.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc027.png" alt="火元素" /><!--
+					--><img src="sc028.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc028.png" alt="火焰符文" /><!--
+					--><img src="sc029.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc029.png" alt="烈焰之心" /><!--
+					--><img src="sc119.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc119.png" alt="赤焰十字星" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image1459.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1459.png" tag="1456,1457,1458,1459" alt="白羊星,小白棉花,白咩咩,白咩咩和小白白" /><!--
+					--><img src="image1500.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1500.png" tag="1497,1498,1499,1500" alt="狮子星,蛋黄喵,狮纸头,无双小狮妹" /><!--
+					--><img src="image1550.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1550.png" tag="1547,1548,1549,1550" alt="射手星,荆棘弓,天使心,心云猎手" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>79</td><td>风相星座</td><td><nobr>5天</nobr></td>
+				<td>
+					<img src="sc036.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc036.png" alt="木元素" /><!--
+					--><img src="sc037.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc037.png" alt="自然符文" /><!--
+					--><img src="sc038.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc038.png" alt="上古神杖" /><!--
+					--><img src="sc122.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc122.png" alt="龙灵不朽腾" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image1533.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1533.png" tag="1530,1531,1532,1533" alt="天秤星,秤仔,羽秤仔,白翼佣兵沃尔坎" /><!--
+					--><img src="image1438.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1438.png" tag="1435,1436,1437,1438" alt="水瓶星,水瓶幽灵,水瓶小倩,水瓶仙子" /><!--
+					--><img src="image1479.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1479.png" tag="1476,1477,1478,1479" alt="双子星,双子星地,双子海贼,宇宙海贼双子星" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>80</td><td>水相星座</td><td><nobr>5天</nobr></td>
+				<td>
+					<img src="sc030.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc030.png" alt="水元素" /><!--
+					--><img src="sc031.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc031.png" alt="寒冰符文" /><!--
+					--><img src="sc032.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc032.png" alt="千年玄冰" /><!--
+					--><img src="sc120.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc120.png" alt="秘窟冰晶卵" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image1490.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1490.png" tag="1487,1488,1489,1490" alt="巨蟹星,蟹粉汤包,蟹粉厨娘,巨蟹小当家" /><!--
+					--><img src="image1560.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1560.png" tag="1557,1558,1559,1560" alt="天蝎星,紫烟蛊,毒尾,封喉教主" /><!--
+					--><img src="image1442.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1442.png" tag="1439,1440,1441,1442" alt="双鱼星,小双鱼,幼小双人鱼,美双鱼美人" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>81</td><td>真金白银</td><td><nobr>6天</nobr></td>
+				<td>
+					<img src="sc073.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc073.png" alt="技巧符文·小" /><!--
+					--><img src="sc074.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc074.png" alt="技巧符文·中" /><!--
+					--><img src="sc075.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc075.png" alt="技巧符文·大" /><!--
+					--><img src="sc118.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc118.png" alt="技巧符文·叉大" /><!--
+					--><img src="sc_jin5w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin5w.png" alt="50000金币" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image1533.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1533.png" tag="1530,1531,1532,1533" alt="天秤星,秤仔,羽秤仔,白翼佣兵沃尔坎" /><!--
+					--><img src="image1543.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1543.png" tag="1540,1541,1542,1543" alt="天秤星,秤仔,羽秤仔,光翼战神沃尔坎" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>82</td><td>旺旺旺</td><td><nobr>5天</nobr></td>
+				<td>
+					<img src="sc_jin60w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin60w.png" alt="600000金币" /><!--
+					--><img src="sc_yu166.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_yu166.png" alt="166玉璧" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image1339.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1339.png" tag="1339,1340,1341,1342" alt="炮竹,火舞狮,年,瑞雪兆丰吉祥年" /><!--
+					--><img src="image1343.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1343.png" tag="1343,1344,1345,1346" alt="水泡,蓝望,蔚蓝,惊涛骇浪千禧年" /><!--
+					--><img src="image1347.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1347.png" tag="1347,1348,1349,1350" alt="腊豆,小粘,年兽,山崩地裂戊戌年兽" /><!--
+					--><img src="image1351.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1351.png" tag="1351,1352,1353,1354" alt="鞭炮,抱竹儿,爆竹娘,翠色欲流新春娘娘" /><!--
+					--><img src="image1355.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1355.png" tag="1355,1356,1357,1358" alt="芒,炽犬,白玉京,光彩夺目白日焰心" /><!--
+					--><img src="image1359.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1359.png" tag="1359,1360,1361,1362" alt="影球,影团,影魔,阿鼻地狱叉腰大魔王" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>83</td><td>七海之旅</td><td><nobr>7天</nobr></td>
+				<td>
+					<img class="monster" src="image1564.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1564.png" tag="1564,1565,1566" alt="黑桃7,特急海盗,巨锚船长" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image1539.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1539.png" tag="1537,1538,1539" alt="黑桃3,新兵尼禄,蒸汽驱动型自走主坦" /><!--
+					--><img src="image1546.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1546.png" tag="1544,1545,1546" alt="梅花4,新兵盖尔,翠谷骑士" /><!--
+					--><img src="image1553.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1553.png" tag="1551,1552,1553" alt="红桃5,呜呜少女,嘤嘤牧师" /><!--
+					--><img src="image1561.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1561.png" tag="1561,1562,1563" alt="梅花6,轮滑小子,黄风特工" />
+				</td>
+			</tr>
+			<tr class="title">
+				<td>84</td><td>玩偶旅团</td><td><nobr>5天</nobr></td>
+				<td>
+					<img src="sc066.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc066.png" alt="智慧符文·大" /><!--
+					--><img src="sc115.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc115.png" alt="智慧符文·叉大" /><!--
+					--><img src="sc069.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc069.png" alt="魅力符文·大" /><!--
+					--><img src="sc116.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc116.png" alt="魅力符文·叉大" /><!--
+					--><img src="sc060.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc060.png" alt="力量符文·大" /><!--
+					--><img src="sc113.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc113.png" alt="力量符文·叉大" /><!--
+					--><img src="sc_jin50w.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_jin50w.png" alt="500000金币" /><!--
+					--><img src="sc_yu100.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc_yu100.png" alt="100玉璧" />
+				</td>
+			</tr>
+			<tr class="info">
+				<td colspan="4">触发条件：
+					<img src="image1539.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1539.png" tag="1537,1538,1539" alt="黑桃3,新兵尼禄,蒸汽驱动型自走主坦" /><!--
+					--><img src="image1546.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1546.png" tag="1544,1545,1546" alt="梅花4,新兵盖尔,翠谷骑士" /><!--
+					--><img src="image1553.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1553.png" tag="1551,1552,1553" alt="红桃5,呜呜少女,嘤嘤牧师" /><!--
+					--><img src="image1563.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1563.png" tag="1561,1562,1563" alt="梅花6,轮滑小子,黄风特工" /><!--
+					--><img src="image1566.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1566.png" tag="1564,1565,1566" alt="黑桃7,特急海盗,巨锚船长" />
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>

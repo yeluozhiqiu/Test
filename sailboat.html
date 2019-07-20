@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8"UTF-8">
+<script>
+/*不同分辨率手机加载*/
+var userScalable = "no";
+(function() {
+	if (window.devicePixelRatio === 1.5) {
+		userScalable = "yes";
+	}
+	var text = "<meta content='target-densitydpi=device-dpi, width=640, user-scalable=" + userScalable + "' name='viewport'>";
+	document.write(text);
+})();
+</script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="图鉴,非官方,紫岩" />
+<!--qq抓取-->
+<meta itemprop="name" content="开船图鉴（简约版）"/>
+<meta itemprop="image" content="images/image639.png" />
+<meta name="description" itemprop="description" content="非官方图鉴，有问题请群内搜索并@紫岩" />
+<title>开船图鉴 - 【非官方】</title>
+<!--<title>【非官方】</title>-->
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<!--ios抓取-->
+<!--<link rel="apple-touch-icon-precomposed" href="images/logo.png" />-->
+<link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+<link rel="stylesheet" type="text/css" href="base.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/base.css" />
+<link rel="stylesheet" type="text/css" href="style.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/style.css" />
+<script type="text/javascript" src="jquery-1.7.2.min.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="scrolltopcontrol.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/scrolltopcontrol.js"></script>
+<script>
+$(document).ready(function(){
+	/*默认图片*/
+	$(".content table img").each(function(){
+		$(this).attr("onerror","this.src='spirit.png'/*tpa=https://ziyan2017.gitee.io/ygsz/images/spirit.png*/");
+	});
+	//隐藏详情展示
+	$(".content table tr.title").click(function(){
+		$(this).next("https://ziyan2017.gitee.io/ygsz/tr.info").toggle();
+	});
+	//开船图片点击
+	$(".content table tr td img").click(function(){
+		var pics = $(this).attr("tag"),
+			names = $(this).attr("alt"),
+			temp = '',
+			temp1 = '',
+			temp2 = '';
+		pics = pics.split(",");
+		names = names.split(",");
+		var num = pics.length;
+		for(i=0; i<num;i++){
+			temp1 += '<td><img src="image'+pics[i]+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/image'+pics[i]+'.png*/ /></td>';
+			temp2 += '<td width="100">'+names[i]+'</td>';
+		}
+		temp = '<table><tr>'+temp1+'</tr><tr>'+temp2+'</tr></table><a class="close" href="javascript:void(0)"></a>';
+		$(".picinfo").html(temp).show();
+		return false;
+	});
+	$(".picinfo a.close").live("click",function(){
+		$(".picinfo").hide();
+	});
+	refresh();
+});
+$(window).resize(function(){refresh();});
+function refresh(){
+};
+</script>
+</head>
+
+<body>
+<div class="wrap">
+	<h1><a href="javascript:if(confirm('https://ziyan2017.gitee.io/ygsz/ziyan/sailboat.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������������ļ�δ�ҵ���  \n\n�����ڷ������ϴ���?'))window.location='https://ziyan2017.gitee.io/ygsz/ziyan/sailboat.html'" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/sailboat.html">紫岩专属</a>开船图鉴（简约版）</h1>
+	<!--导航 开始-->
+	<script>
+	$(document).ready(function(){
+		$("https://ziyan2017.gitee.io/ygsz/.nav a.menu").click(function(){
+			$(".nav .navbox").addClass("show");
+			$("https://ziyan2017.gitee.io/ygsz/body,.wrap").addClass("fullscreen");
+		});
+		$(".nav .navbox a.close").click(function(){
+			$(".nav .navbox").removeClass("show");
+			$("https://ziyan2017.gitee.io/ygsz/body,.wrap").removeClass("fullscreen");
+		});
+	});
+	</script>
+	<div class="nav">
+		<a class="menu" href="javascript:void(0)"></a>
+		<div class="navbox">
+			<a class="close" href="javascript:void(0)"></a>
+			<dl>
+				<dt>图鉴相关<span>【厚颜无耻的放到了最前面】</span></dt>
+				<dd>
+					<a href="index.html" tppabs="https://ziyan2017.gitee.io/ygsz/index.html">-&gt; 图鉴索引</a>
+					<a href="bb.html" tppabs="https://ziyan2017.gitee.io/ygsz/bb.html">-&gt; 部分说明</a>
+				</dd>
+				<dt>妖怪参数</dt>
+				<dd>
+					<a href="index1.html" tppabs="https://ziyan2017.gitee.io/ygsz/index1.html">-&gt; 属性图鉴</a>
+					<a href="skill.html" tppabs="https://ziyan2017.gitee.io/ygsz/skill.html">-&gt; 技能图鉴</a>
+					<a href="loveship.html" tppabs="https://ziyan2017.gitee.io/ygsz/loveship.html">-&gt; 情缘图鉴</a>
+					<a href="test.html" tppabs="https://ziyan2017.gitee.io/ygsz/test.html">-&gt; 整合图鉴（测试）</a>
+					<a href="material.html" tppabs="https://ziyan2017.gitee.io/ygsz/material.html">-&gt; 素材一览</a>
+					<a href="food.html" tppabs="https://ziyan2017.gitee.io/ygsz/food.html">-&gt; 神庙的各种饭</a>
+				</dd>
+				<dt>秘店奖池</dt>
+				<dd>
+					<a href="secretbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/secretbox.html">-&gt; 秘店图鉴</a>
+					<a href="goldbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/goldbox.html">-&gt; 金币池</a>
+					<a href="jadebox.html" tppabs="https://ziyan2017.gitee.io/ygsz/jadebox.html">-&gt; 玉璧池</a>
+					<!--<a href="package.html">-&gt; 礼包怪</a>-->
+					<a href="newbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/newbox.html">-&gt; 属性奖池</a>
+					<a href="hop.html" tppabs="https://ziyan2017.gitee.io/ygsz/hop.html">-&gt; 妖王特效怪</a>
+					<a href="month.html" tppabs="https://ziyan2017.gitee.io/ygsz/month.html">-&gt; 月签到记录</a>
+				</dd>
+				<dt>开船探险</dt>
+				<dd>
+					<a href="sailboat.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat.html">-&gt; 开船图鉴-条件</a>
+					<a href="sailboat1.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat1.html">-&gt; 开船图鉴-素材</a>
+				</dd>
+				<dt>科普娱乐</dt>
+				<dd>
+					<a href="kepu01.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu01.html">-&gt; 二十八星宿</a>
+					<a class="short" href="kepu02.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu02.html">-&gt; 麻将</a>
+					<a class="short" href="kepu03.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu03.html">-&gt; 象棋</a>
+					<a href="kepu04.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu04.html">-&gt; 水浒一百单八将</a>
+					<a href="kepu05.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu05.html">-&gt; 北斗七星</a>
+					<a href="kepu06.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu06.html">-&gt; 天龙八部</a>
+					<a href="kepu07.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu07.html">-&gt; 龙生九子</a>
+					<a href="kepu08.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu08.html">-&gt; 二十四节气</a>
+					<a href="kepu09.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu09.html">-&gt; 十二星座</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<!--导航 结束-->
+	<p>
+		<a href="test.html" tppabs="https://ziyan2017.gitee.io/ygsz/test.html">整合图鉴</a>
+		<a href="loveship.html" tppabs="https://ziyan2017.gitee.io/ygsz/loveship.html">情缘图鉴</a>
+		<a href="secretbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/secretbox.html">秘店图鉴</a>
+		<a href="skill.html" tppabs="https://ziyan2017.gitee.io/ygsz/skill.html">技能图鉴</a>
+		<a class="cur" href="sailboat.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat.html">开船图鉴-条件</a>
+		<a href="sailboat1.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat1.html">开船图鉴-素材</a>
+	</p>
+	<div class="picinfo bt1"></div>
+	<div class="content">
+		<p class="plbtn kptip">
+			<span>一个[假装]成熟的建议：<br>开船时，时间可以<i>超过保底天数几个小时</i>，比较稳妥！</span>
+			<span style="float:right;">[来自一个不成熟大佬的不成熟建议 ◐▽◑]</span>
+		</p>
+		<table class="boat boat1">
+			<tr>
+				<th>ID</th><th>名称</th><th>掉落类型</th><th>时间</th><th>触发条件</th>
+			</tr>
+			<tr class="title">
+				<td>1</td><td>鬼鬼鬼鬼</td><td>魂</td><td><nobr>4天</nobr></td><td>情缘·魑魅魍魉</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：3000魂，4000魂</td></tr>
+			<tr class="title">
+				<td>2</td><td>多塔世界</td><td>神器</td><td><nobr>4天</nobr></td><td>情缘·四大天王</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：昊天塔，2500魂</td></tr>
+			<tr class="title">
+				<td>3</td><td>艺术团汇演</td><td>神器</td><td><nobr>4天</nobr></td><td>情缘·琴棋书画</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：伏羲琴，2500魂</td></tr>
+			<tr class="title">
+				<td>4</td><td>桃园</td><td>神器</td><td><nobr>4天</nobr></td><td>情缘·三个臭皮匠</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：轩辕剑，盘古斧，2500魂</td></tr>
+			<tr class="title">
+				<td>5</td><td>飙车现场</td><td>神器</td><td><!--<nobr style="color:#cc2525;">不保底</nobr>-->6天</td><td>情缘·八仙过海</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：上古神器系列，太一之轮</td></tr>
+			<tr class="title">
+				<td>6</td><td>时空裂痕</td><td>神器</td><td><nobr>4天</nobr></td><td>情缘·创世夫妇</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：女娲石，盘古斧</td></tr>
+			<tr class="title">
+				<td>7</td><td>神仙酒厂</td><td>节日素材</td><td><nobr>4天</nobr></td><td>情缘·分居两地</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：桂花酒，桂花，10000金币</td></tr>
+			<tr class="title">
+				<td>8</td><td>龙舟大会</td><td>节日素材</td><td><nobr>4天</nobr></td><td>情缘·端午传说</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：粽叶，糯米，10000金币，2500魂</td></tr>
+			<tr class="title">
+				<td>9</td><td>灯，等灯等灯</td><td>节日素材</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="image688.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image688.png" tag="688,689,690" alt="灯形,黑仔,及时雨宋江" /><!--
+					--><img src="image226.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image226.png" tag="226,227,228" alt="玄火,秘灯,黄泉引路姬" /><!--
+					--><img src="image46.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image46.png" tag="46,47,48,835,1447" alt="羽妖仔,小诸葛,诸葛孔明,神算诸葛亮,运筹帷幄卧龙诸葛孔明" /><br><!--
+					--><img src="image184.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image184.png" tag="184,185,186" alt="夜叉,夜游鬼,夜神月" /><!--
+					--><img src="image31.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image31.png" tag="31,32,33" alt="玄阴火,青行灯,般若娘" />
+					<!--<img src="images/image187.png" tag="187,188,189,866" alt="神棍,不倒翁,曹国舅,八仙曹国舅" />-->
+				</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：灯笼，10000金币，3000魂</td></tr>
+			<tr class="title">
+				<td>10</td><td>比武大会</td><td>铁匠铺素材</td><td><nobr>4天</nobr></td><td>情缘·八种兵器</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：弃刃，长矛，10000金币，3000魂</td></tr>
+			<tr class="title">
+				<td>11</td><td>三人行</td><td>图书馆素材</td><td><nobr>4天</nobr></td><td>情缘·白胖圆</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：时间符文，10000金币，2500魂</td></tr>
+			<tr class="title">
+				<td>12</td><td>气象大厅</td><td>图书馆素材</td><td><nobr>4天</nobr></td><td>情缘·天庭气象局</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：生命符文，10000金币，2500魂</td></tr>
+			<tr class="title">
+				<td>13</td><td>四季轮回</td><td>碑林素材</td><td><nobr>4天</nobr></td><td>情缘·四季组合</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：枫叶，10000金币，2500魂</td></tr>
+			<tr class="title">
+				<td>14</td><td>邪恶秘穴</td><td>试炼塔素材</td><td><nobr>4天</nobr></td><td>情缘·奥利奥</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：邪恶符文，10000金币，2000魂</td></tr>
+			<tr class="title">
+				<td>15</td><td>赏花大会</td><td>铁匠铺素材</td><td><nobr>4天</nobr></td><td>情缘·梅兰竹菊</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：艳花，10000金币，2500魂</td></tr>
+			<tr class="title">
+				<td>16</td><td>海贼王在哪</td><td>图书馆素材</td><td><nobr>4天</nobr></td><td>情缘·七无害</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：善良符文，10000金币，3000魂</td></tr>
+			<tr class="title">
+				<td>17</td><td>阳澄湖</td><td>节日素材</td><td><nobr>4天</nobr></td><td>情缘·虾兵蟹将</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：螃蟹，10000金币，2000魂</td></tr>
+			<tr class="title">
+				<td>18</td><td>政治婚姻</td><td>图书馆素材</td><td><nobr>4天</nobr></td><td>情缘·政治婚姻</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：真爱符文，10000金币，2000魂</td></tr>
+			<tr class="title">
+				<td>19</td><td>打豆腐</td><td>神庙道具</td><td><nobr>4天</nobr></td><td>情缘·豆腐拳</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：力量之神的眷顾，1金币，2500魂</td></tr>
+			<tr class="title">
+				<td>20</td><td>烈焰岛</td><td>元素</td><td><nobr>4天</nobr></td><td>5火怪含1金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：火焰符文，烈焰之心，30000金币，<br>1000魂，2000魂</td></tr>
+			<tr class="title">
+				<td>21</td><td>烈焰岛-禁区</td><td>四阶/元素</td><td><nobr>3天</nobr></td><td>8火怪含2金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：烈焰之心，赤焰十字星，80000金币，<br>1500魂，3000魂</td></tr>
+			<tr class="title">
+				<td>22</td><td>寒冰池</td><td>元素</td><td><nobr>4天</nobr></td><td>5水怪含1金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：寒冰符文，千年玄冰，30000金币，<br>1000魂，2000魂</td></tr>
+			<tr class="title">
+				<td>23</td><td>寒冰池-禁区</td><td>四阶/元素</td><td><nobr>3天</nobr></td><td>8水怪含2金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：千年玄冰，秘窟冰晶卵，80000金币，<br>1500魂，3000魂</td></tr>
+			<tr class="title">
+				<td>24</td><td>艳阳域</td><td>元素</td><td><nobr>4天</nobr></td><td>5光怪含1金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：光辉符文，辉耀之星，30000金币，<br>1000魂，2000魂</td></tr>
+			<tr class="title">
+				<td>25</td><td>艳阳域-禁区</td><td>四阶/元素</td><td><nobr>3天</nobr></td><td>8光怪含2金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：辉耀之星，六方天运骰，80000金币，<br>1500魂，3000魂</td></tr>
+			<tr class="title">
+				<td>26</td><td>幽暗礁</td><td>元素</td><td><nobr>4天</nobr></td><td>5暗怪含1金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：暗灭符文，夜明珠，30000金币，<br>1000魂，2000魂</td></tr>
+			<tr class="title">
+				<td>27</td><td>幽暗礁-禁区</td><td>四阶/元素</td><td><nobr>3天</nobr></td><td>8暗怪含2金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：夜明珠，月冕霓睛符，80000金币，<br>1500魂，3000魂</td></tr>
+			<tr class="title">
+				<td>28</td><td>黄秃岩</td><td>元素</td><td><nobr>4天</nobr></td><td>5土怪含1金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：大地符文，远古神石，30000金币，<br>1000魂，2000魂</td></tr>
+			<tr class="title">
+				<td>29</td><td>黄秃岩-禁区</td><td>四阶/元素</td><td><nobr>3天</nobr></td><td>8土怪含2金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：远古神石，愚山乾坤石，80000金币，<br>1500魂，3000魂</td></tr>
+			<tr class="title">
+				<td>30</td><td>极木地</td><td>元素</td><td><nobr>4天</nobr></td><td>5木怪含1金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：自然符文，上古神杖，30000金币，<br>1000魂，2000魂</td></tr>
+			<tr class="title">
+				<td>31</td><td>极木地-禁区</td><td>四阶/元素</td><td><nobr>3天</nobr></td><td>8木怪含2金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：上古神杖，龙灵不朽腾，80000金币，<br>1500魂，3000魂</td></tr>
+			<tr class="title">
+				<td>32</td><td>战士试炼</td><td>属性</td><td><nobr>4天</nobr></td><td>8战士银怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：力量符文·小，力量符文·中，长矛，1500魂</td></tr>
+			<tr class="title">
+				<td>33</td><td>勇士试炼</td><td>四阶/属性</td><td><nobr>3天</nobr></td><td>8神勇金怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：力量符文·大，力量符文·叉大，弃刃，2500魂</td></tr>
+			<tr class="title">
+				<td>34</td><td>极速试炼</td><td>属性</td><td><nobr>4天</nobr></td><td>8怪含6神速</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：速度符文·小，速度符文·中，500魂</td></tr>
+			<tr class="title">
+				<td>35</td><td>疾速试炼</td><td>四阶/属性</td><td><nobr>3天</nobr></td><td>8神速含4金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：速度符文·大，速度符文·叉大，惊雷，2500魂</td></tr>
+			<tr class="title">
+				<td>36</td><td>人性试炼</td><td>属性</td><td><nobr>4天</nobr></td><td>8人形银怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：智力符文·小，智力符文·中，旧布，1500魂</td></tr>
+			<tr class="title">
+				<td>37</td><td>知性试炼</td><td>四阶/属性</td><td><nobr>3天</nobr></td><td>8谋略含5金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：智力符文·大，智力符文·叉大，2500魂</td></tr>
+			<tr class="title">
+				<td>38</td><td>呆萌试炼</td><td>属性</td><td><nobr>4天</nobr></td><td>8呆萌银怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：魅力符文·小，魅力符文·中，布娃，1500魂</td></tr>
+			<tr class="title">
+				<td>39</td><td>卖萌试炼</td><td>四阶/属性</td><td><nobr>3天</nobr></td><td>8妹纸金怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：魅力符文·大，魅力符文·叉大，2500魂</td></tr>
+			<tr class="title">
+				<td>40</td><td>神秘试炼</td><td>属性</td><td><nobr>4天</nobr></td><td>8神秘含7银</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：幸运符文·小，幸运符文·中，方帽，1500魂</td></tr>
+			<tr class="title">
+				<td>41</td><td>极运试炼</td><td>四阶/属性</td><td><nobr>3天</nobr></td><td>8吉祥含2金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：幸运符文·大，幸运符文·叉大，2000魂</td></tr>
+			<tr class="title">
+				<td>42</td><td>美食试炼</td><td>属性</td><td><nobr>4天</nobr></td><td>8美食银怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：技巧符文·小，技巧符文·中，兽血，<br>火腿，1500魂</td></tr>
+			<tr class="title">
+				<td>43</td><td>调音试炼</td><td>四阶/属性</td><td><nobr>3天</nobr></td><td>8乐器含5金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：技巧符文·大，技巧符文·叉大，听符，2500魂</td></tr>
+			<tr class="title">
+				<td>44</td><td>特技厨师考场</td><td>神庙道具</td><td><nobr style="color:#cc2525;">不保底</nobr></td><td>8美食不少于3金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：六种小饭</td></tr>
+			<tr class="title">
+				<td>45</td><td>神刀刀的料理</td><td>神庙道具</td><td><nobr>4天</nobr></td><td>8神仙金怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：神之祝福（大盒饭），2500魂</td></tr>
+			<tr class="title">
+				<td>46</td><td>上古法阵-小</td><td>麻将素材</td><td><!--<nobr style="color:#cc2525;">不保底--><nobr>5.4天</nobr></td><td>8法器铜怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：庄家令牌·小，筹码·小，钱袋·小，<br>欠条·小，骰子·小，2000魂</td></tr>
+			<tr class="title">
+				<td>47</td><td>上古法阵-全</td><td>麻将素材</td><td><!--<nobr style="color:#cc2525;">不保底--><nobr>6天</nobr></td><td>8法器银怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：庄家令牌·中，筹码·中，钱袋·中，<br>欠条·中，骰子·中，2500魂</td></tr>
+			<tr class="title">
+				<td>48</td><td>上古法阵-极</td><td>麻将素材</td><td><!--<nobr style="color:#cc2525;">不保底--><nobr>7.5天</nobr></td><td>8法器金怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：庄家令牌·大，筹码·大，钱袋·大，<br>欠条·大，骰子·大，3000魂</td></tr>
+			<tr class="title">
+				<td>49</td><td>武器店</td><td>铁匠铺素材</td><td><nobr>6天</nobr></td><td>6武器任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：长矛</td></tr>
+			<tr class="title">
+				<td>50</td><td>妖葬山</td><td>魂</td><td><nobr>4天</nobr></td><td>8妖怪任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：500魂，2000魂</td></tr>
+			<tr class="title">
+				<td>51</td><td>炼丹炉</td><td>节日素材</td><td><nobr>4天</nobr></td><td>8神仙任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：仙丹，10000金币</td></tr>
+			<tr class="title">
+				<td>52</td><td>奥运大会</td><td>奥运素材</td><td><nobr>6天</nobr></td><td>8怪含3奥运</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：奖牌</td></tr>
+			<tr class="title">
+				<td>53</td><td>神秘的宝箱-小</td><td>金币</td><td><nobr>4天</nobr></td><td>1财迷任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：10000金币，100魂</td></tr>
+			<tr class="title">
+				<td>54</td><td>神秘的宝箱-大</td><td>金币</td><td><nobr>4天</nobr></td><td>3财迷任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：150000金币，3000魂</td></tr>
+			<tr class="title">
+				<td>55</td><td>神秘的宝箱-叉大</td><td>金币</td><td><nobr>4天</nobr></td><td>5财迷任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：300000金币，5000魂</td></tr>
+			<tr class="title">
+				<td>56</td><td>NB工作室门口</td><td>!金甲虫!</td><td><nobr>4天</nobr></td><td>8怪含2彩蛋</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：金甲虫，怪蛋，1金币，1魂</td></tr>
+			<tr class="title">
+				<td>57</td><td>当铺后门</td><td>金币</td><td><nobr>4天</nobr></td><td>8任意铜怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：10000金币，500魂，1000魂</td></tr>
+			<tr class="title">
+				<td>58</td><td>白银圣地</td><td>金币</td><td><nobr>4天</nobr></td><td>8任意银怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：25000金币，1000魂，2000魂</td></tr>
+			<tr class="title">
+				<td>59</td><td>黄金城</td><td>金币</td><td><nobr>4天</nobr></td><td>8任意金怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：50000金币，50000金币，2000魂，2500魂</td></tr>
+			<tr class="title">
+				<td>60</td><td>五行之地</td><td>元素</td><td><nobr>6天</nobr></td><td>8个任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：六种元素</td></tr>
+			<tr class="title">
+				<td>61</td><td>孤岛</td><td>属性</td><td><nobr>6天</nobr></td><td>3到7个任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：六种小符文</td></tr>
+			<tr class="title">
+				<td>62</td><td>触礁</td><td>金币</td><td><nobr>6天</nobr></td><td>1到2个任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：1000金币，5000金币，10000金币，100魂，250魂</td></tr>
+			<tr class="title">
+				<td>63</td><td>不知火舞</td><td>炼丹术素材</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="image10.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image10.png" tag="10,11,12" alt="火印,夏雨荷,丽娜" /><!--
+					--><img src="image149.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image149.png" tag="149,150,151" alt="肉痴,肉炬,豚燕" /><!--
+					--><img src="image161.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image161.png" tag="161,162,163" alt="帘卷精,纤毛兽,黄呱呱" /><br><!--
+					--><img src="image391.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image391.png" tag="391,392,393" alt="玄鸟,七宿仙人,南七宿朱雀" /><!--
+					--><img src="image472.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image472.png" tag="472,473,474" alt="付炬,极炎,敖钦" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：火焰，2000魂</td></tr>
+			<tr class="title">
+				<td>64</td><td>民间养老院</td><td>图书馆素材</td><td><nobr>6天</nobr></td><td>4老人家任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：时间符文，10000金币，500魂</td></tr>
+			<tr class="title">
+				<td>65</td><td>品牌养老院</td><td>图书馆素材</td><td><nobr>4天</nobr></td><td>8老人家任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：时间符文，10000金币，1000魂</td></tr>
+			<tr class="title">
+				<td>66</td><td>富豪养老院</td><td>图书馆素材</td><td><nobr>2天</nobr></td><td>8老人家含2金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：时间符文，10000金币，2000魂</td></tr>
+			<tr class="title">
+				<td>67</td><td>自然祭坛</td><td>图书馆素材</td><td><nobr>6天</nobr></td><td>4自然任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：生命符文，10000金币，500魂</td></tr>
+			<tr class="title">
+				<td>68</td><td>生灵庙</td><td>图书馆素材</td><td><nobr>4天</nobr></td><td>8自然任意怪</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：生命符文，10000金币，1000魂</td></tr>
+			<tr class="title">
+				<td>69</td><td>万物神殿</td><td>图书馆素材</td><td><nobr>2天</nobr></td><td>8自然含2金</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：生命符文，10000金币，2000魂</td></tr>
+			<tr class="title">
+				<td>70</td><td>初恋</td><td>图书馆素材</td><td><nobr>6天</nobr></td><td>情缘·青梅竹马</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：真爱符文，10000金币，1500魂</td></tr>
+			<tr class="title">
+				<td>71</td><td>金婚</td><td>图书馆素材</td><td><nobr>2天</nobr></td><td>情缘·驰名商标</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：真爱符文，10000金币，2500魂</td></tr>
+			<tr class="title">
+				<td>72</td><td>公主病</td><td>节日素材</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="image220.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image220.png" tag="220,221,222" alt="方中,方串,方元姬" /><!--
+					--><img src="image499.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image499.png" tag="499,500,501" alt="金钗子,女侍,王母娘娘" /><br><!--
+					--><img src="image466.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image466.png" tag="466,467,468" alt="艳灵,玫瑰女仆,玫瑰夫人" /><!--
+					--><img src="image292.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image292.png" tag="292,293,294" alt="白奶精,白蛇魅,白娘子" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：金钗，2500魂</td></tr>
+			<tr class="title">
+				<td>73</td><td>远方的星星</td><td>节日素材</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="image310.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image310.png" tag="310,311,312" alt="小金星,星道士,太白金星" /><!--
+					--><img src="image496.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image496.png" tag="496,497,498" alt="芒星,银鹤,银河" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：彗星，1000魂</td></tr>
+			<tr class="title">
+				<td>74</td><td>NB工作室机房</td><td>!金甲虫!</td><td><nobr>6天</nobr></td>
+				<td>
+					<img src="image911.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image911.png" tag="911,912,913" alt="污鸡,键盘侠,黑客公鸡" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：暗元素，邪恶符文，金甲虫，110金币，233魂</td></tr>
+			<tr class="title">
+				<td>75</td><td>圣诞星空</td><td>节日素材</td><td><nobr>4天</nobr></td><td>情缘·圣诞快乐</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：金狗杯，圣诞袜，红糖，2500魂</td></tr>
+			<tr class="title">
+				<td>76</td><td>夏日节气</td><td>节气素材</td><td><nobr>4天</nobr></td>
+				<td>
+					<img src="image1375.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1375.png" tag="1375,1376,1377" alt="瓜瓜儿,夏娃瓜,西瓜小太郎" /><!--
+					--><img src="image1378.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1378.png" tag="1378,1379,1380" alt="小穗穗,小穗儿,穗儿姑娘" /><!--
+					--><img src="image1381.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1381.png" tag="1381,1382,1383" alt="绿苗芒,芒来芒去,芒父芒儿" /><br><!--
+					--><img src="image1384.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1384.png" tag="1384,1385,1386" alt="火苗儿,夏火小鬼,火火崩地儿" /><!--
+					--><img src="image1387.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1387.png" tag="1387,1388,1389" alt="小鼠,哈姆太鼠,冰箱哈姆鼠妹" /><!--
+					--><img src="image1390.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1390.png" tag="1390,1391,1392" alt="锄灵,小锄,大暑" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：节气素材春，夏，秋，冬，50000金币，3000魂</td></tr>
+			<tr class="title">
+				<td>77</td><td>弯道超车</td><td>神器，玉璧</td><td><nobr>4天</nobr></td><td>情缘·真八仙过海</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：上古神器系列，太一之轮，88玉璧</td></tr>
+			<tr class="title">
+				<td>78</td><td>火相星座</td><td>四阶/元素</td><td><nobr>5天</nobr></td>
+				<td>
+					<img src="image1459.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1459.png" tag="1456,1457,1458,1459" alt="白羊星,小白棉花,白咩咩,白咩咩和小白白" /><!--
+					--><img src="image1500.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1500.png" tag="1497,1498,1499,1500" alt="狮子星,蛋黄喵,狮纸头,无双小狮妹" /><!--
+					--><img src="image1550.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1550.png" tag="1547,1548,1549,1550" alt="射手星,荆棘弓,天使心,心云猎手" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：火元素，火焰符文，烈焰之心，赤焰十字星</td></tr>
+			<tr class="title">
+				<td>79</td><td>风相星座</td><td>四阶/元素</td><td><nobr>5天</nobr></td>
+				<td>
+					<img src="image1533.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1533.png" tag="1530,1531,1532,1533" alt="天秤星,秤仔,羽秤仔,白翼佣兵沃尔坎" /><!--
+					--><img src="image1438.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1438.png" tag="1435,1436,1437,1438" alt="水瓶星,水瓶幽灵,水瓶小倩,水瓶仙子" /><!--
+					--><img src="image1479.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1479.png" tag="1476,1477,1478,1479" alt="双子星,双子星地,双子海贼,宇宙海贼双子星" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：木元素，自然符文，上古神杖，龙灵不朽腾</td></tr>
+			<tr class="title">
+				<td>80</td><td>水相星座</td><td>四阶/元素</td><td><nobr>5天</nobr></td>
+				<td>
+					<img src="image1490.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1490.png" tag="1487,1488,1489,1490" alt="巨蟹星,蟹粉汤包,蟹粉厨娘,巨蟹小当家" /><!--
+					--><img src="image1560.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1560.png" tag="1557,1558,1559,1560" alt="天蝎星,紫烟蛊,毒尾,封喉教主" /><!--
+					--><img src="image1442.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1442.png" tag="1439,1440,1441,1442" alt="双鱼星,小双鱼,幼小双人鱼,美双鱼美人" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：水元素，寒冰符文，千年玄冰，秘窟冰晶卵</td></tr>
+			<tr class="title">
+				<td>81</td><td>真金白银</td><td>四阶/属性</td><td><nobr>6天</nobr></td>
+				<td>
+					<img src="image1533.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1533.png" tag="1530,1531,1532,1533" alt="天秤星,秤仔,羽秤仔,白翼佣兵沃尔坎" /><!--
+					--><img src="image1543.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1543.png" tag="1540,1541,1542,1543" alt="天秤星,秤仔,羽秤仔,光翼战神沃尔坎" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：技巧符文·小，技巧符文·中，技巧符文·大，<br>技巧符文·叉大，50000金币</td></tr>
+			<tr class="title">
+				<td>82</td><td>旺旺旺</td><td>金币，玉璧</td><td><nobr>5天</nobr></td><td>情缘·年兽来袭</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：600000金币，166玉璧</td></tr>
+			<tr class="title">
+				<td>83</td><td>七海之旅</td><td>扑克怪</td><td><nobr>7天</nobr></td>
+				<td>
+					<img src="image1539.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1539.png" tag="1537,1538,1539" alt="黑桃3,新兵尼禄,蒸汽驱动型自走主坦" /><!--
+					--><img src="image1546.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1546.png" tag="1544,1545,1546" alt="梅花4,新兵盖尔,翠谷骑士" /><br><!--
+					--><img src="image1553.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1553.png" tag="1551,1552,1553" alt="红桃5,呜呜少女,嘤嘤牧师" /><!--
+					--><img src="image1561.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1561.png" tag="1561,1562,1563" alt="梅花6,轮滑小子,黄风特工" />
+				</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：黑桃7</td></tr>
+			<tr class="title">
+				<td>84</td><td>玩偶旅团</td><td>四阶/属性<br>金币，玉璧</td><td><nobr>5天</nobr></td><td>情缘·玩偶旅团</td>
+			</tr>
+			<tr class="info"><td colspan="5">保底掉落：智慧符文·大，魅力符文·大，力量符文·大，<br>智慧符文·叉大，魅力符文·叉大，力量符文·叉大，<br>500000金币，100玉璧</td></tr>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>

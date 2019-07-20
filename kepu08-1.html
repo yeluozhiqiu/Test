@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8"UTF-8">
+<script>
+/*不同分辨率手机加载*/
+var userScalable = "no";
+(function() {
+	if (window.devicePixelRatio === 1.5) {
+		userScalable = "yes";
+	}
+	var text = "<meta content='target-densitydpi=device-dpi, width=640, user-scalable=" + userScalable + "' name='viewport'>";
+	document.write(text);
+})();
+</script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="图鉴,非官方,紫岩" />
+<!--qq抓取-->
+<meta itemprop="name" content="科普小知识（娱乐向）"/>
+<meta itemprop="image" content="images/image588.png" />
+<meta name="description" itemprop="description" content="非官方图鉴，有问题请群内搜索并@紫岩" />
+<title>科普小知识（娱乐向） - 【紫岩专属】</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+<!--ios抓取-->
+<!--<link rel="apple-touch-icon-precomposed" href="../images/logo.png" />-->
+<link rel="apple-touch-icon-precomposed" href="../images/icon.png" />
+<link rel="stylesheet" type="text/css" href="base.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/base.css" />
+<link rel="stylesheet" type="text/css" href="style.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/style.css" />
+<script type="text/javascript" src="jquery-1.7.2.min.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="scrolltopcontrol.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/scrolltopcontrol.js"></script>
+<script>
+$(document).ready(function(){
+	$(".content table tr td img").each(function(){
+		$(this).attr("onerror","this.src='spirit.png'/*tpa=https://ziyan2017.gitee.io/ygsz/images/spirit.png*/");
+	});
+	//图片点击
+	$(".content table tr td img").click(function(){
+		var pics = $(this).attr("tag"),
+			names = $(this).attr("alt"),
+			temp = '',
+			temp1 = '',
+			temp2 = '';
+		pics = pics.split(",");
+		names = names.split(",");
+		var num = pics.length;
+		for(i=0; i<num;i++){
+			if(pics[i] == '000'){
+				temp1 += '<td><img src="'+'spirit'+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/'+'spirit'+'.png*/ /></td>';
+			}else{
+				temp1 += '<td><img src="image'+pics[i]+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/image'+pics[i]+'.png*/ /></td>';
+			}
+			temp2 += '<td width="100">'+names[i]+'</td>';
+		}
+		temp = '<table><tr>'+temp1+'</tr><tr>'+temp2+'</tr></table><a class="close" href="javascript:void(0)"></a>';
+		$(".picinfo").html(temp).show();
+		return false;
+	});
+	$(".picinfo a.close").live("click",function(){
+		$(".picinfo").hide();
+	});
+	refresh();
+});
+$(window).resize(function(){refresh();});
+function refresh(){
+};
+</script>
+</head>
+
+<body>
+<div class="wrap">
+	<h1><a href="kepu08.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu08.html">标准版</a>科普小知识（娱乐向）</h1>
+	<p>
+		<a href="kepu01-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu01.html">二十八星宿</a>
+		<a href="kepu04-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu04.html">水浒一百单八将</a>
+		<a href="kepu06-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu06.html">天龙八部</a>
+		<a class="cur" href="kepu08-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu08.html">二十四节气</a>
+		<a href="index-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/index.html">返回首页</a>
+	</p>
+	<div class="picinfo"></div>
+	<div class="content">
+		<table class="kp">
+			<tr class="title">
+				<td><img src="image7.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image7.png" tag="7,8,9" alt="绿灵,叶魅,春丽" /></td>
+				<td colspan="4" style="font-size:1.2em;">春雨惊春清谷天</td>
+				<td><img src="image7.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image7.png" tag="7,8,9" alt="绿灵,叶魅,春丽" /></td>
+			</tr>
+			<tr class="pic">
+				<td class="own"><img src="image1429.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1429.png" tag="1429,1430,1431" alt="春盘,咬春灵童,春卷杀手" /></td>
+				<td><img src="image1432.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1432.png" tag="1432,1433,1434" alt="水滴,水灵,萧萧暮雨" /></td>
+				<td class="own"><img src="image1363.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1363.png" tag="1363,1364,1365" alt="铜锣儿,敲锣儿,小脑斧惊蛰儿" /></td>
+				<td class="own"><img src="image1366.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1366.png" tag="1366,1367,1368" alt="未融,和风芽,春分十里小燕几" /></td>
+				<td class="own"><img src="image1369.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1369.png" tag="1369,1370,1371" alt="小幽儿,墓烛幽儿,三三幽鬼灯" /></td>
+				<td class="own"><img src="image1372.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1372.png" tag="1372,1373,1374" alt="小米伞,米花伞,亭亭玉莉" /></td>
+			</tr>
+			<tr class="name">
+				<td class="own">立春</td>
+				<td>雨水</td>
+				<td class="own">惊蛰</td>
+				<td class="own">春分</td>
+				<td class="own">清明</td>
+				<td class="own">谷雨</td>
+			</tr>
+			<tr class="title">
+				<td><img src="image10.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image10.png" tag="10,11,12" alt="火印,夏雨荷,丽娜" /></td>
+				<td colspan="4" style="font-size:1.2em;">夏满芒夏暑相连</td>
+				<td><img src="image10.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image10.png" tag="10,11,12" alt="火印,夏雨荷,丽娜" /></td>
+			</tr>
+			<tr class="pic">
+				<td class="own"><img src="image1375.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1375.png" tag="1375,1376,1377" alt="瓜瓜儿,夏娃瓜,西瓜小太郎" /></td>
+				<td class="own"><img src="image1378.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1378.png" tag="1378,1379,1380" alt="小穗穗,小穗儿,穗儿姑娘" /></td>
+				<td class="own"><img src="image1381.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1381.png" tag="1381,1382,1383" alt="绿苗芒,芒来芒去,芒父芒儿" /></td>
+				<td class="own"><img src="image1384.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1384.png" tag="1384,1385,1386" alt="火苗儿,夏火小鬼,火火崩地儿" /></td>
+				<td class="own"><img src="image1387.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1387.png" tag="1387,1388,1389" alt="小鼠,哈姆太鼠,冰箱哈姆鼠妹" /></td>
+				<td class="own"><img src="image1390.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1390.png" tag="1390,1391,1392" alt="锄灵,小锄,大暑" /></td>
+			</tr>
+			<tr class="name">
+				<td class="own">立夏</td>
+				<td class="own">小满</td>
+				<td class="own">芒种</td>
+				<td class="own">夏至</td>
+				<td class="own">小暑</td>
+				<td class="own">大暑</td>
+			</tr>
+			<tr class="title">
+				<td><img src="image13.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image13.png" tag="13,14,15" alt="枯妖,秋波,秋香" /></td>
+				<td colspan="4" style="font-size:1.2em;">秋处露秋寒霜降</td>
+				<td><img src="image13.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image13.png" tag="13,14,15" alt="枯妖,秋波,秋香" /></td>
+			</tr>
+			<tr class="pic">
+				<td class="own"><img src="image1393.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1393.png" tag="1393,1394,1395" alt="秋灵,人气主播,秋蚊杀手" /></td>
+				<td class="own"><img src="image1396.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1396.png" tag="1396,1397,1398" alt="粘球,秋老虎,秋老虎旅行版" /></td>
+				<td class="own"><img src="image1399.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1399.png" tag="1399,1400,1401" alt="懒懒鹿,白鹿,白露姬" /></td>
+				<td class="own"><img src="image1402.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1402.png" tag="1402,1403,1404" alt="谷一,庚云,秋麦郎" /></td>
+				<td class="own"><img src="image1405.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1405.png" tag="1405,1406,1407" alt="子鹿,乹毷,寒鹿" /></td>
+				<td class="own"><img src="image1408.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1408.png" tag="1408,1409,1410" alt="紫晶,紫冰,紫霜" /></td>
+			</tr>
+			<tr class="name">
+				<td class="own">立秋</td>
+				<td class="own">处暑</td>
+				<td class="own">白露</td>
+				<td class="own">秋分</td>
+				<td class="own">寒露</td>
+				<td class="own">霜降</td>
+			</tr>
+			<tr class="title">
+				<td><img src="image16.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image16.png" tag="16,17,18" alt="玄冰,呆萌姬,幽兰雪魅" /></td>
+				<td colspan="4" style="font-size:1.2em;">冬雪雪冬小大寒</td>
+				<td><img src="image16.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image16.png" tag="16,17,18" alt="玄冰,呆萌姬,幽兰雪魅" /></td>
+			</tr>
+			<tr class="pic">
+				<td class="own"><img src="image1411.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1411.png" tag="1411,1412,1413" alt="咕冬,噗冬,冬门吹雪" /></td>
+				<td class="own"><img src="image1414.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1414.png" tag="1414,1415,1416" alt="雪丸,小雪童,雪舞姬" /></td>
+				<td class="own"><img src="image1417.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1417.png" tag="1417,1418,1419" alt="雪偶,雪男,极地雪男" /></td>
+				<td><img src="image1420.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1420.png" tag="1420,1421,1422" alt="光晶雪,雪无印,一雪一杀士" /></td>
+				<td class="own"><img src="image1423.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1423.png" tag="1423,1424,1425" alt="暖宝,冬味灵,驭汤仙人" /></td>
+				<td class="own"><img src="image1426.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1426.png" tag="1426,1427,1428" alt="寒鼠,寒子,大寒天子" /></td>
+			</tr>
+			<tr class="name">
+				<td class="own">立冬</td>
+				<td class="own">小雪</td>
+				<td class="own">大雪</td>
+				<td>冬至</td>
+				<td class="own">小寒</td>
+				<td class="own">大寒</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>

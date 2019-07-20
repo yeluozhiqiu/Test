@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+/*不同分辨率手机加载*/
+var userScalable = "no";
+(function() {
+	if (window.devicePixelRatio === 1.5) {
+		userScalable = "yes";
+	}
+	var text = "<meta content='target-densitydpi=device-dpi, width=640, user-scalable=" + userScalable + "' name='viewport'>";
+	document.write(text);
+})();
+</script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="图鉴,非官方,紫岩" />
+<meta name="description" content="非官方图鉴，有问题请群内搜索并@紫岩" />
+<title>科普小知识（娱乐向） - 妖怪手帐</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+<!--ios抓取-->
+<!--<link rel="apple-touch-icon-precomposed" href="../images/logo.png" />-->
+<link rel="apple-touch-icon-precomposed" href="../images/icon.png" />
+<link rel="stylesheet" type="text/css" href="base.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/base.css" />
+<link rel="stylesheet" type="text/css" href="style.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/style.css" />
+<script type="text/javascript" src="jquery-1.7.2.min.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="scrolltopcontrol.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/scrolltopcontrol.js"></script>
+<script>
+$(document).ready(function(){
+	//图片点击
+	$(".content table tr td img").click(function(){
+		var pics = $(this).attr("tag"),
+			names = $(this).attr("alt"),
+			temp = '',
+			temp1 = '',
+			temp2 = '';
+		pics = pics.split(",");
+		names = names.split(",");
+		var num = pics.length;
+		for(i=0; i<num;i++){
+			if(pics[i] == '000'){
+				temp1 += '<td><img src="'+'spirit'+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/'+'spirit'+'.png*/ /></td>';
+			}else{
+				temp1 += '<td><img src="image'+pics[i]+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/image'+pics[i]+'.png*/ /></td>';
+			}
+			temp2 += '<td><em>'+names[i]+'</td>';
+		}
+		temp = '<table><tr>'+temp1+'</tr><tr class="name">'+temp2+'</tr></table><a class="close" href="javascript:void(0)"></a>';
+		$(".picinfo").html(temp).show();
+		return false;
+	});
+	$(".picinfo a.close").live("click",function(){
+		$(".picinfo").hide();
+	});
+	refresh();
+});
+$(window).resize(function(){refresh();});
+function refresh(){
+};
+</script>
+</head>
+
+<body>
+<div class="wrap">
+	<h1><a href="kepu06.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu06.html">标准版</a>科普小知识（娱乐向）</h1>
+	<p>
+		<a href="kepu01-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu01.html">二十八星宿</a>
+		<a href="kepu04-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu04.html">水浒一百单八将</a>
+		<a class="cur" href="kepu06-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu06.html">天龙八部</a>
+		<a href="kepu08-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu08.html">二十四节气</a>
+		<a href="index-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/index.html">返回首页</a>
+	</p>
+	<div class="picinfo"></div>
+	<div class="content">
+		<table class="kp">
+			<tr>
+				<td class="own">一</td>
+				<td class="own">二</td>
+				<td>三</td>
+				<td>四</td>
+			</tr>
+			<tr>
+				<td width="300" class="own"><img src="image576.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image576.png" tag="574,575,576" alt="金杵,帝天,帝释天" /></td>
+				<td width="300" class="own"><img src="image600.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image600.png" tag="598,599,600" alt="坛仔,那家,小娜迦" /></td>
+				<td width="300"><img src="image666.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image666.png" tag="664,665,666" alt="九婴,盲女,母夜叉" /></td>
+				<td width="300"><img src="image579.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image579.png" tag="577,578,579" alt="魂散,乐神,乾达婆" /></td>
+			</tr>
+			<tr class="name">
+				<td class="own">天众</td>
+				<td class="own">龙众</td>
+				<td>夜叉</td>
+				<td>乾达婆</td>
+			</tr>
+			<tr><td class="own">五</td><td class="own">六</td><td class="own">七</td><td class="own">八</td></tr>
+			<tr>
+				<td class="own"><img src="image675.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image675.png" tag="673,674,675" alt="明珠,玄戒,阿修罗" /></td>
+				<td class="own"><img src="image636.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image636.png" tag="634,635,636" alt="轻音,角鹰,迦罗逻" /></td>
+				<td class="own"><img src="image603.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image603.png" tag="601,602,603" alt="心鼓,传音马,紧那罗" /></td>
+				<td class="own"><img src="image678.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image678.png" tag="676,677,678" alt="青荷,愚蛇,摩呼罗迦" /></td>
+			</tr>
+			<tr class="name">
+				<td class="own">阿修罗</td>
+				<td class="own">迦楼罗</td>
+				<td class="own">紧那罗</td>
+				<td class="own">摩呼罗迦</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>

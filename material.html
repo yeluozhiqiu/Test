@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+/*不同分辨率手机加载*/
+var userScalable = "no";
+(function() {
+	if (window.devicePixelRatio === 1.5) {
+		userScalable = "yes";
+	}
+	var text = "<meta content='target-densitydpi=device-dpi, width=640, user-scalable=" + userScalable + "' name='viewport'>";
+	document.write(text);
+})();
+</script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="图鉴,非官方,紫岩" />
+<!--qq抓取-->
+<meta itemprop="name" content="素材一览（简约版）"/>
+<meta itemprop="image" content="images/sc001.png" />
+<meta name="description" itemprop="description" content="非官方图鉴，有问题请群内搜索并@紫岩" />
+<title>素材一览 - 【非官方】</title>
+<!--<title>【非官方】</title>-->
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<!--ios抓取-->
+<!--<link rel="apple-touch-icon-precomposed" href="images/logo.png" />-->
+<link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+<link rel="stylesheet" type="text/css" href="base.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/base.css" />
+<link rel="stylesheet" type="text/css" href="style.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/style.css" />
+<script type="text/javascript" src="jquery-1.7.2.min.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="scrolltopcontrol.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/scrolltopcontrol.js"></script>
+<script>
+$(document).ready(function(){
+	/*数据处理-合并技能
+	$("https://ziyan2017.gitee.io/ygsz/.content table tr.info").each(function(){
+		var titleTr = $(this).prev("tr.title");
+		$(this).find("td:first").appendTo(titleTr);
+		var attribute = '',
+			attrtxt = new Array("力 ","， 智 ","， 速 ","， 魅 ","， 运 ","， 技 ");
+		for(var i=0; i<6; i++){
+			attribute += attrtxt[i] + $(this).find("td").eq(i).text();
+		}
+		$(this).html('<td colspan="5">'+attribute+'</td>');
+	});
+	*/
+	/*默认图片*/
+	$(".content table tr.title").each(function(){
+		$(this).find("img").attr("onerror","this.src='spirit.png'/*tpa=https://ziyan2017.gitee.io/ygsz/images/spirit.png*/");
+	});
+	/*属性显隐*/
+	$(".content table tr.title").click(function(){
+		$(this).next("https://ziyan2017.gitee.io/ygsz/tr.info").toggle();
+	});
+	//属性筛选
+	var flg = true;
+	$(".content table tr.title a").click(function(){
+		var curname = $(this).attr("class");
+		if( flg == true ){
+			$(".content table tr.title").each(function(){
+				if($(this).find("a."+curname).size()==0){
+					$(this).hide();
+				}
+			});
+			flg = false;
+		}else{
+			$(".content table tr.title").show();
+			flg = true;
+		}
+		return false;
+	});
+	refresh();
+});
+$(window).resize(function(){refresh();});
+function refresh(){
+};
+</script>
+</head>
+
+<body>
+<div class="wrap">
+	<h1>素材一览（简约版）</h1>
+	<!--导航 开始-->
+	<script>
+	$(document).ready(function(){
+		$("https://ziyan2017.gitee.io/ygsz/.nav a.menu").click(function(){
+			$(".nav .navbox").addClass("show");
+			$("https://ziyan2017.gitee.io/ygsz/body,.wrap").addClass("fullscreen");
+		});
+		$(".nav .navbox a.close").click(function(){
+			$(".nav .navbox").removeClass("show");
+			$("https://ziyan2017.gitee.io/ygsz/body,.wrap").removeClass("fullscreen");
+		});
+		//皮一下的计数
+		/*
+		var num=0;
+		$(".content table tr.title").each(function(){
+			var tag = $(this).find("td:eq(4)").text();
+			if(tag.length<=3&&$(this).hasClass("Cu")){
+				num++;
+			}
+		});
+		alert(num);
+		*/
+	});
+	</script>
+	<div class="nav">
+		<a class="menu" href="javascript:void(0)"></a>
+		<div class="navbox">
+			<a class="close" href="javascript:void(0)"></a>
+			<dl>
+				<dt>图鉴相关<span>【厚颜无耻的放到了最前面】</span></dt>
+				<dd>
+					<a href="index.html" tppabs="https://ziyan2017.gitee.io/ygsz/index.html">-&gt; 图鉴索引</a>
+					<a href="bb.html" tppabs="https://ziyan2017.gitee.io/ygsz/bb.html">-&gt; 部分说明</a>
+				</dd>
+				<dt>妖怪参数</dt>
+				<dd>
+					<a href="index1.html" tppabs="https://ziyan2017.gitee.io/ygsz/index1.html">-&gt; 属性图鉴</a>
+					<a href="skill.html" tppabs="https://ziyan2017.gitee.io/ygsz/skill.html">-&gt; 技能图鉴</a>
+					<a href="loveship.html" tppabs="https://ziyan2017.gitee.io/ygsz/loveship.html">-&gt; 情缘图鉴</a>
+					<a href="test.html" tppabs="https://ziyan2017.gitee.io/ygsz/test.html">-&gt; 整合图鉴（测试）</a>
+					<a href="material.html" tppabs="https://ziyan2017.gitee.io/ygsz/material.html">-&gt; 素材一览</a>
+					<a href="food.html" tppabs="https://ziyan2017.gitee.io/ygsz/food.html">-&gt; 神庙的各种饭</a>
+				</dd>
+				<dt>秘店奖池</dt>
+				<dd>
+					<a href="secretbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/secretbox.html">-&gt; 秘店图鉴</a>
+					<a href="goldbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/goldbox.html">-&gt; 金币池</a>
+					<a href="jadebox.html" tppabs="https://ziyan2017.gitee.io/ygsz/jadebox.html">-&gt; 玉璧池</a>
+					<!--<a href="package.html">-&gt; 礼包怪</a>-->
+					<a href="newbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/newbox.html">-&gt; 属性奖池</a>
+					<a href="hop.html" tppabs="https://ziyan2017.gitee.io/ygsz/hop.html">-&gt; 妖王特效怪</a>
+					<a href="month.html" tppabs="https://ziyan2017.gitee.io/ygsz/month.html">-&gt; 月签到记录</a>
+				</dd>
+				<dt>开船探险</dt>
+				<dd>
+					<a href="sailboat.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat.html">-&gt; 开船图鉴-条件</a>
+					<a href="sailboat1.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat1.html">-&gt; 开船图鉴-素材</a>
+				</dd>
+				<dt>科普娱乐</dt>
+				<dd>
+					<a href="kepu01.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu01.html">-&gt; 二十八星宿</a>
+					<a class="short" href="kepu02.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu02.html">-&gt; 麻将</a>
+					<a class="short" href="kepu03.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu03.html">-&gt; 象棋</a>
+					<a href="kepu04.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu04.html">-&gt; 水浒一百单八将</a>
+					<a href="kepu05.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu05.html">-&gt; 北斗七星</a>
+					<a href="kepu06.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu06.html">-&gt; 天龙八部</a>
+					<a href="kepu07.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu07.html">-&gt; 龙生九子</a>
+					<a href="kepu08.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu08.html">-&gt; 二十四节气</a>
+					<a href="kepu09.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu09.html">-&gt; 十二星座</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<!--导航 结束-->
+	<p>
+		<a href="test.html" tppabs="https://ziyan2017.gitee.io/ygsz/test.html">整合图鉴</a>
+		<a href="loveship.html" tppabs="https://ziyan2017.gitee.io/ygsz/loveship.html">情缘图鉴</a>
+		<a href="sailboat.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat.html">开船图鉴</a>
+		<a href="skill.html" tppabs="https://ziyan2017.gitee.io/ygsz/skill.html">技能图鉴</a>
+		<a class="cur" href="material.html" tppabs="https://ziyan2017.gitee.io/ygsz/material.html">素材一览</a>
+		<a href="food.html" tppabs="https://ziyan2017.gitee.io/ygsz/food.html">神庙的各种饭</a>
+		<!--<a style="width:auto; padding:0 16px;" href="test.html">图鉴整合版本(测试)</a>-->
+	</p>
+	<div class="content">
+		<p class="plbtn kptip">
+			<span>PS：灰色为 已失效/一次性活动 素材；<i>部分素材可通过返利兑换获得</i>，这里不单独做标注了</span>
+			<span class="r">来自偷懒的<i>紫岩</i></span>
+		</p>
+		<table>
+			<tr>
+				<th width="60" style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<!--<th>妖怪手帐<br>交流群<br>3群 237924470</th>-->
+				<th>素材<br>ID</th><th>名称</th><th>类别</th>
+			</tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc001.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc001.png" /></td>
+				<td>1</td><td>弃刃</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-铁匠装备铺、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc002.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc002.png" /></td>
+				<td>2</td><td>木魅枝</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-密林探险、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc003.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc003.png" /></td>
+				<td>3</td><td>火腿</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-肉铺打工、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc004.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc004.png" /></td>
+				<td>4</td><td>首领头骨</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-碑林、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc005.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc005.png" /></td>
+				<td>5</td><td>不知火</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-老中医看诊、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc006.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc006.png" /></td>
+				<td>6</td><td>毒药</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-炼丹术、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc007.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc007.png" /></td>
+				<td>7</td><td>长矛</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-铁匠装备铺、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc008.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc008.png" /></td>
+				<td>8</td><td>法术</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-老中医看诊、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc009.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc009.png" /></td>
+				<td>9</td><td>兽血</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-肉铺打工、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc010.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc010.png" /></td>
+				<td>10</td><td>竹子</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-密林探险、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc011.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc011.png" /></td>
+				<td>11</td><td>莲花</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-小溪的秘密、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc012.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc012.png" /></td>
+				<td>12</td><td>羽毛</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-饰品、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc013.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc013.png" /></td>
+				<td>13</td><td>火焰</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-炼丹术、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc014.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc014.png" /></td>
+				<td>14</td><td>雪花</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-饰品、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc015.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc015.png" /></td>
+				<td>15</td><td>飓风</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-出海捕鱼、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc016.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc016.png" /></td>
+				<td>16</td><td>流水</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-小溪的秘密、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc017.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc017.png" /></td>
+				<td>17</td><td>烈日符文</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-试炼塔、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc018.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc018.png" /></td>
+				<td>18</td><td>银月符文</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-试炼塔、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc019.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc019.png" /></td>
+				<td>19</td><td>云朵符文</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-出海捕鱼、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc020.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc020.png" /></td>
+				<td>20</td><td>时间符文</td><td>图书馆素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-图书馆、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc021.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc021.png" /></td>
+				<td>21</td><td>善良符文</td><td>图书馆素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-图书馆、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc022.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc022.png" /></td>
+				<td>22</td><td>邪恶符文</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-试炼塔、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc023.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc023.png" /></td>
+				<td>23</td><td>真爱符文</td><td>图书馆素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-图书馆、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc024.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc024.png" /></td>
+				<td>24</td><td>生命符文</td><td>图书馆素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-图书馆、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc025.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc025.png" /></td>
+				<td>25</td><td>死亡符文</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-碑林、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc026.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc026.png" /></td>
+				<td>26</td><td>虚空符文</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-试炼塔、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc027.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc027.png" /></td>
+				<td>27</td><td>火元素</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc028.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc028.png" /></td>
+				<td>28</td><td>火焰符文</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc029.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc029.png" /></td>
+				<td>29</td><td>烈焰之心</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、集市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc030.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc030.png" /></td>
+				<td>30</td><td>水元素</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc031.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc031.png" /></td>
+				<td>31</td><td>寒冰符文</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc032.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc032.png" /></td>
+				<td>32</td><td>千年玄冰</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、集市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc033.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc033.png" /></td>
+				<td>33</td><td>土元素</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc034.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc034.png" /></td>
+				<td>34</td><td>大地符文</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc035.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc035.png" /></td>
+				<td>35</td><td>远古神石</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、集市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc036.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc036.png" /></td>
+				<td>36</td><td>木元素</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc037.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc037.png" /></td>
+				<td>37</td><td>自然符文</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc038.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc038.png" /></td>
+				<td>38</td><td>上古神杖</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、集市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc039.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc039.png" /></td>
+				<td>39</td><td>光元素</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc040.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc040.png" /></td>
+				<td>40</td><td>光辉符文</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc041.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc041.png" /></td>
+				<td>41</td><td>辉耀之星</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、集市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc042.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc042.png" /></td>
+				<td>42</td><td>暗元素</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc043.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc043.png" /></td>
+				<td>43</td><td>黯灭符文</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc044.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc044.png" /></td>
+				<td>44</td><td>月明珠</td><td>低阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、集市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc045.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc045.png" /></td>
+				<td>45</td><td>东皇钟</td><td>十大神器</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc046.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc046.png" /></td>
+				<td>46</td><td>轩辕剑</td><td>十大神器</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc047.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc047.png" /></td>
+				<td>47</td><td>盘古斧</td><td>十大神器</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc048.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc048.png" /></td>
+				<td>48</td><td>炼妖壶</td><td>十大神器</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc049.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc049.png" /></td>
+				<td>49</td><td>昊天塔</td><td>十大神器</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc050.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc050.png" /></td>
+				<td>50</td><td>伏羲琴</td><td>十大神器</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc051.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc051.png" /></td>
+				<td>51</td><td>神农鼎</td><td>十大神器</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc052.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc052.png" /></td>
+				<td>52</td><td>崆峒印</td><td>十大神器</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc053.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc053.png" /></td>
+				<td>53</td><td>昆仑镜</td><td>十大神器</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc054.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc054.png" /></td>
+				<td>54</td><td>女娲石</td><td>十大神器</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc055.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc055.png" /></td>
+				<td>55</td><td>太一之轮</td><td>特殊素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc056.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc056.png" /></td>
+				<td>56</td><td>粽叶</td><td>端午素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：端午关卡掉落、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc057.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc057.png" /></td>
+				<td>57</td><td>糯米</td><td>端午素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：端午关卡掉落、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc058.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc058.png" /></td>
+				<td>58</td><td>力量符文·小</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：集市、开船、秘店、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc059.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc059.png" /></td>
+				<td>59</td><td>力量符文·中</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：集市、开船、秘店、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc060.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc060.png" /></td>
+				<td>60</td><td>力量符文·大</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-九离塔、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc061.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc061.png" /></td>
+				<td>61</td><td>速度符文·小</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：集市、开船、秘店、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc062.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc062.png" /></td>
+				<td>62</td><td>速度符文·中</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：集市、开船、秘店、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc063.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc063.png" /></td>
+				<td>63</td><td>速度符文·大</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-九离塔、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc064.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc064.png" /></td>
+				<td>64</td><td>智慧符文·小</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：集市、开船、秘店、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc065.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc065.png" /></td>
+				<td>65</td><td>智慧符文·中</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：集市、开船、秘店、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc066.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc066.png" /></td>
+				<td>66</td><td>智慧符文·大</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-五碑林、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc067.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc067.png" /></td>
+				<td>67</td><td>魅力符文·小</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：集市、开船、秘店、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc068.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc068.png" /></td>
+				<td>68</td><td>魅力符文·中</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：集市、开船、秘店、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc069.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc069.png" /></td>
+				<td>69</td><td>魅力符文·大</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-阴阳河、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc070.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc070.png" /></td>
+				<td>70</td><td>幸运符文·小</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：集市、开船、秘店、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc071.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc071.png" /></td>
+				<td>71</td><td>幸运符文·中</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：集市、开船、秘店、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc072.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc072.png" /></td>
+				<td>72</td><td>幸运符文·大</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-阴阳河、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc073.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc073.png" /></td>
+				<td>73</td><td>技巧符文·小</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：集市、开船、秘店、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc074.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc074.png" /></td>
+				<td>74</td><td>技巧符文·中</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：集市、开船、秘店、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc075.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc075.png" /></td>
+				<td>75</td><td>技巧符文·大</td><td>低阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-五碑林、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc076.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc076.png" /></td>
+				<td>76</td><td>金甲虫</td><td>特殊素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、补偿发放、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc077.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc077.png" /></td>
+				<td>77</td><td>金钗</td><td>七夕素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：七夕关卡掉落、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc078.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc078.png" /></td>
+				<td>78</td><td>彗星</td><td>七夕素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：七夕关卡掉落、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc079.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc079.png" /></td>
+				<td>79</td><td>奖牌</td><td>特殊素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc080.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc080.png" /></td>
+				<td>80</td><td>庄家令牌·小</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc081.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc081.png" /></td>
+				<td>81</td><td>庄家令牌·中</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc082.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc082.png" /></td>
+				<td>82</td><td>庄家令牌·大</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc083.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc083.png" /></td>
+				<td>83</td><td>筹码·小</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc084.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc084.png" /></td>
+				<td>84</td><td>筹码·中</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc085.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc085.png" /></td>
+				<td>85</td><td>筹码·大</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc086.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc086.png" /></td>
+				<td>86</td><td>钱袋·小</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc087.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc087.png" /></td>
+				<td>87</td><td>钱袋·中</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc088.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc088.png" /></td>
+				<td>88</td><td>钱袋·大</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc089.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc089.png" /></td>
+				<td>89</td><td>欠条·小</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc090.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc090.png" /></td>
+				<td>90</td><td>欠条·中</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc091.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc091.png" /></td>
+				<td>91</td><td>欠条·大</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc092.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc092.png" /></td>
+				<td>92</td><td>骰子·小</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc093.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc093.png" /></td>
+				<td>93</td><td>骰子·中</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc094.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc094.png" /></td>
+				<td>94</td><td>骰子·大</td><td>麻将素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：麻将活动抽取、开船（不保底）、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc095.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc095.png" /></td>
+				<td>95</td><td>桂花酒</td><td>中秋素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：中秋关卡掉落、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc096.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc096.png" /></td>
+				<td>96</td><td>螃蟹</td><td>中秋素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：中秋关卡掉落、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc097.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc097.png" /></td>
+				<td>97</td><td>灯笼</td><td>中秋素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：中秋关卡掉落、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc098.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc098.png" /></td>
+				<td>98</td><td>桂花</td><td>中秋素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：中秋关卡掉落、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc099.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc099.png" /></td>
+				<td>99</td><td>仙丹</td><td>特殊素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：中秋关卡掉落、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc100.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc100.png" /></td>
+				<td>100</td><td>旧布</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-饰品、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc101.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc101.png" /></td>
+				<td>101</td><td>净叶</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-密林探险、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc102.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc102.png" /></td>
+				<td>102</td><td>听符</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-千年古寺、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc103.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc103.png" /></td>
+				<td>103</td><td>纸贝</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-出海捕鱼、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc104.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc104.png" /></td>
+				<td>104</td><td>布娃</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-炼丹术、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc105.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc105.png" /></td>
+				<td>105</td><td>怪蛋</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-老中医看诊、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc106.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc106.png" /></td>
+				<td>106</td><td>艳花</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-铁匠装备铺、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc107.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc107.png" /></td>
+				<td>107</td><td>肥草</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-小溪的秘密、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc108.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc108.png" /></td>
+				<td>108</td><td>方帽</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-饰品、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc109.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc109.png" /></td>
+				<td>109</td><td>惊雷</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-千年古寺、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc110.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc110.png" /></td>
+				<td>110</td><td>枫叶</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-碑林、抽奖、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc111.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc111.png" /></td>
+				<td>111</td><td>年玉</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-千年古寺、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc112.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc112.png" /></td>
+				<td>112</td><td>巨牙</td><td>普通素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-肉铺打工、抽奖、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc113.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc113.png" /></td>
+				<td>113</td><td>力量符文·叉大</td><td>四阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、精英关、秘店、黑市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc114.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc114.png" /></td>
+				<td>114</td><td>速度符文·叉大</td><td>四阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、精英关、秘店、黑市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc115.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc115.png" /></td>
+				<td>115</td><td>智慧符文·叉大</td><td>四阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、精英关、秘店、黑市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc116.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc116.png" /></td>
+				<td>116</td><td>魅力符文·叉大</td><td>四阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、精英关、秘店、黑市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc117.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc117.png" /></td>
+				<td>117</td><td>幸运符文·叉大</td><td>四阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、精英关、秘店、黑市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc118.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc118.png" /></td>
+				<td>118</td><td>技巧符文·叉大</td><td>四阶符文素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、精英关、秘店、黑市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc119.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc119.png" /></td>
+				<td>119</td><td>赤焰十字星</td><td>四阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、精英关、秘店、黑市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc120.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc120.png" /></td>
+				<td>120</td><td>秘窟冰晶卵</td><td>四阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、精英关、秘店、黑市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc121.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc121.png" /></td>
+				<td>121</td><td>愚山乾坤石</td><td>四阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、精英关、秘店、黑市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc122.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc122.png" /></td>
+				<td>122</td><td>龙灵不朽腾</td><td>四阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、精英关、秘店、黑市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc123.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc123.png" /></td>
+				<td>123</td><td>六方天运骰</td><td>四阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、精英关、秘店、黑市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc124.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc124.png" /></td>
+				<td>124</td><td>月冕霓睛符</td><td>四阶元素素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：开船、精英关、秘店、黑市、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc125.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc125.png" /></td>
+				<td>125</td><td>圣诞袜</td><td>圣诞素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：圣诞关卡掉落、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc126.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc126.png" /></td>
+				<td>126</td><td>金狗杯</td><td>圣诞素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：圣诞关卡掉落、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc127.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc127.png" /></td>
+				<td>127</td><td>红糖</td><td>圣诞素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：圣诞关卡掉落、开船、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc128.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc128.png" /></td>
+				<td>128</td><td>春节兑换-新</td><td>活动素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：春节兑换活动限时素材</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc129.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc129.png" /></td>
+				<td>129</td><td>春节兑换-春</td><td>活动素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：春节兑换活动限时素材</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc130.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc130.png" /></td>
+				<td>130</td><td>春节兑换-快</td><td>活动素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：春节兑换活动限时素材</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc131.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc131.png" /></td>
+				<td>131</td><td>春节兑换-乐</td><td>活动素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：春节兑换活动限时素材</td></tr>
+			<tr class="title sc null">
+				<td style="padding:4px;"><img src="sc132.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc132.png" /></td>
+				<td>132</td><td>节气兑换-节</td><td>活动素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：节气兑换活动限时素材</td></tr>
+			<tr class="title sc null">
+				<td style="padding:4px;"><img src="sc133.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc133.png" /></td>
+				<td>133</td><td>节气兑换-气</td><td>活动素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：节气兑换活动限时素材</td></tr>
+			<tr class="title sc null">
+				<td style="padding:4px;"><img src="sc134.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc134.png" /></td>
+				<td>134</td><td>节气兑换-快</td><td>活动素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：节气兑换活动限时素材</td></tr>
+			<tr class="title sc null">
+				<td style="padding:4px;"><img src="sc135.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc135.png" /></td>
+				<td>135</td><td>节气兑换-乐</td><td>活动素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：节气兑换活动限时素材</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc136.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc136.png" /></td>
+				<td>136</td><td>节气素材春</td><td>节气素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-节气、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc137.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc137.png" /></td>
+				<td>137</td><td>节气素材夏</td><td>节气素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-节气、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc138.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc138.png" /></td>
+				<td>138</td><td>节气素材秋</td><td>节气素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-节气、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc139.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc139.png" /></td>
+				<td>139</td><td>节气素材冬</td><td>节气素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-节气、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc140.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc140.png" /></td>
+				<td>140</td><td>星座素材火</td><td>星座素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：战妖王、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc141.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc141.png" /></td>
+				<td>141</td><td>星座素材水</td><td>星座素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：战妖王、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc142.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc142.png" /></td>
+				<td>142</td><td>星座素材土</td><td>星座素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：战妖王、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc143.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc143.png" /></td>
+				<td>143</td><td>星座素材木</td><td>星座素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：战妖王、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc144.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc144.png" /></td>
+				<td>144</td><td>星座素材光</td><td>星座素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：战妖王、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc145.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc145.png" /></td>
+				<td>145</td><td>星座素材暗</td><td>星座素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：战妖王、氪金</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc146.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc146.png" /></td>
+				<td>146</td><td>超进阶素材火</td><td>超进阶素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：战妖王</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc147.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc147.png" /></td>
+				<td>147</td><td>超进阶素材水</td><td>超进阶素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：战妖王</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc148.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc148.png" /></td>
+				<td>148</td><td>超进阶素材土</td><td>超进阶素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：战妖王</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc149.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc149.png" /></td>
+				<td>149</td><td>超进阶素材木</td><td>超进阶素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：战妖王</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc150.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc150.png" /></td>
+				<td>150</td><td>超进阶素材光</td><td>超进阶素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：战妖王</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc151.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc151.png" /></td>
+				<td>151</td><td>超进阶素材暗</td><td>超进阶素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：战妖王</td></tr>
+			<tr class="title sc null">
+				<td style="padding:4px;"><img src="sc152.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc152.png" /></td>
+				<td>152</td><td>周年素材-二</td><td>活动素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：二周年兑换活动限时素材</td></tr>
+			<tr class="title sc null">
+				<td style="padding:4px;"><img src="sc153.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc153.png" /></td>
+				<td>153</td><td>周年素材-周</td><td>活动素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：二周年兑换活动限时素材</td></tr>
+			<tr class="title sc null">
+				<td style="padding:4px;"><img src="sc154.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc154.png" /></td>
+				<td>154</td><td>周年素材-年</td><td>活动素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：二周年兑换活动限时素材</td></tr>
+			<tr class="title sc null">
+				<td style="padding:4px;"><img src="sc155.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc155.png" /></td>
+				<td>155</td><td>周年素材-庆</td><td>活动素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：二周年兑换活动限时素材</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc156.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc156.png" /></td>
+				<td>156</td><td>方块</td><td>扑克素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-纸牌屋</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc157.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc157.png" /></td>
+				<td>157</td><td>皇家方块</td><td>扑克素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-赌场</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc158.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc158.png" /></td>
+				<td>158</td><td>黑桃</td><td>扑克素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-纸牌屋</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc159.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc159.png" /></td>
+				<td>159</td><td>皇家黑桃</td><td>扑克素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-赌场</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc160.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc160.png" /></td>
+				<td>160</td><td>红心</td><td>扑克素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-纸牌屋</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc161.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc161.png" /></td>
+				<td>161</td><td>皇家红心</td><td>扑克素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-赌场</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc162.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc162.png" /></td>
+				<td>162</td><td>梅花</td><td>扑克素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-纸牌屋</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc163.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc163.png" /></td>
+				<td>163</td><td>皇家梅花</td><td>扑克素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：素材关-赌场</td></tr>
+			<tr class="title sc">
+				<td style="padding:4px;"><img src="sc164.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/sc164.png" /></td>
+				<td>164</td><td>星络典</td><td>魂珠素材</td>
+			</tr>
+			<tr class="info"><td colspan="4">获取途径：挑战关-悟真塔</td></tr>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8"UTF-8">
+<script>
+/*不同分辨率手机加载*/
+var userScalable = "no";
+(function() {
+	if (window.devicePixelRatio === 1.5) {
+		userScalable = "yes";
+	}
+	var text = "<meta content='target-densitydpi=device-dpi, width=640, user-scalable=" + userScalable + "' name='viewport'>";
+	document.write(text);
+})();
+</script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="图鉴,非官方,紫岩" />
+<!--qq抓取-->
+<meta itemprop="name" content="情缘图鉴（简约版）"/>
+<meta itemprop="image" content="images/image109.png" />
+<meta name="description" itemprop="description" content="非官方图鉴，有问题请群内搜索并@紫岩" />
+<title>情缘图鉴 - 【非官方】</title>
+<!--<title>【非官方】</title>-->
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<!--ios抓取-->
+<!--<link rel="apple-touch-icon-precomposed" href="images/logo.png" />-->
+<link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+<link rel="stylesheet" type="text/css" href="base.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/base.css" />
+<link rel="stylesheet" type="text/css" href="style.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/style.css" />
+<script type="text/javascript" src="jquery-1.7.2.min.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="scrolltopcontrol.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/scrolltopcontrol.js"></script>
+<script>
+$(document).ready(function(){
+	/*默认图片*/
+	$(".content table img").each(function(){
+		$(this).attr("onerror","this.src='spirit.png'/*tpa=https://ziyan2017.gitee.io/ygsz/images/spirit.png*/");
+	});
+	var flg=0;
+	$(".content table tr.names").each(function(){
+		flg++;
+		if(flg<10){
+			$(this).find("th").eq(1).text('0'+flg);
+		}else{
+			$(this).find("th").eq(1).text(flg);
+		}
+	});
+	/*情缘筛选*/
+	$("https://ziyan2017.gitee.io/ygsz/.content p.lsbtn a.show").click(function(){
+		$(this).addClass("on").siblings("a").removeClass("on");
+		$(".content table tr.details").show();
+	});
+	$(".content p.lsbtn a.hidden").click(function(){
+		$(this).addClass("on").siblings("a").removeClass("on");
+		$(".content table tr.details").hide();
+	});
+	$(".content table tr.names").click(function(){
+		$(this).nextUntil("tr.names").toggle();
+		$(".content p.btn a").removeClass("on");
+	});
+	refresh();
+});
+$(window).resize(function(){refresh();});
+function refresh(){
+};
+</script>
+</head>
+
+<body>
+<div class="wrap">
+	<h1><a href="javascript:if(confirm('https://ziyan2017.gitee.io/ygsz/ziyan/loveship.html  \n\n���ļ��޷��� Teleport Ultra ����, ��Ϊ ������������ļ�δ�ҵ���  \n\n�����ڷ������ϴ���?'))window.location='https://ziyan2017.gitee.io/ygsz/ziyan/loveship.html'" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/loveship.html">紫岩专属</a>情缘图鉴（简约版）</h1>
+	<!--导航 开始-->
+	<script>
+	$(document).ready(function(){
+		$("https://ziyan2017.gitee.io/ygsz/.nav a.menu").click(function(){
+			$(".nav .navbox").addClass("show");
+			$("https://ziyan2017.gitee.io/ygsz/body,.wrap").addClass("fullscreen");
+		});
+		$(".nav .navbox a.close").click(function(){
+			$(".nav .navbox").removeClass("show");
+			$("https://ziyan2017.gitee.io/ygsz/body,.wrap").removeClass("fullscreen");
+		});
+	});
+	</script>
+	<div class="nav">
+		<a class="menu" href="javascript:void(0)"></a>
+		<div class="navbox">
+			<a class="close" href="javascript:void(0)"></a>
+			<dl>
+				<dt>图鉴相关<span>【厚颜无耻的放到了最前面】</span></dt>
+				<dd>
+					<a href="index.html" tppabs="https://ziyan2017.gitee.io/ygsz/index.html">-&gt; 图鉴索引</a>
+					<a href="bb.html" tppabs="https://ziyan2017.gitee.io/ygsz/bb.html">-&gt; 部分说明</a>
+				</dd>
+				<dt>妖怪参数</dt>
+				<dd>
+					<a href="index1.html" tppabs="https://ziyan2017.gitee.io/ygsz/index1.html">-&gt; 属性图鉴</a>
+					<a href="skill.html" tppabs="https://ziyan2017.gitee.io/ygsz/skill.html">-&gt; 技能图鉴</a>
+					<a href="loveship.html" tppabs="https://ziyan2017.gitee.io/ygsz/loveship.html">-&gt; 情缘图鉴</a>
+					<a href="test.html" tppabs="https://ziyan2017.gitee.io/ygsz/test.html">-&gt; 整合图鉴（测试）</a>
+					<a href="material.html" tppabs="https://ziyan2017.gitee.io/ygsz/material.html">-&gt; 素材一览</a>
+					<a href="food.html" tppabs="https://ziyan2017.gitee.io/ygsz/food.html">-&gt; 神庙的各种饭</a>
+				</dd>
+				<dt>秘店奖池</dt>
+				<dd>
+					<a href="secretbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/secretbox.html">-&gt; 秘店图鉴</a>
+					<a href="goldbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/goldbox.html">-&gt; 金币池</a>
+					<a href="jadebox.html" tppabs="https://ziyan2017.gitee.io/ygsz/jadebox.html">-&gt; 玉璧池</a>
+					<!--<a href="package.html">-&gt; 礼包怪</a>-->
+					<a href="newbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/newbox.html">-&gt; 属性奖池</a>
+					<a href="hop.html" tppabs="https://ziyan2017.gitee.io/ygsz/hop.html">-&gt; 妖王特效怪</a>
+					<a href="month.html" tppabs="https://ziyan2017.gitee.io/ygsz/month.html">-&gt; 月签到记录</a>
+				</dd>
+				<dt>开船探险</dt>
+				<dd>
+					<a href="sailboat.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat.html">-&gt; 开船图鉴-条件</a>
+					<a href="sailboat1.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat1.html">-&gt; 开船图鉴-素材</a>
+				</dd>
+				<dt>科普娱乐</dt>
+				<dd>
+					<a href="kepu01.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu01.html">-&gt; 二十八星宿</a>
+					<a class="short" href="kepu02.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu02.html">-&gt; 麻将</a>
+					<a class="short" href="kepu03.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu03.html">-&gt; 象棋</a>
+					<a href="kepu04.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu04.html">-&gt; 水浒一百单八将</a>
+					<a href="kepu05.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu05.html">-&gt; 北斗七星</a>
+					<a href="kepu06.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu06.html">-&gt; 天龙八部</a>
+					<a href="kepu07.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu07.html">-&gt; 龙生九子</a>
+					<a href="kepu08.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu08.html">-&gt; 二十四节气</a>
+					<a href="kepu09.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu09.html">-&gt; 十二星座</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<!--导航 结束-->
+	<p>
+		<a href="test.html" tppabs="https://ziyan2017.gitee.io/ygsz/test.html">整合图鉴</a>
+		<a class="cur" href="loveship.html" tppabs="https://ziyan2017.gitee.io/ygsz/loveship.html">情缘图鉴</a>
+		<a href="secretbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/secretbox.html">秘店图鉴</a>
+		<a href="skill.html" tppabs="https://ziyan2017.gitee.io/ygsz/skill.html">技能图鉴</a>
+		<a href="sailboat.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat.html">开船图鉴</a>
+		<a href="kepu01.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu01.html">科普小知识</a>
+	</p>
+	<div class="content">
+		<p class="lsbtn">
+			<a class="show on" href="javascript:void(0)">展开</a>
+			<a class="hidden" href="javascript:void(0)">收缩</a>
+		</p>
+		<table class="loveship">
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>八种兵器</nobr></th><th>情缘技能</th><th><nobr>全队每人力速技+233</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>8只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img class="Cu" src="image109.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image109.png" tag="109,110,111" alt="斧尾,石墩,石敢当" /></td>
+				<td>109</td><td>斧尾</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image109.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image109.png" tag="109,110,111" alt="斧尾,石墩,石敢当" />
+					<img src="image110.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image110.png" tag="109,110,111" alt="斧尾,石墩,石敢当" />
+					<img src="image111.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image111.png" tag="109,110,111" alt="斧尾,石墩,石敢当" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img class="Ag" src="image126.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image126.png" tag="126,127,128" alt="巨剑,狗头铡,王四" /></td>
+				<td>126</td><td>巨剑</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image126.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image126.png" tag="126,127,128" alt="巨剑,狗头铡,王四" />
+					<img src="image127.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image127.png" tag="126,127,128" alt="巨剑,狗头铡,王四" />
+					<img src="image128.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image128.png" tag="126,127,128" alt="巨剑,狗头铡,王四" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img class="Ag" src="image129.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image129.png" tag="129,130,131" alt="戟虫,戟甲虫,稳重斯基" /></td>
+				<td>129</td><td>戟虫</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image129.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image129.png" tag="129,130,131" alt="戟虫,戟甲虫,稳重斯基" />
+					<img src="image130.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image130.png" tag="129,130,131" alt="戟虫,戟甲虫,稳重斯基" />
+					<img src="image131.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image131.png" tag="129,130,131" alt="戟虫,戟甲虫,稳重斯基" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img class="Ag" src="image132.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image132.png" tag="132,133" alt="勾鬼,勾屠" /></td>
+				<td>132</td><td>勾鬼</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image132.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image132.png" tag="132,133" alt="勾鬼,勾屠" />
+					<img src="image133.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image133.png" tag="132,133" alt="勾鬼,勾屠" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img class="Cu" src="image158.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image158.png" tag="158,159,160" alt="尖刹,罗刹,湿罗刹" /></td>
+				<td>158</td><td>尖刹</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image158.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image158.png" tag="158,159,160" alt="尖刹,罗刹,湿罗刹" />
+					<img src="image159.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image159.png" tag="158,159,160" alt="尖刹,罗刹,湿罗刹" />
+					<img src="image160.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image160.png" tag="158,159,160" alt="尖刹,罗刹,湿罗刹" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img class="Au super" src="image170.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image170.png" tag="170,171,172,1504,1505" alt="剑灵,诗娃,李白,心剑合一李小白,诗仙剑圣李太白" /></td>
+				<td>170</td><td>剑灵</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img class="super" src="image170.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image170.png" tag="170,171,172,1504,1505" alt="剑灵,诗娃,李白,心剑合一李小白,诗仙剑圣李太白" />
+					<img class="super" src="image171.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image171.png" tag="170,171,172,1504,1505" alt="剑灵,诗娃,李白,心剑合一李小白,诗仙剑圣李太白" />
+					<img class="super" src="image172.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image172.png" tag="170,171,172,1504,1505" alt="剑灵,诗娃,李白,心剑合一李小白,诗仙剑圣李太白" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img class="Au super" src="image176.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image176.png" tag="176,177,178,1506,1507" alt="戟月,钺娃,洪玉儿,双戟洪少侠,烈火焚天洪小仙" /></td>
+				<td>176</td><td>戟月</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img class="super" src="image176.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image176.png" tag="176,177,178,1506,1507" alt="戟月,钺娃,洪玉儿,双戟洪少侠,烈火焚天洪小仙" />
+					<img class="super" src="image177.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image177.png" tag="176,177,178,1506,1507" alt="戟月,钺娃,洪玉儿,双戟洪少侠,烈火焚天洪小仙" />
+					<img class="super" src="image178.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image178.png" tag="176,177,178,1506,1507" alt="戟月,钺娃,洪玉儿,双戟洪少侠,烈火焚天洪小仙" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img class="Cu" src="image184.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image184.png" tag="184,185,186" alt="夜叉,夜游鬼,夜神月" /></td>
+				<td>184</td><td>夜叉</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image184.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image184.png" tag="184,185,186" alt="夜叉,夜游鬼,夜神月" />
+					<img src="image185.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image185.png" tag="184,185,186" alt="夜叉,夜游鬼,夜神月" />
+					<img src="image186.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image186.png" tag="184,185,186" alt="夜叉,夜游鬼,夜神月" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>琴棋书画</nobr></th><th>情缘技能</th><th><nobr>魅技+520</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>4只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image241.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image241.png" /></td>
+				<td>241</td><td>弦女</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image241.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image241.png" />
+					<img src="image242.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image242.png" />
+					<img src="image243.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image243.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image244.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image244.png" /></td>
+				<td>244</td><td>棋灵</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image244.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image244.png" />
+					<img src="image245.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image245.png" />
+					<img src="image246.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image246.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image247.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image247.png" /></td>
+				<td>247</td><td>墨悬</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image247.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image247.png" />
+					<img src="image248.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image248.png" />
+					<img src="image249.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image249.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image250.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image250.png" /></td>
+				<td>250</td><td>画精</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image250.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image250.png" />
+					<img src="image251.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image251.png" />
+					<img src="image252.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image252.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>法海别捣乱</nobr></th><th>情缘技能</th><th><nobr>&emsp;全队属性下降！！<br><font style="font-size:19px;">情缘内四只怪全属性-25%</font></nobr></th>
+			</tr>
+			<tr class="details">
+				<td>4只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image286.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image286.png" /></td>
+				<td>286</td><td>法糕</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image286.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image286.png" />
+					<img src="image287.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image287.png" />
+					<img src="image288.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image288.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image289.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image289.png" /></td>
+				<td>289</td><td>壶精</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image289.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image289.png" />
+					<img src="image290.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image290.png" />
+					<img src="image291.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image291.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image292.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image292.png" /></td>
+				<td>292</td><td>白奶精</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image292.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image292.png" />
+					<img src="image293.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image293.png" />
+					<img src="image294.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image294.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image295.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image295.png" /></td>
+				<td>295</td><td>抹茶精</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image295.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image295.png" />
+					<img src="image296.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image296.png" />
+					<img src="image297.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image297.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>奥利奥</nobr></th><th>情缘技能</th><th><nobr>力量+200</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image253.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image253.png" /></td>
+				<td>253</td><td>小手铐</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image253.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image253.png" />
+					<img src="image254.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image254.png" />
+					<img src="image255.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image255.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image256.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image256.png" /></td>
+				<td>256</td><td>令牌君</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image256.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image256.png" />
+					<img src="image257.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image257.png" />
+					<img src="image258.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image258.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>梅兰竹菊</nobr></th><th>情缘技能</th><th><nobr>全属性+120</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>4只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image259.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image259.png" /></td>
+				<td>259</td><td>菊花</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image259.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image259.png" />
+					<img src="image260.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image260.png" />
+					<img src="image261.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image261.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image262.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image262.png" /></td>
+				<td>262</td><td>竹苗</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image262.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image262.png" />
+					<img src="image263.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image263.png" />
+					<img src="image264.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image264.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image265.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image265.png" /></td>
+				<td>265</td><td>梅妃</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image265.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image265.png" />
+					<img src="image266.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image266.png" />
+					<img src="image267.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image267.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image268.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image268.png" /></td>
+				<td>268</td><td>月光兰</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image268.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image268.png" />
+					<img src="image269.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image269.png" />
+					<img src="image270.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image270.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>地三鲜</nobr></th><th>情缘技能</th><th><nobr>运气+150</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>3只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image49.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image49.png" /></td>
+				<td>49</td><td>智鼠</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image49.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image49.png" />
+					<img src="image50.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image50.png" />
+					<img src="image51.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image51.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image274.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image274.png" /></td>
+				<td>274</td><td>阿椒</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image274.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image274.png" />
+					<img src="image275.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image275.png" />
+					<img src="image276.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image276.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image277.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image277.png" /></td>
+				<td>277</td><td>紫果</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image277.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image277.png" />
+					<img src="image278.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image278.png" />
+					<img src="image279.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image279.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>驰名商标</nobr></th><th>情缘技能</th><th><nobr>速魅+200</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image280.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image280.png" /></td>
+				<td>280</td><td>吕布</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image280.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image280.png" />
+					<img src="image281.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image281.png" />
+					<img src="image282.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image282.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image283.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image283.png" /></td>
+				<td>283</td><td>迷你貂</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image283.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image283.png" />
+					<img src="image284.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image284.png" />
+					<img src="image285.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image285.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>三个臭皮匠</nobr></th><th>情缘技能</th><th><nobr>力速+450</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>3只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image55.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image55.png" /></td>
+				<td>55</td><td>蛇带</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image55.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image55.png" />
+					<img src="image56.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image56.png" />
+					<img src="image57.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image57.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image304.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image304.png" /></td>
+				<td>304</td><td>小草鞋</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image304.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image304.png" />
+					<img src="image305.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image305.png" />
+					<img src="image306.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image306.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image307.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image307.png" /></td>
+				<td>307</td><td>狡兔</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image307.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image307.png" />
+					<img src="image308.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image308.png" />
+					<img src="image309.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image309.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>端午传说</nobr></th><th>情缘技能</th><th><nobr>全属性+300</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>3只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image316.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image316.png" /></td>
+				<td>316</td><td>粽妮</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image316.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image316.png" />
+					<img src="image317.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image317.png" />
+					<img src="image318.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image318.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image319.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image319.png" /></td>
+				<td>319</td><td>粽仔</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image319.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image319.png" />
+					<img src="image320.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image320.png" />
+					<img src="image321.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image321.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image322.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image322.png" /></td>
+				<td>322</td><td>离卷</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image322.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image322.png" />
+					<img src="image323.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image323.png" />
+					<img src="image324.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image324.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>四大天王</nobr></th><th>情缘技能</th><th><nobr>力技+400</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>4只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image337.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image337.png" /></td>
+				<td>337</td><td>弦仔</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image337.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image337.png" />
+					<img src="image338.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image338.png" />
+					<img src="image339.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image339.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image340.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image340.png" /></td>
+				<td>340</td><td>伞灵</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image340.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image340.png" />
+					<img src="image341.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image341.png" />
+					<img src="image342.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image342.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image343.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image343.png" /></td>
+				<td>343</td><td>火烧</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image343.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image343.png" />
+					<img src="image344.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image344.png" />
+					<img src="image345.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image345.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image346.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image346.png" /></td>
+				<td>346</td><td>众生剑</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image346.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image346.png" />
+					<img src="image347.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image347.png" />
+					<img src="image348.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image348.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>七无害</nobr></th><th>情缘技能</th><th><nobr>全队每人运气×200%</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>7只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image352.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image352.png" /></td>
+				<td>352</td><td>捆柴桑</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image352.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image352.png" />
+					<img src="image353.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image353.png" />
+					<img src="image354.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image354.png" />
+				</td>
+
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image355.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image355.png" /></td>
+				<td>355</td><td>盐灰坨</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image355.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image355.png" />
+					<img src="image356.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image356.png" />
+					<img src="image357.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image357.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image370.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image370.png" /></td>
+				<td>370</td><td>米迷</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image370.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image370.png" />
+					<img src="image371.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image371.png" />
+					<img src="image372.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image372.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image373.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image373.png" /></td>
+				<td>373</td><td>矮油</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image373.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image373.png" />
+					<img src="image374.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image374.png" />
+					<img src="image375.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image375.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image376.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image376.png" /></td>
+				<td>376</td><td>酱仔</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image376.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image376.png" />
+					<img src="image377.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image377.png" />
+					<img src="image378.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image378.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image385.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image385.png" /></td>
+				<td>385</td><td>黑塔匣</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image385.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image385.png" />
+					<img src="image386.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image386.png" />
+					<img src="image387.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image387.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image394.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image394.png" /></td>
+				<td>394</td><td>绿幽</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image394.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image394.png" />
+					<img src="image395.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image395.png" />
+					<img src="image396.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image396.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>八仙过海</nobr></th><th>情缘技能</th><th><nobr>全队每人全属性+168</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>8只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image202.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image202.png" /></td>
+				<td>202</td><td>葫芦妖</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image202.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image202.png" />
+					<img src="image203.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image203.png" />
+					<img src="image204.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image204.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image187.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image187.png" /></td>
+				<td>187</td><td>神棍</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image187.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image187.png" />
+					<img src="image188.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image188.png" />
+					<img src="image189.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image189.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image190.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image190.png" /></td>
+				<td>190</td><td>大宝剑</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image190.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image190.png" />
+					<img src="image191.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image191.png" />
+					<img src="image192.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image192.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image208.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image208.png" /></td>
+				<td>208</td><td>洞箫</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image208.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image208.png" />
+					<img src="image209.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image209.png" />
+					<img src="image210.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image210.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image211.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image211.png" /></td>
+				<td>211</td><td>芭蕉叶</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image211.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image211.png" />
+					<img src="image212.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image212.png" />
+					<img src="image213.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image213.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image214.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image214.png" /></td>
+				<td>214</td><td>莲灵</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image214.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image214.png" />
+					<img src="image215.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image215.png" />
+					<img src="image216.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image216.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image217.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image217.png" /></td>
+				<td>217</td><td>莲精</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image217.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image217.png" />
+					<img src="image218.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image218.png" />
+					<img src="image219.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image219.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image232.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image232.png" /></td>
+				<td>232</td><td>锤子</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image232.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image232.png" />
+					<img src="image233.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image233.png" />
+					<img src="image234.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image234.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>鸡甲战队</nobr></th><th>情缘技能</th><th><nobr>力速技+300</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>3只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image451.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image451.png" /></td>
+				<td>451</td><td>法鸡</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image451.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image451.png" />
+					<img src="image452.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image452.png" />
+					<img src="image453.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image453.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image454.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image454.png" /></td>
+				<td>454</td><td>弱鸡</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image454.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image454.png" />
+					<img src="image455.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image455.png" />
+					<img src="image456.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image456.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image457.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image457.png" /></td>
+				<td>457</td><td>捉鸡</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image457.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image457.png" />
+					<img src="image458.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image458.png" />
+					<img src="image459.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image459.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>四海游龙</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>4只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image469.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image469.png" /></td>
+				<td>469</td><td>叠珠</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image469.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image469.png" />
+					<img src="image470.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image470.png" />
+					<img src="image471.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image471.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image472.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image472.png" /></td>
+				<td>472</td><td>付炬</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image472.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image472.png" />
+					<img src="image473.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image473.png" />
+					<img src="image474.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image474.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image475.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image475.png" /></td>
+				<td>475</td><td>唤水仔</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image475.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image475.png" />
+					<img src="image476.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image476.png" />
+					<img src="image477.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image477.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image478.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image478.png" /></td>
+				<td>478</td><td>甘冰</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image478.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image478.png" />
+					<img src="image479.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image479.png" />
+					<img src="image480.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image480.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>虾兵蟹将</nobr></th><th>情缘技能</th><th><nobr>力速+200</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image517.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image517.png" /></td>
+				<td>517</td><td>兰灵</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image517.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image517.png" />
+					<img src="image518.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image518.png" />
+					<img src="image519.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image519.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image520.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image520.png" /></td>
+				<td>520</td><td>气圆</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image520.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image520.png" />
+					<img src="image521.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image521.png" />
+					<img src="image522.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image522.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>木牛流马</nobr></th><th>情缘技能</th><th><nobr>力速+200</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image523.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image523.png" /></td>
+				<td>523</td><td>犄木</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image523.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image523.png" />
+					<img src="image524.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image524.png" />
+					<img src="image525.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image525.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image538.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image538.png" /></td>
+				<td>538</td><td>独秀</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image538.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image538.png" />
+					<img src="image539.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image539.png" />
+					<img src="image540.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image540.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>倩女幽魂</nobr></th><th>情缘技能</th><th><nobr>暗属性妖怪<br>全属性×200%</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image568.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image568.png" /></td>
+				<td>568</td><td>书包仔</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image568.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image568.png" />
+					<img src="image569.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image569.png" />
+					<img src="image570.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image570.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image571.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image571.png" /></td>
+				<td>571</td><td>魂飞</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image571.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image571.png" />
+					<img src="image572.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image572.png" />
+					<img src="image573.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image573.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>豆腐拳</nobr></th><th>情缘技能</th><th><nobr>力技+200</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image193.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image193.png" /></td>
+				<td>193</td><td>豆附</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image193.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image193.png" />
+					<img src="image194.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image194.png" />
+					<img src="image195.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image195.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image565.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image565.png" /></td>
+				<td>565</td><td>袋仔</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image565.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image565.png" />
+					<img src="image566.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image566.png" />
+					<img src="image567.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image567.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>科学新星</nobr></th><th>情缘技能</th><th><nobr>技巧+400</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image580.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image580.png" /></td>
+				<td>580</td><td>金灵</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image580.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image580.png" />
+					<img src="image581.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image581.png" />
+					<img src="image582.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image582.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image583.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image583.png" /></td>
+				<td>583</td><td>银灵</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image583.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image583.png" />
+					<img src="image584.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image584.png" />
+					<img src="image585.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image585.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>分居两地</nobr></th><th>情缘技能</th><th><nobr>全队每人全属性+68</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image652.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image652.png" /></td>
+				<td>652</td><td>碟作</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image652.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image652.png" />
+					<img src="image653.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image653.png" />
+					<img src="image654.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image654.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image655.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image655.png" /></td>
+				<td>655</td><td>后</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image655.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image655.png" />
+					<img src="image656.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image656.png" />
+					<img src="image657.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image657.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>情夙</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image715.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image715.png" /></td>
+				<td>715</td><td>藤坠</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image715.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image715.png" />
+					<img src="image716.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image716.png" />
+					<img src="image717.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image717.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image721.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image721.png" /></td>
+				<td>721</td><td>芹正</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image721.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image721.png" />
+					<img src="image722.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image722.png" />
+					<img src="image723.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image723.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>人山人海</nobr></th><th>情缘技能</th><th><nobr>全队每人全属性+58</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image784.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image784.png" /></td>
+				<td>784</td><td>土包</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image784.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image784.png" />
+					<img src="image785.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image785.png" />
+					<img src="image786.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image786.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image787.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image787.png" /></td>
+				<td>787</td><td>秘汤</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image787.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image787.png" />
+					<img src="image788.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image788.png" />
+					<img src="image789.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image789.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>传销五人组</nobr></th><th>情缘技能</th><th><nobr>全队每人全属性+88</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>5只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image37.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image37.png" /></td>
+				<td>37</td><td>五行石</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image37.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image37.png" />
+					<img src="image38.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image38.png" />
+					<img src="image39.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image39.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image134.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image134.png" /></td>
+				<td>134</td><td>马溜儿</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image134.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image134.png" />
+					<img src="image135.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image135.png" />
+					<img src="image136.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image136.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image152.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image152.png" /></td>
+				<td>152</td><td>胖蝠</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image152.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image152.png" />
+					<img src="image153.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image153.png" />
+					<img src="image154.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image154.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image161.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image161.png" /></td>
+				<td>161</td><td>帘卷精</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image161.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image161.png" />
+					<img src="image162.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image162.png" />
+					<img src="image163.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image163.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image173.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image173.png" /></td>
+				<td>173</td><td>糖僧肉</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image173.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image173.png" />
+					<img src="image174.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image174.png" />
+					<img src="image175.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image175.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>创世夫妇</nobr></th><th>情缘技能</th><th><nobr>全队每人运技×130%</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image820.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image820.png" /></td>
+				<td>820</td><td>五色石</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image820.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image820.png" />
+					<img src="image821.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image821.png" />
+					<img src="image822.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image822.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image823.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image823.png" /></td>
+				<td>823</td><td>绳仙</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image823.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image823.png" />
+					<img src="image824.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image824.png" />
+					<img src="image825.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image825.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>政治婚姻</nobr></th><th>情缘技能</th><th><nobr>魅力+250</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image298.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image298.png" /></td>
+				<td>298</td><td>鱼粥</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image298.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image298.png" />
+					<img src="image299.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image299.png" />
+					<img src="image300.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image300.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image685.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image685.png" /></td>
+				<td>685</td><td>荞似</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image685.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image685.png" />
+					<img src="image686.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image686.png" />
+					<img src="image687.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image687.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>蝶恋</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image430.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image430.png" /></td>
+				<td>430</td><td>毒又</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image430.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image430.png" />
+					<img src="image431.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image431.png" />
+					<img src="image432.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image432.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image433.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image433.png" /></td>
+				<td>433</td><td>一佰</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image433.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image433.png" />
+					<img src="image434.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image434.png" />
+					<img src="image435.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image435.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>魑魅魍魉</nobr></th><th>情缘技能</th><th><nobr>全体运魅×130%</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image604.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image604.png" /></td>
+				<td>604</td><td>结魄</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image604.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image604.png" />
+					<img src="image605.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image605.png" />
+					<img src="image606.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image606.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image637.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image637.png" /></td>
+				<td>637</td><td>万两</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image637.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image637.png" />
+					<img src="image638.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image638.png" />
+					<img src="image639.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image639.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>万圣战役</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>3只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image838.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image838.png" /></td>
+				<td>838</td><td>南瓜仔</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image838.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image838.png" />
+					<img src="image839.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image839.png" />
+					<img src="image840.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image840.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image841.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image841.png" /></td>
+				<td>841</td><td>魔剑</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image841.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image841.png" />
+					<img src="image842.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image842.png" />
+					<img src="image843.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image843.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image844.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image844.png" /></td>
+				<td>844</td><td>帚木</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image844.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image844.png" />
+					<img src="image845.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image845.png" />
+					<img src="image846.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image846.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>妖狐之恋</nobr></th><th>情缘技能</th><th><nobr>全队每人运气+50</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image875.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image875.png" /></td>
+				<td>875</td><td>狐精</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image875.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image875.png" />
+					<img src="image876.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image876.png" />
+					<img src="image877.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image877.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image878.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image878.png" /></td>
+				<td>878</td><td>银冠</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image878.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image878.png" />
+					<img src="image879.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image879.png" />
+					<img src="image880.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image880.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>石头记</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>3只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image929.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image929.png" /></td>
+				<td>929</td><td>群芳</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image929.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image929.png" />
+					<img src="image930.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image930.png" />
+					<img src="image931.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image931.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image932.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image932.png" /></td>
+				<td>932</td><td>通灵宝玉</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image932.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image932.png" />
+					<img src="image933.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image933.png" />
+					<img src="image934.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image934.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image935.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image935.png" /></td>
+				<td>935</td><td>绛珠仙草</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image935.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image935.png" />
+					<img src="image936.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image936.png" />
+					<img src="image937.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image937.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>喵喵汪汪</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image978.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image978.png" /></td>
+				<td>978</td><td>喵夕</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image975.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image975.png" />
+					<img src="image977.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image977.png" />
+					<img src="image978.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image978.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image982.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image982.png" /></td>
+				<td>982</td><td>汪年</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image979.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image979.png" />
+					<img src="image981.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image981.png" />
+					<img src="image982.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image982.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>真·八仙过海</nobr></th><th>情缘技能</th><th><nobr>全队每人全属性+328</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>8只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image852.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image852.png" /></td>
+				<td>852</td><td>八仙铁拐李</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image202.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image202.png" />
+					<img src="image204.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image204.png" />
+					<img src="image852.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image852.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image866.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image866.png" /></td>
+				<td>866</td><td>八仙曹国舅</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image187.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image187.png" />
+					<img src="image189.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image189.png" />
+					<img src="image866.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image866.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image853.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image853.png" /></td>
+				<td>853</td><td>八仙吕洞宾</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image190.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image190.png" />
+					<img src="image192.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image192.png" />
+					<img src="image853.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image853.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image868.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image868.png" /></td>
+				<td>868</td><td>八仙韩湘子</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image208.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image208.png" />
+					<img src="image210.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image210.png" />
+					<img src="image868.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image868.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image851.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image851.png" /></td>
+				<td>851</td><td>八仙汉钟离</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image211.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image211.png" />
+					<img src="image213.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image213.png" />
+					<img src="image851.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image851.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image850.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image850.png" /></td>
+				<td>850</td><td>八仙何仙姑</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image214.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image214.png" />
+					<img src="image216.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image216.png" />
+					<img src="image850.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image850.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image861.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image861.png" /></td>
+				<td>861</td><td>八仙蓝采和</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image217.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image217.png" />
+					<img src="image219.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image219.png" />
+					<img src="image861.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image861.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image867.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image867.png" /></td>
+				<td>867</td><td>八仙张果老</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image232.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image232.png" />
+					<img src="image234.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image234.png" />
+					<img src="image867.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image867.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>真·驰名商标</nobr></th><th>情缘技能</th><th><nobr>速魅+350</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image836.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image836.png" /></td>
+				<td>836</td><td>四大美女貂蝉</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image283.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image283.png" />
+					<img src="image285.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image285.png" />
+					<img src="image836.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image836.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image837.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image837.png" /></td>
+				<td>837</td><td>赤兔吕布</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image280.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image280.png" />
+					<img src="image282.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image282.png" />
+					<img src="image837.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image837.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>白胖圆</nobr></th><th>情缘技能</th><th><nobr>运气+450</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>3只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image91.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image91.png" /></td>
+				<td>91</td><td>云儿</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image91.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image91.png" />
+					<img src="image92.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image92.png" />
+					<img src="image93.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image93.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image94.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image94.png" /></td>
+				<td>94</td><td>元宝君</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image94.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image94.png" />
+					<img src="image95.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image95.png" />
+					<img src="image96.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image96.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image97.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image97.png" /></td>
+				<td>97</td><td>桃儿</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image97.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image97.png" />
+					<img src="image98.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image98.png" />
+					<img src="image99.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image99.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>真·仨臭皮匠</nobr></th><th>情缘技能</th><th><nobr>每多战士力速+150</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>3只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image832.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image832.png" /></td>
+				<td>832</td><td>昭烈刘玄德</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image304.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image304.png" />
+					<img src="image306.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image306.png" />
+					<img src="image832.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image832.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image833.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image833.png" /></td>
+				<td>833</td><td>武圣关云长</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image55.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image55.png" />
+					<img src="image57.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image57.png" />
+					<img src="image833.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image833.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image834.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image834.png" /></td>
+				<td>834</td><td>咆哮张翼德</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image307.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image307.png" />
+					<img src="image309.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image309.png" />
+					<img src="image834.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image834.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>真·四海游龙</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>4只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image944.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image944.png" /></td>
+				<td>944</td><td>龙王敖广</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image469.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image469.png" />
+					<img src="image471.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image471.png" />
+					<img src="image944.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image944.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image945.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image945.png" /></td>
+				<td>945</td><td>龙王敖钦</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image472.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image472.png" />
+					<img src="image474.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image474.png" />
+					<img src="image945.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image945.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image946.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image946.png" /></td>
+				<td>946</td><td>龙王敖闰</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image475.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image475.png" />
+					<img src="image477.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image477.png" />
+					<img src="image946.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image946.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image947.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image947.png" /></td>
+				<td>947</td><td>龙王敖顺</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image478.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image478.png" />
+					<img src="image480.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image480.png" />
+					<img src="image947.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image947.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>圣诞快乐</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>3只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image914.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image914.png" /></td>
+				<td>914</td><td>礼方</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image914.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image914.png" />
+					<img src="image915.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image915.png" />
+					<img src="image916.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image916.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image917.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image917.png" /></td>
+				<td>917</td><td>兔兔</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image917.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image917.png" />
+					<img src="image918.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image918.png" />
+					<img src="image919.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image919.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image920.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image920.png" /></td>
+				<td>920</td><td>松果</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image920.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image920.png" />
+					<img src="image921.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image921.png" />
+					<img src="image922.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image922.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>新春快乐</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image975.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image975.png" /></td>
+				<td>975</td><td>猫眼石</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image975.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image975.png" />
+					<img src="image976.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image976.png" />
+					<img src="image977.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image977.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image979.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image979.png" /></td>
+				<td>979</td><td>汪仔</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image979.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image979.png" />
+					<img src="image980.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image980.png" />
+					<img src="image981.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image981.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>财神兄弟</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image989.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image989.png" /></td>
+				<td>989</td><td>发财</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image990.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image990.png" />
+					<img src="image991.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image991.png" />
+					<img src="image1017.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1017.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image992.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image992.png" /></td>
+				<td>992</td><td>白板</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image993.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image993.png" />
+					<img src="image994.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image994.png" />
+					<img src="image1016.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1016.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>金童玉女</nobr></th><th>情缘技能</th><th><nobr>全队每人运气×160%</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1004.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1004.png" /></td>
+				<td>1004</td><td>玉儿</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image1004.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1004.png" />
+					<img src="image1005.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1005.png" />
+					<img src="image1006.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1006.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1007.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1007.png" /></td>
+				<td>1007</td><td>金儿</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image1007.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1007.png" />
+					<img src="image1008.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1008.png" />
+					<img src="image1009.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1009.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>四方之神</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>4只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1018.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1018.png" /></td>
+				<td>1018</td><td>北风</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image1019.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1019.png" />
+					<img src="image1020.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1020.png" />
+					<img src="image1021.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1021.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1022.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1022.png" /></td>
+				<td>1022</td><td>东风</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image1023.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1023.png" />
+					<img src="image1024.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1024.png" />
+					<img src="image1025.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1025.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1026.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1026.png" /></td>
+				<td>1026</td><td>南风</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image1027.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1027.png" />
+					<img src="image1028.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1028.png" />
+					<img src="image1029.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1029.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1030.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1030.png" /></td>
+				<td>1030</td><td>西风</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image1031.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1031.png" />
+					<img src="image1032.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1032.png" />
+					<img src="image1033.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1033.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>新春对联</nobr></th><th>情缘技能</th><th><nobr>火属性妖怪运气+168</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>3只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1038.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1038.png" /></td>
+				<td>1038</td><td>横批</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image1038.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1038.png" />
+					<img src="image1039.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1039.png" />
+					<img src="image1040.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1040.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1041.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1041.png" /></td>
+				<td>1041</td><td>上联</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image1041.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1041.png" />
+					<img src="image1042.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1042.png" />
+					<img src="image1043.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1043.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1044.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1044.png" /></td>
+				<td>1044</td><td>下联</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image1044.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1044.png" />
+					<img src="image1045.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1045.png" />
+					<img src="image1046.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1046.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>新春七件事</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>7只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image957.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image957.png" /></td>
+				<td>957</td><td>纸方</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image957.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image957.png" />
+					<img src="image958.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image958.png" />
+					<img src="image959.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image959.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image960.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image960.png" /></td>
+				<td>960</td><td>肥方</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image960.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image960.png" />
+					<img src="image961.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image961.png" />
+					<img src="image962.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image962.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image963.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image963.png" /></td>
+				<td>963</td><td>菇仔</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image963.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image963.png" />
+					<img src="image964.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image964.png" />
+					<img src="image965.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image965.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image966.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image966.png" /></td>
+				<td>966</td><td>原粉</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image966.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image966.png" />
+					<img src="image967.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image967.png" />
+					<img src="image968.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image968.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image969.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image969.png" /></td>
+				<td>969</td><td>大豆豆</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image969.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image969.png" />
+					<img src="image970.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image970.png" />
+					<img src="image971.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image971.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image972.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image972.png" /></td>
+				<td>972</td><td>簸箕仔</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image972.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image972.png" />
+					<img src="image973.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image973.png" />
+					<img src="image974.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image974.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image983.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image983.png" /></td>
+				<td>983</td><td>糖瓜</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image983.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image983.png" />
+					<img src="image984.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image984.png" />
+					<img src="image985.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image985.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>新婚夫妇</nobr></th><th>情缘技能</th><th><nobr>光属性妖怪<br>全属性×200%</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1047.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1047.png" /></td>
+				<td>1049</td><td>书包客</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image1047.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1047.png" />
+					<img src="image1048.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1048.png" />
+					<img src="image1049.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1049.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1050.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1050.png" /></td>
+				<td>1052</td><td>缘起</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image1050.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1050.png" />
+					<img src="image1051.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1051.png" />
+					<img src="image1052.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1052.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>奇葩马戏团</nobr></th><th>情缘技能</th><th><nobr>技巧+900</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>6只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image112.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image112.png" /></td>
+				<td>112</td><td>烛灵</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image112.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image112.png" />
+					<img src="image113.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image113.png" />
+					<img src="image114.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image114.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image121.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image121.png" /></td>
+				<td>121</td><td>寻香</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image121.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image121.png" />
+					<img src="image122.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image122.png" />
+					<img src="image123.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image123.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image140.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image140.png" /></td>
+				<td>140</td><td>碟雕</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image140.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image140.png" />
+					<img src="image141.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image141.png" />
+					<img src="image142.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image142.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image164.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image164.png" /></td>
+				<td>164</td><td>猿樱</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image164.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image164.png" />
+					<img src="image165.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image165.png" />
+					<img src="image166.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image166.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image179.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image179.png" /></td>
+				<td>179</td><td>猜</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image179.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image179.png" />
+					<img src="image180.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image180.png" />
+					<img src="image181.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image181.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image229.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image229.png" /></td>
+				<td>229</td><td>雪灵珠</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image229.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image229.png" />
+					<img src="image230.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image230.png" />
+					<img src="image231.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image231.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>一周年庆</nobr></th><th>情缘技能</th><th><nobr><font style="font-size:20px;">每增加一个周年庆妖怪</font><br>全属性+400</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>4只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1130.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1130.png" /></td>
+				<td>1130</td><td>粘方</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image1131.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1131.png" />
+					<img src="image1132.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1132.png" />
+					<img src="image1133.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1133.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1134.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1134.png" /></td>
+				<td>1134</td><td>晕针</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image1135.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1135.png" />
+					<img src="image1136.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1136.png" />
+					<img src="image1137.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1137.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1138.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1138.png" /></td>
+				<td>1138</td><td>旋印</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image1139.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1139.png" />
+					<img src="image1140.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1140.png" />
+					<img src="image1141.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1141.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1142.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1142.png" /></td>
+				<td>1142</td><td>圆糖</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image1143.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1143.png" />
+					<img src="image1144.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1144.png" />
+					<img src="image1145.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1145.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>真·端午传说</nobr></th><th>情缘技能</th><th><nobr>全属性+400</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>3只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image316.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image316.png" /></td>
+				<td>316</td><td>粽妮</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image316.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image316.png" />
+					<img src="image317.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image317.png" />
+					<img src="image318.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image318.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image319.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image319.png" /></td>
+				<td>319</td><td>粽仔</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image319.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image319.png" />
+					<img src="image320.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image320.png" />
+					<img src="image321.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image321.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1173.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1173.png" /></td>
+				<td>1173</td><td>御龙屈原</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image322.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image322.png" />
+					<img src="image324.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image324.png" />
+					<img src="image1173.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1173.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>圣诞超快乐</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1328.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1328.png" /></td>
+				<td>1328</td><td>彩角</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image1328.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1328.png" />
+					<img src="image1329.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1329.png" />
+					<img src="image1330.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1330.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1335.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1335.png" /></td>
+				<td>1335</td><td>萌礼</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image1336.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1336.png" />
+					<img src="image1337.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1337.png" />
+					<img src="image1338.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1338.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>年兽来袭</nobr></th><th>情缘技能</th><th><nobr>无技能</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>6只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1339.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1339.png" /></td>
+				<td>1339</td><td>炮竹</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image1340.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1340.png" />
+					<img src="image1341.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1341.png" />
+					<img src="image1342.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1342.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1343.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1343.png" /></td>
+				<td>1343</td><td>水泡</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image1344.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1344.png" />
+					<img src="image1345.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1345.png" />
+					<img src="image1346.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1346.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1347.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1347.png" /></td>
+				<td>1347</td><td>腊豆</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image1348.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1348.png" />
+					<img src="image1349.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1349.png" />
+					<img src="image1350.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1350.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1351.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1351.png" /></td>
+				<td>1351</td><td>鞭炮</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image1352.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1352.png" />
+					<img src="image1353.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1353.png" />
+					<img src="image1354.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1354.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1355.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1355.png" /></td>
+				<td>1355</td><td>芒</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image1356.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1356.png" />
+					<img src="image1357.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1357.png" />
+					<img src="image1358.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1358.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1359.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1359.png" /></td>
+				<td>1359</td><td>影球</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image1360.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1360.png" />
+					<img src="image1361.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1361.png" />
+					<img src="image1362.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1362.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>玩偶旅团</nobr></th><th>情缘技能</th><th><nobr>全队每人全属性+600</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>5只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1537.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1537.png" /></td>
+				<td>1537</td><td>黑桃3</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image1537.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1537.png" />
+					<img src="image1538.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1538.png" />
+					<img src="image1539.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1539.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1544.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1544.png" /></td>
+				<td>1544</td><td>梅花4</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image1544.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1544.png" />
+					<img src="image1545.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1545.png" />
+					<img src="image1546.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1546.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1551.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1551.png" /></td>
+				<td>1551</td><td>红桃5</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image1551.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1551.png" />
+					<img src="image1552.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1552.png" />
+					<img src="image1553.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1553.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1561.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1561.png" /></td>
+				<td>1561</td><td>梅花6</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image1561.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1561.png" />
+					<img src="image1562.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1562.png" />
+					<img src="image1563.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1563.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1564.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1564.png" /></td>
+				<td>1564</td><td>黑桃7</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image1564.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1564.png" />
+					<img src="image1565.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1565.png" />
+					<img src="image1566.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1566.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>一万年</nobr></th><th>情缘技能</th><th><nobr>全队每人全属性+200</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image697.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image697.png" /></td>
+				<td>697</td><td>赤焰</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image697.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image697.png" />
+					<img src="image698.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image698.png" />
+					<img src="image699.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image699.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1578.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1578.png" /></td>
+				<td>1578</td><td>三点</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image1579.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1579.png" />
+					<img src="image1580.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1580.png" />
+					<img src="image1581.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1581.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>青梅竹马</nobr></th><th>情缘技能</th><th><nobr>力量+200</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>2只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image85.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image85.png" /></td>
+				<td>85</td><td>小青梅</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image85.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image85.png" />
+					<img src="image86.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image86.png" />
+					<img src="image87.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image87.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image88.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image88.png" /></td>
+				<td>88</td><td>小竹笋</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image88.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image88.png" />
+					<img src="image89.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image89.png" />
+					<img src="image90.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image90.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>天庭气象局</nobr></th><th>情缘技能</th><th><nobr>全队每人技巧×200%</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>5只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image22.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image22.png" /></td>
+				<td>22</td><td>悦鸣</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image22.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image22.png" />
+					<img src="image23.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image23.png" />
+					<img src="image24.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image24.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image64.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image64.png" /></td>
+				<td>64</td><td>鸡卒</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image64.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image64.png" />
+					<img src="image65.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image65.png" />
+					<img src="image66.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image66.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image82.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image82.png" /></td>
+				<td>82</td><td>糯米滋</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image82.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image82.png" />
+					<img src="image83.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image83.png" />
+					<img src="image84.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image84.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image103.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image103.png" /></td>
+				<td>103</td><td>凡锦</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image103.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image103.png" />
+					<img src="image104.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image104.png" />
+					<img src="image105.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image105.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image301.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image301.png" /></td>
+				<td>301</td><td>电符</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td class="pic">
+					<img src="image301.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image301.png" />
+					<img src="image302.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image302.png" />
+					<img src="image303.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image303.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>六扇窗</nobr></th><th>情缘技能</th><th><nobr>速度+500</NOBR></th>
+			</tr>
+			<tr class="details">
+				<td>5只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image1.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1.png" /></td>
+				<td>1</td><td>渊鲶</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image1.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1.png" />
+					<img src="image2.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image2.png" />
+					<img src="image3.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image3.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image52.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image52.png" /></td>
+				<td>52</td><td>芽头</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image52.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image52.png" />
+					<img src="image53.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image53.png" />
+					<img src="image54.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image54.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image76.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image76.png" /></td>
+				<td>76</td><td>黄箭令</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image76.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image76.png" />
+					<img src="image77.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image77.png" />
+					<img src="image78.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image78.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image115.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image115.png" /></td>
+				<td>115</td><td>音符</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image115.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image115.png" />
+					<img src="image116.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image116.png" />
+					<img src="image117.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image117.png" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img src="image199.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image199.png" /></td>
+				<td>199</td><td>大鲵</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td class="pic">
+					<img src="image199.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image199.png" />
+					<img src="image200.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image200.png" />
+					<img src="image201.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image201.png" />
+				</td>
+			</tr>
+			<tr class="names">
+				<th style="padding:4px;"><img src="logo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/logo.png" /></th>
+				<th></th><th><nobr>四季组合</nobr></th><th>情缘技能</th><th><nobr>魅力+800</nobr></th>
+			</tr>
+			<tr class="details">
+				<td>4只</td><td>妖怪<br>ID</td><td>名称</td><td>属性</td><td>进化</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img class="Ag" src="image7.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image7.png" tag="7,8,9" alt="绿灵,叶魅,春丽" /></td>
+				<td>7</td><td>绿灵</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td class="pic">
+					<img src="image7.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image7.png" tag="7,8,9" alt="绿灵,叶魅,春丽" />
+					<img src="image8.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image8.png" tag="7,8,9" alt="绿灵,叶魅,春丽" />
+					<img src="image9.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image9.png" tag="7,8,9" alt="绿灵,叶魅,春丽" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img class="Ag" src="image10.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image10.png" tag="10,11,12" alt="火印,夏雨荷,丽娜" /></td>
+				<td>10</td><td>火印</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td class="pic">
+					<img src="image10.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image10.png" tag="10,11,12" alt="火印,夏雨荷,丽娜" />
+					<img src="image11.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image11.png" tag="10,11,12" alt="火印,夏雨荷,丽娜" />
+					<img src="image12.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image12.png" tag="10,11,12" alt="火印,夏雨荷,丽娜" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img class="Ag" src="image13.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image13.png" /></td>
+				<td>13</td><td>枯妖</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td class="pic">
+					<img src="image13.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image13.png" tag="13,14,15" alt="枯妖,秋波,秋香" />
+					<img src="image14.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image14.png" tag="13,14,15" alt="枯妖,秋波,秋香" />
+					<img src="image15.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image15.png" tag="13,14,15" alt="枯妖,秋波,秋香" />
+				</td>
+			</tr>
+			<tr class="details">
+				<td style="padding:4px;"><img class="Ag" src="image16.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image16.png" tag="16,17,18" alt="玄冰,呆萌姬,幽兰雪魅" /></td>
+				<td>16</td><td>玄冰</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td class="pic">
+					<img src="image16.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image16.png" tag="16,17,18" alt="玄冰,呆萌姬,幽兰雪魅" />
+					<img src="image17.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image17.png" tag="16,17,18" alt="玄冰,呆萌姬,幽兰雪魅" />
+					<img src="image18.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image18.png" tag="16,17,18" alt="玄冰,呆萌姬,幽兰雪魅" />
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>

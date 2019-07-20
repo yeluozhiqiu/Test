@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+/*不同分辨率手机加载*/
+var userScalable = "no";
+(function() {
+	if (window.devicePixelRatio === 1.5) {
+		userScalable = "yes";
+	}
+	var text = "<meta content='target-densitydpi=device-dpi, width=640, user-scalable=" + userScalable + "' name='viewport'>";
+	document.write(text);
+})();
+</script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="图鉴,非官方,紫岩" />
+<meta name="description" content="非官方图鉴，有问题请群内搜索并@紫岩" />
+<title>科普小知识（娱乐向） - 妖怪手帐</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+<!--ios抓取-->
+<!--<link rel="apple-touch-icon-precomposed" href="../images/logo.png" />-->
+<link rel="apple-touch-icon-precomposed" href="../images/icon.png" />
+<link rel="stylesheet" type="text/css" href="base.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/base.css" />
+<link rel="stylesheet" type="text/css" href="style.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/style.css" />
+<script type="text/javascript" src="jquery-1.7.2.min.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="scrolltopcontrol.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/scrolltopcontrol.js"></script>
+<script>
+$(document).ready(function(){
+	$(".content table tr.pic td img").each(function(){
+		$(this).attr("onerror","this.src='spirit.png'/*tpa=https://ziyan2017.gitee.io/ygsz/images/spirit.png*/");
+	});
+	//图片点击
+	$(".content table tr td img").click(function(){
+		var pics = $(this).attr("tag"),
+			names = $(this).attr("alt"),
+			temp = '',
+			temp1 = '',
+			temp2 = '';
+		pics = pics.split(",");
+		names = names.split(",");
+		var num = pics.length;
+		for(i=0; i<num;i++){
+			if(pics[i] == '000'){
+				temp1 += '<td><img src="'+'spirit'+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/'+'spirit'+'.png*/ /></td>';
+			}else{
+				temp1 += '<td><img src="image'+pics[i]+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/image'+pics[i]+'.png*/ /></td>';
+			}
+			temp2 += '<td width="100">'+names[i]+'</td>';
+		}
+		temp = '<table><tr>'+temp1+'</tr><tr>'+temp2+'</tr></table><a class="close" href="javascript:void(0)"></a>';
+		$(".picinfo").html(temp).show();
+		return false;
+	});
+	$(".picinfo a.close").live("click",function(){
+		$(".picinfo").hide();
+	});
+	refresh();
+});
+$(window).resize(function(){refresh();});
+function refresh(){
+};
+</script>
+</head>
+
+<body>
+<div class="wrap">
+	<h1><a href="kepu01.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu01.html">标准版</a>科普小知识（娱乐向）</h1>
+	<p>
+		<a class="cur" href="kepu01-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu01.html">二十八星宿</a>
+		<a href="kepu04-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu04.html">水浒一百单八将</a>
+		<a href="kepu06-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu06.html">天龙八部</a>
+		<a href="kepu08-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu08.html">二十四节气</a>
+		<a href="index-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/index.html">返回首页</a>
+	</p>
+	<div class="picinfo"></div>
+	<div class="content">
+		<table class="kp">
+			<tr class="title">
+				<td><img src="image000.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image000.png" onerror="this.src='../images/logo.png'" tag="000,000,000" alt="？,？,？" /></td>
+				<td colspan="6" style="font-size:1.2em;">东方青龙七宿</td>
+			</tr>
+			<tr class="pic">
+				<td class="own"><img src="image588.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image588.png" tag="586,587,588" alt="壶仔,呜呼,角木蛟" /></td>
+				<td class="own"><img src="image684.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image684.png" tag="682,683,684" alt="瞌睡蛋,爱吸霸,亢金龙" /></td>
+				<td class="own"><img src="image738.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image738.png" tag="736,737,738" alt="芋中,酪付,氐土貉" /></td>
+				<td class="own"><img src="image732.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image732.png" tag="730,731,732" alt="圆溜,酒酿圆,房日兔己" /></td>
+				<td class="own"><img src="image777.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image777.png" tag="775,776,777" alt="心蓝,月酱,心月狐" /></td>
+				<td class="own"><img src="image780.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image780.png" tag="778,779,780" alt="戚虎仔,胖虎,尾火虎" /></td>
+				<td class="own"><img src="image795.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image795.png" tag="793,794,795" alt="莲仔,豹力,箕水豹" /></td>
+			</tr>
+			<tr class="name">
+				<td class="own">角木蛟</td>
+				<td class="own">亢金龙</td>
+				<td class="own">氐土貉</td>
+				<td class="own">房日兔</td>
+				<td class="own">心月狐</td>
+				<td class="own">尾火虎</td>
+				<td class="own">箕水豹</td>
+			</tr>
+			<tr class="title">
+				<td><img src="image000.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image000.png" onerror="this.src='../images/logo.png'" tag="000,000,000" alt="？,？,？" /></td>
+				<td colspan="6" style="font-size:1.2em;">西方白虎七宿</td>
+			</tr>
+			<tr class="pic">
+				<td class="own"><img src="image1015.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1015.png" tag="1013,1014,1015" alt="柴木,柴犬,奎木狼" /></td>
+				<td class="own"><img src="image1195.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1195.png" tag="1193,1194,1195" alt="跑蛋,力丸,娄金狗" /></td>
+				<td class="own"><img src="image1204.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1204.png" tag="1202,1203,1204" alt="土球,土冒,胃土雉" /></td>
+				<td class="own"><img src="image1198.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1198.png" tag="1196,1197,1198" alt="传音,躺舒服斯基,昴日鸡" /></td>
+				<td class="own"><img src="image1012.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1012.png" tag="1010,1011,1012" alt="乌梅子,乌梅鸦,毕月乌" /></td>
+				<td class="own"><img src="image1207.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1207.png" tag="1205,1206,1207" alt="桃核,树懒,觜火猴" /></td>
+				<td class="own"><img src="image1536.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1536.png" tag="1534,1535,1536" alt="水魂珠,豪猿,参水猿" /></td>
+			</tr>
+			<tr class="name">
+				<td class="own">奎木狼</td>
+				<td class="own">娄金狗</td>
+				<td class="own">胃土雉</td>
+				<td class="own">昴日鸡</td>
+				<td class="own">毕月乌</td>
+				<td class="own">觜火猴</td>
+				<td class="own">参水猿</td>
+			</tr>
+			<tr class="title">
+				<td class="own"><img src="image393.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image393.png" tag="391,392,393" alt="玄鸟,七宿仙人,南七宿朱雀" /></td>
+				<td colspan="6" style="font-size:1.2em;">南方朱雀七宿</td>
+			</tr>
+			<tr class="pic">
+				<td class="own"><img src="image798.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image798.png" tag="796,797,798" alt="树方,井升,井木犴" /></td>
+				<td><img src="image1075.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1075.png" tag="1072,1073,1074,1075" alt="羊糕,羔羊,鬼金羊,星宿鬼金羊" /></td>
+				<td class="own"><img src="image1081.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1081.png" tag="1079,1080,1081" alt="糖方,糖核,柳土獐" /></td>
+				<td class="own"><img src="image1078.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1078.png" tag="1076,1077,1078" alt="明星,星矢,星日马" /></td>
+				<td class="own"><img src="image1117.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1117.png" tag="1114,1115,1116,1117" alt="情花瓣,缘牌,红运,张月鹿" /></td>
+				<td class="own"><img src="image1113.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1113.png" tag="1111,1112,1113" alt="种子,酒汤仔,翼火蛇" /></td>
+				<td class="own"><img src="image1120.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1120.png" tag="1118,1119,1120" alt="条贱,隧弯,轸水蚓" /></td>
+			</tr>
+			<tr class="name">
+				<td class="own">井木犴</td>
+				<td>鬼金羊</td>
+				<td class="own">柳土獐</td>
+				<td class="own">星日马</td>
+				<td class="own">张月鹿</td>
+				<td class="own">翼火蛇</td>
+				<td class="own">轸水蚓</td>
+			</tr>
+			<tr class="title">
+				<td class="own"><img src="image390.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image390.png" tag="388,389,390" alt="甲球,球仔,玄武仙人" /></td>
+				<td colspan="6" style="font-size:1.2em;">北方玄武七宿</td>
+			</tr>
+			<tr class="pic">
+				<td class="own"><img src="image1514.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1514.png" tag="1512,1513,1514" alt="竹豆,空竹,竹时雨" /></td>
+				<td class="own"><img src="image1466.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1466.png" tag="1464,1465,1466" alt="牛小宝,牛金宝,牛金牛" /></td>
+				<td class="own"><img src="image1486.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1486.png" tag="1484,1485,1486" alt="包小福,圆福,萌耳福娘" /></td>
+				<td class="own"><img src="image1529.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1529.png" tag="1527,1528,1529" alt="藏鼠,芝鼠,虚日鼠" /></td>
+				<td class="own"><img src="image1523.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1523.png" tag="1521,1522,1523" alt="影燕,月燕,危月燕" /></td>
+				<td class="own"><img src="image1475.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1475.png" tag="1473,1474,1475" alt="天珠,趴趴猪,室火小主" /></td>
+				<td><img src="image1493.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1493.png" tag="1491,1492,1493" alt="水玉,章玉,壁水貐" /></td>
+			</tr>
+			<tr class="name">
+				<td class="own">斗木獬</td>
+				<td class="own">牛金牛</td>
+				<td class="own">女土蝠</td>
+				<td class="own">虚日鼠</td>
+				<td class="own">危月燕</td>
+				<td class="own">室火猪</td>
+				<td>壁水貐</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>

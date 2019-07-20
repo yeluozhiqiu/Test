@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8"UTF-8">
+<script>
+/*不同分辨率手机加载*/
+var userScalable = "no";
+(function() {
+	if (window.devicePixelRatio === 1.5) {
+		userScalable = "yes";
+	}
+	var text = "<meta content='target-densitydpi=device-dpi, width=640, user-scalable=" + userScalable + "' name='viewport'>";
+	document.write(text);
+})();
+</script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="图鉴,非官方,紫岩" />
+<!--qq抓取-->
+<meta itemprop="name" content="妖王特效妖怪"/>
+<meta itemprop="image" content="images/image1358.png" />
+<meta name="description" itemprop="description" content="非官方图鉴，有问题请群内搜索并@紫岩" />
+<title>妖王特效妖怪 - 【非官方】</title>
+<!--<title>【非官方】</title>-->
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<!--ios抓取-->
+<!--<link rel="apple-touch-icon-precomposed" href="images/logo.png" />-->
+<link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+<link rel="stylesheet" type="text/css" href="base.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/base.css" />
+<link rel="stylesheet" type="text/css" href="style.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/style.css" />
+<script type="text/javascript" src="jquery-1.7.2.min.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="scrolltopcontrol.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/scrolltopcontrol.js"></script>
+<script>
+$(document).ready(function(){
+	$(".content table tr td img").each(function(){
+		$(this).attr("onerror","this.src='spirit.png'/*tpa=https://ziyan2017.gitee.io/ygsz/images/spirit.png*/");
+	});
+	//图片点击
+	$(".content table tr.pic td img").click(function(){
+		var pics = $(this).attr("tag"),
+			names = $(this).attr("alt"),
+			temp = '',
+			temp1 = '',
+			temp2 = '',
+			temp3 = '',
+			tip = '，属性奖池',
+			lv = $(this).attr("data-level");
+		pics = pics.split(",");
+		names = names.split(",");
+		var num = pics.length;
+		for(i=0; i<num;i++){
+			if(pics[i] == '000'){
+				temp1 += '<td><img src="'+'spirit'+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/'+'spirit'+'.png*/ /></td>';
+			}else{
+				temp1 += '<td><img src="image'+pics[i]+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/image'+pics[i]+'.png*/ /></td>';
+			}
+			temp2 += '<td width="100">'+names[i]+'</td>';
+		}
+		if( temp2.indexOf("圣诞彩鹿") > 0 ){ tip = ''; }
+		if( temp2.indexOf("大天狗") > 0 ){ tip = ''; }
+		if( temp2.indexOf("柠公主") > 0 ){ tip = ''; }
+		if( temp2.indexOf("东方之神句芒") > 0 ){ tip = ''; }
+		if( temp2.indexOf("西方之神蓐收") > 0 ){ tip = ''; }
+		if( temp2.indexOf("壹大师") > 0 ){ tip = ''; }
+		if( temp2.indexOf("周大师") > 0 ){ tip = ''; }
+		if( temp2.indexOf("甜大师") > 0 ){ tip = ''; }
+		if( temp2.indexOf("庆大师") > 0 ){ tip = ''; }
+		temp3 = '<tr><td>获取方式</td><td colspan="3">'+$(this).attr("data-getway")+tip+'</td></tr>';
+		temp = '<table><tr>'+temp1+'</tr><tr>'+temp2+'</tr>'+temp3+'</table><a class="close" href="javascript:void(0)"></a>';
+		$(".picinfo").html(temp).show();
+		$(".picinfo table tr").each(function(){
+			$(this).find("td").eq(lv).addClass("rq");
+		});
+		$(".picinfo img").each(function(){
+			$(this).attr("onerror","this.src='spirit.png'/*tpa=https://ziyan2017.gitee.io/ygsz/images/spirit.png*/");
+		});
+		return false;
+	});
+	$(".picinfo a.close").live("click",function(){
+		$(".picinfo").hide();
+	});
+	refresh();
+});
+$(window).resize(function(){refresh();});
+function refresh(){
+};
+</script>
+<style>
+.picinfo table tr td:nth-child(4){ color:#564224;}
+.picinfo table tr td:nth-child(4) img{ padding:0; border-color:#d8cfb0; margin:24px auto;}
+.picinfo table tr td.rq{ color:#cc2525;}
+.picinfo table tr td.rq img{ padding:4px; border-color:#cc2525; margin:20px auto;}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+	<h1>妖王特效妖怪</h1>
+	<!--导航 开始-->
+	<script>
+	$(document).ready(function(){
+		$("https://ziyan2017.gitee.io/ygsz/.nav a.menu").click(function(){
+			$(".nav .navbox").addClass("show");
+			$("https://ziyan2017.gitee.io/ygsz/body,.wrap").addClass("fullscreen");
+		});
+		$(".nav .navbox a.close").click(function(){
+			$(".nav .navbox").removeClass("show");
+			$("https://ziyan2017.gitee.io/ygsz/body,.wrap").removeClass("fullscreen");
+		});
+	});
+	</script>
+	<div class="nav">
+		<a class="menu" href="javascript:void(0)"></a>
+		<div class="navbox">
+			<a class="close" href="javascript:void(0)"></a>
+			<dl>
+				<dt>图鉴相关<span>【厚颜无耻的放到了最前面】</span></dt>
+				<dd>
+					<a href="index.html" tppabs="https://ziyan2017.gitee.io/ygsz/index.html">-&gt; 图鉴索引</a>
+					<a href="bb.html" tppabs="https://ziyan2017.gitee.io/ygsz/bb.html">-&gt; 部分说明</a>
+				</dd>
+				<dt>妖怪参数</dt>
+				<dd>
+					<a href="index1.html" tppabs="https://ziyan2017.gitee.io/ygsz/index1.html">-&gt; 属性图鉴</a>
+					<a href="skill.html" tppabs="https://ziyan2017.gitee.io/ygsz/skill.html">-&gt; 技能图鉴</a>
+					<a href="loveship.html" tppabs="https://ziyan2017.gitee.io/ygsz/loveship.html">-&gt; 情缘图鉴</a>
+					<a href="test.html" tppabs="https://ziyan2017.gitee.io/ygsz/test.html">-&gt; 整合图鉴（测试）</a>
+					<a href="material.html" tppabs="https://ziyan2017.gitee.io/ygsz/material.html">-&gt; 素材一览</a>
+					<a href="food.html" tppabs="https://ziyan2017.gitee.io/ygsz/food.html">-&gt; 神庙的各种饭</a>
+				</dd>
+				<dt>秘店奖池</dt>
+				<dd>
+					<a href="secretbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/secretbox.html">-&gt; 秘店图鉴</a>
+					<a href="goldbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/goldbox.html">-&gt; 金币池</a>
+					<a href="jadebox.html" tppabs="https://ziyan2017.gitee.io/ygsz/jadebox.html">-&gt; 玉璧池</a>
+					<!--<a href="package.html">-&gt; 礼包怪</a>-->
+					<a href="newbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/newbox.html">-&gt; 属性奖池</a>
+					<a href="hop.html" tppabs="https://ziyan2017.gitee.io/ygsz/hop.html">-&gt; 妖王特效怪</a>
+					<a href="month.html" tppabs="https://ziyan2017.gitee.io/ygsz/month.html">-&gt; 月签到记录</a>
+				</dd>
+				<dt>开船探险</dt>
+				<dd>
+					<a href="sailboat.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat.html">-&gt; 开船图鉴-条件</a>
+					<a href="sailboat1.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat1.html">-&gt; 开船图鉴-素材</a>
+				</dd>
+				<dt>科普娱乐</dt>
+				<dd>
+					<a href="kepu01.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu01.html">-&gt; 二十八星宿</a>
+					<a class="short" href="kepu02.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu02.html">-&gt; 麻将</a>
+					<a class="short" href="kepu03.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu03.html">-&gt; 象棋</a>
+					<a href="kepu04.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu04.html">-&gt; 水浒一百单八将</a>
+					<a href="kepu05.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu05.html">-&gt; 北斗七星</a>
+					<a href="kepu06.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu06.html">-&gt; 天龙八部</a>
+					<a href="kepu07.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu07.html">-&gt; 龙生九子</a>
+					<a href="kepu08.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu08.html">-&gt; 二十四节气</a>
+					<a href="kepu09.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu09.html">-&gt; 十二星座</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<!--导航 结束-->
+	<p>
+		<a href="test.html" tppabs="https://ziyan2017.gitee.io/ygsz/test.html">整合图鉴</a>
+		<a href="loveship.html" tppabs="https://ziyan2017.gitee.io/ygsz/loveship.html">情缘图鉴</a>
+		<a href="secretbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/secretbox.html">秘店图鉴</a>
+		<a href="newbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/newbox.html">属性奖池</a>
+		<a href="sailboat.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat.html">开船图鉴</a>
+		<a href="kepu01.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu01.html">科普小知识</a>
+	</p>
+	<div class="picinfo"></div>
+	<div class="content">
+		<p class="plbtn"><!--#d16019--><!--#cc2525-->
+			<span style="padding:0 0 16px; height:auto;">
+				“<font class="lt" style="border-top-color:#564224; margin:12px 4px 0 6px;"></font>&emsp;
+				”为面板较高的倍怪，可使用5倍怪+1面板，仅供参考
+			</span>
+		</p>
+		<style>
+		.content table tr.pic.huo td.recmd:before{ border-top-color:#cc4631;}
+		.content table tr.pic.mu td.recmd:before{ border-top-color:#507a18;}
+		.content table tr.pic.tu td.recmd:before{ border-top-color:#8f6629;}
+		.content table tr.pic.shui td.recmd:before{ border-top-color:#3c83b7;}
+		.content table tr.pic.guang td.recmd:before{ border-top-color:#c28e12;}
+		.content table tr.pic.an td.recmd:before{ border-top-color:#65497a;}
+		.content table tr.name.huo td.recmd{ color:#cc4631;}
+		.content table tr.name.mu td.recmd{ color:#507a18;}
+		.content table tr.name.tu td.recmd{ color:#8f6629;}
+		.content table tr.name.shui td.recmd{ color:#3c83b7;}
+		.content table tr.name.guang td.recmd{ color:#c28e12;}
+		.content table tr.name.an td.recmd{ color:#65497a;}
+		</style>
+		<table class="kp">
+			<!--火-->
+			<tr class="title">
+				<td><img src="ico_huo.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/ico_huo.png" /></td>
+				<td colspan="4" style="font-size:1.2em;">火妖王特效妖怪</td>
+				<td><img src="ico_mei.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/ico_mei.png" /></td>
+			</tr>
+			<tr class="pic huo">
+				<td class="recmd"><img class="Au" src="image1318.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1318.png" tag="1315,1316,1317,1318" data-level="3"
+						 data-getway="氪金" alt="甜仔,糖狗,糖王,糖太宗" /></td>
+				<td class="recmd"><img class="Au" src="image1117.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1117.png" tag="1114,1115,1116,1117" data-level="3"
+						 data-getway="氪金" alt="情花瓣,缘牌,红运,张月鹿" /></td>
+				<td class="recmd"><img class="Au" src="image1239.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1239.png" tag="1236,1237,1238,1239" data-level="3"
+						 data-getway="氪金成就获取，40个礼包达成" alt="盲种,柠仔,柠妮,柠公主" /></td>
+				<td><img class="Au" src="image1141.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1141.png" tag="1138,1139,1140,1141" data-level="3"
+						 data-getway="返利大赏领取，月充值满5000" alt="旋印,逐光仔,藏仔,壹大师" /></td>
+				<td class="recmd"><img class="Au" src="image934.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image934.png" tag="932,933,934" data-level="2"
+						 data-getway="氪金，三倍玉璧池，秘店" alt="通灵宝玉,绛洞花主,贾宝玉" /></td>
+				<td class="recmd"><img class="Au" src="image606.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image606.png" tag="604,605,606" data-level="2"
+						 data-getway="氪金，三倍玉璧池，秘店" alt="结魄,布芳,魑魅" /></td>
+			</tr>
+			<tr class="name huo">
+				<td data-val="172" class="recmd">糖太宗</td>
+				<td data-val="300" class="recmd">张月鹿</td>
+				<td data-val="328" class="recmd">柠公主</td>
+				<td data-val="128">壹大师</td>
+				<td data-val="294" class="recmd">贾宝玉</td>
+				<td data-val="304" class="recmd">魑魅</td>
+			</tr>
+			<!--木-->
+			<tr class="title">
+				<td><img src="ico_mu.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/ico_mu.png" /></td>
+				<td colspan="4" style="font-size:1.2em;">木妖王特效妖怪</td>
+				<td><img src="ico_li.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/ico_li.png" /></td>
+			</tr>
+			<tr class="pic mu">
+				<td class="recmd"><img class="Au" src="image1145.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1145.png" tag="1142,1143,1144,1145" data-level="3"
+						 data-getway="返利大赏领取，月充值满5000" alt="圆糖,绿粥,糖卷,周大师" /></td>
+				<td class="recmd"><img class="Au" src="image946.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image946.png" tag="475,476,477,946" data-level="3"
+						 data-getway="普通玉璧池" alt="唤水仔,送雨客,敖闰,龙王敖闰" /></td>
+				<td><img class="Au" src="image600.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image600.png" tag="598,599,600" data-level="2"
+						 data-getway="氪金，三倍玉璧池，秘店" alt="坛仔,那家,小娜迦" /></td>
+				<td class="recmd"><img class="Au" src="image1025.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1025.png" tag="1022,1023,1024,1025" data-level="3"
+						 data-getway="麻将活动 [ 双周周末开启 ]" alt="东风,芒童,春神,东方之神句芒" /></td>
+				<td class="recmd"><img class="Au" src="image657.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image657.png" tag="655,656,657" data-level="2"
+						 data-getway="氪金，普通玉璧池，秘店" alt="后,后羿,箭神后羿" /></td>
+				<td class="recmd"><img class="Au" src="image1006.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1006.png" tag="1004,1005,1006" data-level="2"
+						 data-getway="三倍金币池" alt="玉儿,彩女,玉女" /></td>
+			</tr>
+			<tr class="name mu">
+				<td data-val="214" class="recmd">周大师</td>
+				<td data-val="130" class="recmd">龙王敖闰</td>
+				<td data-val="92">小娜迦</td>
+				<td data-val="104" class="recmd">壮年东风</td>
+				<td data-val="280" class="recmd">箭神后羿</td>
+				<td data-val="162" class="recmd">玉女</td>
+			</tr>
+			<!--土-->
+			<tr class="title">
+				<td><img src="ico_tu.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/ico_tu.png" /></td>
+				<td colspan="4" style="font-size:1.2em;">土妖王特效妖怪</td>
+				<td><img src="ico_su.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/ico_su.png" /></td>
+			</tr>
+			<tr class="pic tu">
+				<td class="recmd"><img class="Au" src="image1263.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1263.png" tag="1260,1261,1262,1263" data-level="3"
+						 data-getway="氪金，秘店" alt="土豆,爱豆,豆布衣,皇豆" /></td>
+				<td class="recmd"><img class="Au" src="image825.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image825.png" tag="823,824,825" data-level="2"
+						 data-getway="氪金，三倍玉璧池，秘店" alt="绳仙,风义,创世伏羲" /></td>
+				<td class="recmd"><img class="Au" src="image567.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image567.png" tag="565,566,567" data-level="2"
+						 data-getway="氪金，三倍玉璧池" alt="袋仔,拳鼠,拳王" /></td>
+				<td class="recmd"><img class="Au" src="image675.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image675.png" tag="673,674,675" data-level="2"
+						 data-getway="氪金，三倍玉璧池" alt="明珠,玄戒,阿修罗" /></td>
+				<td><img class="Au" src="image1033.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1033.png" tag="1030,1031,1032,1033" data-level="3"
+						 data-getway="麻将活动 [ 双周周末开启 ]" alt="西风,秋叶,司秋,西方之神蓐收" /></td>
+				<td class="recmd"><img class="Au" src="image943.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image943.png" tag="382,383,384,943" data-level="3"
+						 data-getway="龙子关卡，普通玉璧池" alt="迷归,狮似,狻猊,龙子狻猊" /></td>
+			</tr>
+			<tr class="name tu">
+				<td data-val="138" class="recmd">皇豆</td>
+				<td data-val="150" class="recmd">创世伏羲</td>
+				<td data-val="160" class="recmd">拳王</td>
+				<td data-val="288" class="recmd">阿修罗</td>
+				<td data-val="106">壮年西风</td>
+				<td data-val="144" class="recmd">龙子狻猊</td>
+			</tr>
+			<!--水-->
+			<tr class="title">
+				<td><img src="ico_shui.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/ico_shui.png" /></td>
+				<td colspan="4" style="font-size:1.2em;">水妖王特效妖怪</td>
+				<td><img src="ico_zhi.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/ico_zhi.png" /></td>
+			</tr>
+			<tr class="pic shui">
+				<td><img class="Au" src="image1259.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1259.png" tag="1256,1257,1258,1259" data-level="3"
+						 data-getway="氪金" alt="雪晶,淇淋,冰糖,鹿冰花" /></td>
+				<td class="recmd"><img class="Au" src="image1133.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1133.png" tag="1130,1131,1132,1133" data-level="3"
+						 data-getway="返利大赏领取，月充值满5000" alt="粘方,粘兽,粘胖胖,甜大师" /></td>
+				<td class="recmd"><img class="Au" src="image1085.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1085.png" tag="1082,1083,1084,1085" data-level="3"
+						 data-getway="氪金，三倍玉璧池，秘店" alt="冰兰,团冢,介公子,晋文公" /></td>
+				<td class="recmd"><img class="Au" src="image998.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image998.png" tag="995,996,997,998" data-level="3"
+						 data-getway="氪金，三倍玉璧池" alt="圆蛋,小圆,一娃,时空少女一娃" /></td>
+				<td class="recmd"><img class="Au" src="image579.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image579.png" tag="577,578,579" data-level="2"
+						 data-getway="氪金，三倍玉璧池" alt="魂散,乐神,乾达婆" /></td>
+				<td class="recmd"><img class="Au" src="image639.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image639.png" tag="637,638,639" data-level="2"
+						 data-getway="氪金，三倍玉璧池，秘店" alt="万两,金来,魍魉" /></td>
+			</tr>
+			<tr class="name shui">
+				<td data-val="79">鹿冰花</td>
+				<td data-val="160" class="recmd">甜大师</td>
+				<td data-val="338" class="recmd">晋文公</td>
+				<td data-val="200" class="recmd">一娃</td>
+				<td data-val="118" class="recmd">乾达婆</td>
+				<td data-val="120" class="recmd">魍魉</td>
+			</tr>
+			<!--光-->
+			<tr class="title">
+				<td><img src="ico_guang.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/ico_guang.png" /></td>
+				<td colspan="4" style="font-size:1.2em;">光妖王特效妖怪</td>
+				<td><img src="ico_yun.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/ico_yun.png" /></td>
+			</tr>
+			<tr class="pic guang">
+				<td><img class="Au" src="image1192.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1192.png" tag="1190,1191,1192" data-level="2"
+						 data-getway="氪金" alt="二狗子,笑天狗,二郎神" /></td>
+				<td class="recmd"><img class="Au" src="image1330.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1330.png" tag="1328,1329,1330" data-level="2"
+						 data-getway="氪金" alt="彩角,彩色仔,圣诞彩鹿" /></td>
+				<td class="recmd"><img class="Au" src="image1137.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1137.png" tag="1134,1135,1136,1137" data-level="3"
+						 data-getway="返利大赏领取，月充值满5000" alt="晕针,糖仔,糖控,庆大师" /></td>
+				<td class="recmd"><img class="Au" src="image865.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image865.png" tag="862,863,864,865" data-level="3"
+						 data-getway="双十一限定抽取" alt="狗呆,狗粮,单身狗,大天狗" /></td>
+				<td class="recmd"><img class="Au" src="image982.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image982.png" tag="979,980,981,982" data-level="3"
+						 data-getway="氪金，三倍玉璧池，秘店" alt="汪仔,萌极,糖无极,汪年" /></td>
+				<td class="recmd"><img class="Au" src="image931.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image931.png" tag="929,930,931" data-level="2"
+						 data-getway="氪金，三倍玉璧池，秘店" alt="群芳,蘅芜君,薛宝钗" /></td>
+			</tr>
+			<tr class="name guang">
+				<td data-val="124">二郎神</td>
+				<td data-val="310" class="recmd">圣诞彩鹿</td>
+				<td data-val="268" class="recmd">庆大师</td>
+				<td data-val="605" class="recmd">大天狗</td>
+				<td data-val="294" class="recmd">汪年</td>
+				<td data-val="134" class="recmd">薛宝钗</td>
+			</tr>
+			<!--暗-->
+			<tr class="title">
+				<td><img src="ico_an.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/ico_an.png" /></td>
+				<td colspan="4" style="font-size:1.2em;">暗妖王特效妖怪</td>
+				<td><img src="ico_ji.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/ico_ji.png" /></td>
+			</tr>
+			<tr class="pic an">
+				<td class="recmd"><img class="Au" src="image978.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image978.png" tag="975,976,977,978" data-level="3"
+						 data-getway="氪金，三倍玉璧池，秘店" alt="猫眼石,夕,馋猫,喵夕" /></td>
+				<td class="recmd"><img class="Au" src="image1075.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1075.png" tag="1072,1073,1074,1075" data-level="3"
+						 data-getway="氪金，三倍玉璧池" alt="羊糕,羔羊,鬼金羊,星宿鬼金羊" /></td>
+				<td class="recmd"><img class="Au" src="image1062.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1062.png" tag="1060,1061,1062" data-level="2"
+						 data-getway="氪金，三倍玉璧池" alt="魂飞破扇,鬼才,天师钟馗" /></td>
+				<td><img class="Au" src="image588.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image588.png" tag="586,587,588" data-level="2"
+						 data-getway="氪金，三倍玉璧池" alt="壶仔,呼鸣,角木蛟" /></td>
+				<td class="recmd"><img class="Au" src="image666.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image666.png" tag="664,665,666" data-level="2"
+						 data-getway="氪金，三倍玉璧池" alt="九婴,盲女,母夜叉" /></td>
+				<td class="recmd"><img class="Au" src="image857.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image857.png" tag="854,855,856,857" data-level="3"
+						 data-getway="氪金，三倍玉璧池，秘店" alt="迷迷貂,貂侍,倾城美女貂蝉,魅影夫人" /></td>
+			</tr>
+			<tr class="name an">
+				<td data-val="286" class="recmd">喵夕</td>
+				<td data-val="289" class="recmd">鬼金羊</td>
+				<td data-val="270" class="recmd">天师钟馗</td>
+				<td data-val="98">角木蛟</td>
+				<td data-val="128" class="recmd">母夜叉</td>
+				<td data-val="172" class="recmd">魅影夫人</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>

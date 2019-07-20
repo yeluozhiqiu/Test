@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8"UTF-8">
+<script>
+/*不同分辨率手机加载*/
+var userScalable = "no";
+(function() {
+	if (window.devicePixelRatio === 1.5) {
+		userScalable = "yes";
+	}
+	var text = "<meta content='target-densitydpi=device-dpi, width=640, user-scalable=" + userScalable + "' name='viewport'>";
+	document.write(text);
+})();
+</script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="图鉴,非官方,紫岩" />
+<meta name="description" content="非官方图鉴，有问题请群内搜索并@紫岩" />
+<title>金币池图鉴 - 妖怪手帐</title>
+<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+<!--ios抓取-->
+<!--<link rel="apple-touch-icon-precomposed" href="../images/logo.png" />-->
+<link rel="apple-touch-icon-precomposed" href="../images/icon.png" />
+<link rel="stylesheet" type="text/css" href="base.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/base.css" />
+<link rel="stylesheet" type="text/css" href="style.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/style.css" />
+<script type="text/javascript" src="jquery-1.7.2.min.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="scrolltopcontrol.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/scrolltopcontrol.js"></script>
+<script>
+$(document).ready(function(){
+	/*默认图片*/
+	$(".content ul.pool li").each(function(){
+		$(this).find("img").attr("onerror","this.src='spirit.png'/*tpa=https://ziyan2017.gitee.io/ygsz/images/spirit.png*/");
+	});
+	//图片点击
+	$(".content ul.pool li img").click(function(){
+		var pics = $(this).attr("tag"),
+			names = $(this).attr("alt"),
+			temp = '',
+			temp1 = '',
+			temp2 = '';
+		pics = pics.split(",");
+		names = names.split(",");
+		var num = pics.length;
+		for(i=0; i<num;i++){
+			if(pics[i] == '000'){
+				temp1 += '<td><img src="'+'spirit'+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/'+'spirit'+'.png*/ /></td>';
+			}else{
+				temp1 += '<td><img src="image'+pics[i]+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/image'+pics[i]+'.png*/ /></td>';
+			}
+			temp2 += '<td><em>'+names[i]+'</td>';
+		}
+		temp = '<table><tr>'+temp1+'</tr><tr class="name">'+temp2+'</tr></table><a class="close" href="javascript:void(0)"></a>';
+		$(".picinfo").html(temp).show();
+		/*默认图片*/
+		$(".picinfo img").each(function(){
+			$(this).attr("onerror","this.src='spirit.png'/*tpa=https://ziyan2017.gitee.io/ygsz/images/spirit.png*/");
+		});
+		return false;
+	});
+	$(".picinfo a.close").live("click",function(){
+		$(".picinfo").hide();
+	});
+	//三倍显隐
+	$(".content p.plbtn a").click(function(){
+		$(this).toggleClass("on").siblings("a").removeClass("on");
+		if($(this).hasClass("on")){
+			if($(this).attr("tag")=='onlytri'){
+				$(".content ul.pool li").hide();
+				$(".content ul.pool li.triple").show();
+			}else if($(this).attr("tag")=='notri'){
+				$(".content ul.pool li").hide();
+				$(".content ul.pool li:not(.triple)").show();
+			}
+		}else{
+			$(".content ul.pool li").hide();
+			$(".content ul.pool li").show();
+		}
+	});
+	refresh();
+});
+$(window).resize(function(){refresh();});
+function refresh(){
+};
+</script>
+<style>
+.picinfo table tr td:nth-child(4){ color:#564224;}
+.picinfo table tr td:nth-child(4) img{ padding:0; border-color:#d8cfb0; margin:24px auto;}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+	<h1><a href="goldbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/goldbox.html">标准版</a>金币池 - 紫岩专属</h1>
+	<p>
+		<a href="index-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/index.html">图鉴一览</a>
+		<a class="cur" href="goldbox-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/goldbox.html">金币池</a>
+		<a href="jadebox-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/jadebox.html">玉璧池</a>
+		<a href="newbox-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/newbox.html">元素池</a>
+		<a href="kepu01-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu01.html">科普小知识</a>
+	</p>
+	<div class="picinfo"></div>
+	<script>
+	$(document).ready(function(){
+		//统计
+		var triown = $(".content").find("https://ziyan2017.gitee.io/ygsz/ziyan/li.own").size(),
+			triall = $(".content").find("li").size(),
+			norall = triall-$(".content").find("li.triple").size(),
+			norown = triown-$(".content").find("https://ziyan2017.gitee.io/ygsz/ziyan/li.triple.own").size();
+		$("p.record").find("font.norall").html(norall);
+		$("p.record").find("font.norown").html(norown);
+		$("p.record").find("font.triall").html(triall);
+		$("p.record").find("font.triown").html(triown);
+	});
+	</script>
+	<p class="record">
+		当前进度 <font class="norown"></font>/<font class="norall"></font> &emsp;&emsp;三倍池 <font class="triown"></font>/<font class="triall">900</font><br>
+		ヾ(o◕∀◕)ﾉ ヾ(o◕∀◕)ﾉ ヾ(o◕∀◕)ﾉ&emsp;
+	</p>
+	<div class="content">
+		<p class="plbtn">
+			<a tag="notri" href="javascript:void(0)"><em></em>不看三倍</a>
+			<a tag="onlytri" href="javascript:void(0)"><em></em>只看三倍</a>
+			<span>“<font class="lt"></font>&emsp;<font class="rb"></font>”标记为三倍怪</span>
+		</p>
+		<ul class="pool">
+			<li class="Au triple own"><img src="image1004.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1004.png" tag="1004,1005,1006" alt="玉儿,彩女,玉女" /></li>
+			<li class="Au own"><img src="image847.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image847.png" tag="847,848,849" alt="嘴鬼,肉迷,饕餮" /></li>
+			<li class="Au own"><img src="image580.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image580.png" tag="580,581,582" alt="金灵,望仔,金角大王" /></li>
+			<li class="Au own"><img src="image176.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image176.png" tag="176,177,178,1506,1507" alt="戟月,钺娃,洪玉儿,双戟洪少侠,烈火焚天洪小仙" /></li>
+			<li class="Au own"><img src="image170.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image170.png" tag="170,171,172,1504,1505" alt="剑灵,诗娃,李白,心剑合一李小白,诗仙剑圣李太白" /></li>
+			
+			<li class="Ag own"><img src="image1090.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1090.png" tag="1090,1091,1092" alt="飞轮仔,甲马,神行太保戴宗" /></li>
+			<li class="Ag own"><img src="image1069.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1069.png" tag="1069,1070,1071" alt="绵糖,行云,入云龙公孙胜" /></li>
+			<li class="Ag own"><img src="image688.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image688.png" tag="688,689,690" alt="灯形,黑仔,及时雨宋江" /></li>
+			<li class="Ag own"><img src="image661.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image661.png" tag="661,662,663" alt="萝胖,进攻器,拿破仑" /></li>
+			<li class="Ag own"><img src="image601.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image601.png" tag="601,602,603" alt="心鼓,传音马,紧那罗" /></li>
+			
+			<li class="Ag own"><img src="image538.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image538.png" tag="538,539,540" alt="独秀,彩鞍,流马" /></li>
+			<li class="Ag own"><img src="image514.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image514.png" tag="514,515,516" alt="祭石,福塔,托塔天王" /></li>
+			<li class="Ag own"><img src="image496.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image496.png" tag="496,497,498" alt="芒星,银鹤,银河" /></li>
+			<li class="Ag own"><img src="image445.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image445.png" tag="445,446,447" alt="喵儿,喵公子,武曲星" /></li>
+			<li class="Ag own"><img src="image403.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image403.png" tag="403,404,405" alt="古卷,书呆,文曲星" /></li>
+			
+			<li class="Ag own"><img src="image376.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image376.png" tag="376,377,378" alt="酱仔,狸弯,酱军" /></li>
+			<li class="Ag own"><img src="image346.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image346.png" tag="346,347,348" alt="众生剑,琉璃埵护者,增长天王" /></li>
+			<li class="Ag own"><img src="image343.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image343.png" tag="343,344,345" alt="火烧,赤仔,广目天王" /></li>
+			<li class="Ag own"><img src="image244.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image244.png" tag="244,245,246" alt="棋灵,棋妖,棋魂" /></li>
+			<li class="Ag own"><img src="image193.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image193.png" tag="193,194,195" alt="豆附,杜甫,很忙的杜甫" /></li>
+			
+			<li class="Ag own"><img src="image126.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image126.png" tag="126,127,128" alt="巨剑,狗头铡,王四" /></li>
+			<li class="Ag own"><img src="image43.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image43.png" tag="43,44,45" alt="魔虫,恶灵,梦魇" /></li>
+			<li class="Ag own"><img src="image13.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image13.png" tag="13,14,15" alt="枯妖,秋波,秋香" /></li>
+			<li class="Ag own"><img src="image10.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image10.png" tag="10,11,12" alt="火印,夏雨荷,丽娜" /></li>
+			<li class="Cu own"><img src="image1196.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1196.png" tag="1196,1197,1198" alt="传音,躺舒服斯基,昴日鸡" /></li>
+			
+			<li class="Cu own"><img src="image1193.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1193.png" tag="1193,1194,1195" alt="跑蛋,力丸,娄金狗" /></li>
+			<li class="Cu own"><img src="image1079.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1079.png" tag="1079,1080,1081" alt="糖方,糖核,柳土獐" /></li>
+			<li class="Cu own"><img src="image1076.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1076.png" tag="1076,1077,1078" alt="明星,星矢,星日马" /></li>
+			<li class="Cu own"><img src="image1063.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image1063.png" tag="1063,1064,1065" alt="桶冒,兰劫,旱地忽律朱贵" /></li>
+			<li class="Cu own"><img src="image983.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image983.png" tag="983,984,985" alt="糖瓜,灶王,灶神" /></li>
+			
+			<li class="Cu own"><img src="image972.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image972.png" tag="972,973,974" alt="簸箕仔,扫帚君,扫尘娘" /></li>
+			<li class="Cu own"><img src="image969.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image969.png" tag="969,970,971" alt="大豆豆,磨豆坊,豆腐爷" /></li>
+			<li class="Cu own"><img src="image966.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image966.png" tag="966,967,968" alt="原粉,面团仔,馒头婆婆" /></li>
+			<li class="Cu own"><img src="image963.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image963.png" tag="963,964,965" alt="菇仔,菇娘,赶集娘" /></li>
+			<li class="Cu own"><img src="image960.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image960.png" tag="960,961,962" alt="肥方,东坡肉,苏东坡" /></li>
+			
+			<li class="Cu own"><img src="image957.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image957.png" tag="957,958,959" alt="纸方,剪娘,喜儿" /></li>
+			<li class="Cu own"><img src="image881.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image881.png" tag="881,882,883" alt="鞋双,草兄,败履" /></li>
+			<li class="Cu own"><img src="image872.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image872.png" tag="872,873,874" alt="落头虫,落头民,飞头撩" /></li>
+			<li class="Cu own"><img src="image858.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image858.png" tag="858,859,860" alt="沫沫,清道夫,混江龙李俊" /></li>
+			<li class="Cu own"><img src="image838.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image838.png" tag="838,839,840" alt="南瓜仔,南瓜灵,捣蛋鬼" /></li>
+			
+			<li class="Cu own"><img src="image829.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image829.png" tag="829,830,831" alt="蓝瘦香菇,心苦书童,愁苦孟郊" /></li>
+			<li class="Cu own"><img src="image817.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image817.png" tag="817,818,819" alt="参段,呆仔,参童" /></li>
+			<li class="Cu own"><img src="image814.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image814.png" tag="814,815,816" alt="犬方,标兵,青面兽杨志" /></li>
+			<li class="Cu own"><img src="image811.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image811.png" tag="811,812,813" alt="血满,鬼刷,赤发鬼刘唐" /></li>
+			<li class="Cu own"><img src="image808.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image808.png" tag="808,809,810" alt="蓝羽,蓝孩纸,扑天雕李应" /></li>
+			
+			<li class="Cu own"><img src="image736.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image736.png" tag="736,737,738" alt="芋中,酪付,氐土貉" /></li>
+			<li class="Cu own"><img src="image733.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image733.png" tag="733,734,735" alt="杞生,杞果,杞妃" /></li>
+			<li class="Cu own"><img src="image730.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image730.png" tag="730,731,732" alt="圆溜,酒酿圆,房日兔己" /></li>
+			<li class="Cu own"><img src="image727.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image727.png" tag="727,728,729" alt="虎仔,童虎,行者武松" /></li>
+			<li class="Cu own"><img src="image712.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image712.png" tag="712,713,714" alt="黄豆豆,豆宝宝,黄豆娘" /></li>
+			
+			<li class="Cu triple own"><img src="image700.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image700.png" tag="700,701,702" alt="兰炎,冷漠,青霞" /></li>
+			<li class="Cu triple own"><img src="image697.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image697.png" tag="697,698,699" alt="赤焰,暖暖,紫霞" /></li>
+			<li class="Cu own"><img src="image670.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image670.png" tag="670,671,672" alt="呵,呵呵,哦" /></li>
+			<li class="Cu own"><img src="image667.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image667.png" tag="667,668,669" alt="花符,浪爷,碧池长老" /></li>
+			<li class="Cu own"><img src="image562.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image562.png" tag="562,563,564" alt="悬叶,独舟,鹦螺号" /></li>
+			
+			<li class="Cu own"><img src="image559.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image559.png" tag="559,560,561" alt="呆冒,唇豚,慧鲸" /></li>
+			<li class="Cu own"><img src="image541.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image541.png" tag="541,542,543" alt="二丸,四丸,八丸" /></li>
+			<li class="Cu own"><img src="image526.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image526.png" tag="526,527,528" alt="钢蛋,发条仔,胖仔" /></li>
+			<li class="Cu own"><img src="image523.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image523.png" tag="523,524,525" alt="犄木,屯车,木牛" /></li>
+			<li class="Cu own"><img src="image484.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image484.png" tag="484,485,486" alt="喜蛋,喜鹊,鹊桥" /></li>
+			
+			<li class="Cu own"><img src="image466.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image466.png" tag="466,467,468" alt="艳灵,玫瑰女仆,玫瑰夫人" /></li>
+			<li class="Cu own"><img src="image457.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image457.png" tag="457,458,459" alt="捉鸡,黄焖鸡,初号机" /></li>
+			<li class="Cu own"><img src="image454.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image454.png" tag="454,455,456" alt="弱鸡,速机,二号机" /></li>
+			<li class="Cu own"><img src="image451.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image451.png" tag="451,452,453" alt="法鸡,扑腾鸡,零号机" /></li>
+			<li class="Cu own"><img src="image448.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image448.png" tag="448,449,450" alt="七目,兰赤甲,花木兰" /></li>
+			
+			<li class="Cu own"><img src="image394.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image394.png" tag="394,395,396" alt="绿幽,绿茶魅,绿茶姬" /></li>
+			<li class="Cu own"><img src="image385.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image385.png" tag="385,386,387" alt="黑塔匣,杜康女,醋母" /></li>
+			<li class="Cu own"><img src="image373.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image373.png" tag="373,374,375" alt="矮油,油条条,油条兄弟" /></li>
+			<li class="Cu own"><img src="image370.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image370.png" tag="370,371,372" alt="米迷,饭小团,咩咩魅" /></li>
+			<li class="Cu own"><img src="image352.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image352.png" tag="352,353,354" alt="捆柴桑,柴犬酱,柴可夫司机" /></li>
+			
+			<li class="Cu own"><img src="image319.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image319.png" tag="319,320,321" alt="粽仔,小鲜肉,腹黑仔" /></li>
+			<li class="Cu own"><img src="image316.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image316.png" tag="316,317,318" alt="粽妮,白白,白美甜" /></li>
+			<li class="Cu own"><img src="image295.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image295.png" tag="295,296,297" alt="抹茶精,青蛇魅,小青" /></li>
+			<li class="Cu own"><img src="image289.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image289.png" tag="289,290,291" alt="壶精,药童,名医许仙" /></li>
+			<li class="Cu own"><img src="image277.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image277.png" tag="277,278,279" alt="紫果,茄凡,大茄师傅" /></li>
+			
+			<li class="Cu own"><img src="image274.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image274.png" tag="274,275,276" alt="阿椒,红孩儿,辣子姬" /></li>
+			<li class="Cu own"><img src="image262.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image262.png" tag="262,263,264" alt="竹苗,林绿儿,林呆呆" /></li>
+			<li class="Cu own"><img src="image259.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image259.png" tag="259,260,261" alt="菊花,菊少年,菊爷" /></li>
+			<li class="Cu own"><img src="image235.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image235.png" tag="235,236,237" alt="瞳灵,独眼精,贞珠" /></li>
+			<li class="Cu own"><img src="image229.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image229.png" tag="229,230,231" alt="雪灵珠,雪顶,玉照夜狮子" /></li>
+			
+			<li class="Cu own"><img src="image205.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image205.png" tag="205,206,207" alt="邪骨灵,面假,鬼斩骨" /></li>
+			<li class="Cu own"><img src="image199.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image199.png" tag="199,200,201" alt="大鲵,山童,蛮力客" /></li>
+			<li class="Cu own"><img src="image184.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image184.png" tag="184,185,186" alt="夜叉,夜游鬼,夜神月" /></li>
+			<li class="Cu own"><img src="image158.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image158.png" tag="158,159,160" alt="尖刹,罗刹,湿罗刹" /></li>
+			<li class="Cu own"><img src="image146.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image146.png" tag="146,147,148" alt="白馒,黑白馒,乾坤子" /></li>
+			
+			<li class="Cu own"><img src="image143.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image143.png" tag="143,144,145" alt="一钱,二炳,不留" /></li>
+			<li class="Cu own"><img src="image109.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image109.png" tag="109,110,111" alt="斧尾,石墩,石敢当" /></li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8"UTF-8">
+<script>
+/*不同分辨率手机加载*/
+var userScalable = "no";
+(function() {
+	if (window.devicePixelRatio === 1.5) {
+		userScalable = "yes";
+	}
+	var text = "<meta content='target-densitydpi=device-dpi, width=640, user-scalable=" + userScalable + "' name='viewport'>";
+	document.write(text);
+})();
+</script>
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content="图鉴,非官方,紫岩" />
+<!--qq抓取-->
+<meta itemprop="name" content="科普小知识（娱乐向）"/>
+<meta itemprop="image" content="images/image574.png" />
+<meta name="description" itemprop="description" content="非官方图鉴，有问题请群内搜索并@紫岩" />
+<title>科普小知识（娱乐向） - 【非官方】</title>
+<!--<title>【非官方】</title>-->
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+<!--ios抓取-->
+<!--<link rel="apple-touch-icon-precomposed" href="images/logo.png" />-->
+<link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+<link rel="stylesheet" type="text/css" href="base.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/base.css" />
+<link rel="stylesheet" type="text/css" href="style.css" tppabs="https://ziyan2017.gitee.io/ygsz/css/style.css" />
+<script type="text/javascript" src="jquery-1.7.2.min.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="scrolltopcontrol.js" tppabs="https://ziyan2017.gitee.io/ygsz/js/scrolltopcontrol.js"></script>
+<script>
+$(document).ready(function(){
+	$(".content table tr.title").click(function(){
+		$(this).next("https://ziyan2017.gitee.io/ygsz/tr.info").toggle();
+	});
+	//图片点击
+	$(".content table tr td img").click(function(){
+		var pics = $(this).attr("tag"),
+			names = $(this).attr("alt"),
+			temp = '',
+			temp1 = '',
+			temp2 = '';
+		pics = pics.split(",");
+		names = names.split(",");
+		var num = pics.length;
+		for(i=0; i<num;i++){
+			if(pics[i] == '000'){
+				temp1 += '<td><img src="'+'spirit'+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/'+'spirit'+'.png*/ /></td>';
+			}else{
+				temp1 += '<td><a href="#tl'+pics[i]+'"><img src="image'+pics[i]+'.png"/*tpa=https://ziyan2017.gitee.io/ygsz/images/image'+pics[i]+'.png*/ /></a></td>';
+			}
+			temp2 += '<td><a href="#tl'+pics[i]+'">'+names[i]+'</a></td>';
+		}
+		temp = '<table><tr>'+temp1+'</tr><tr class="name">'+temp2+'</tr></table><a class="close" href="javascript:void(0)"></a>';
+		$(".picinfo").html(temp).show();
+		return false;
+	});
+	$(".picinfo a.close").live("click",function(){
+		$(".picinfo").hide();
+	});
+	refresh();
+});
+$(window).resize(function(){refresh();});
+function refresh(){
+};
+</script>
+</head>
+
+<body>
+<div class="wrap">
+	<h1><a href="kepu06-1.html" tppabs="https://ziyan2017.gitee.io/ygsz/ziyan/kepu06.html">紫岩专属</a>科普小知识（娱乐向）</h1>
+	<!--导航 开始-->
+	<script>
+	$(document).ready(function(){
+		$("https://ziyan2017.gitee.io/ygsz/.nav a.menu").click(function(){
+			$(".nav .navbox").addClass("show");
+			$("https://ziyan2017.gitee.io/ygsz/body,.wrap").addClass("fullscreen");
+		});
+		$(".nav .navbox a.close").click(function(){
+			$(".nav .navbox").removeClass("show");
+			$("https://ziyan2017.gitee.io/ygsz/body,.wrap").removeClass("fullscreen");
+		});
+	});
+	</script>
+	<div class="nav">
+		<a class="menu" href="javascript:void(0)"></a>
+		<div class="navbox">
+			<a class="close" href="javascript:void(0)"></a>
+			<dl>
+				<dt>图鉴相关<span>【厚颜无耻的放到了最前面】</span></dt>
+				<dd>
+					<a href="index.html" tppabs="https://ziyan2017.gitee.io/ygsz/index.html">-&gt; 图鉴索引</a>
+					<a href="bb.html" tppabs="https://ziyan2017.gitee.io/ygsz/bb.html">-&gt; 部分说明</a>
+				</dd>
+				<dt>妖怪参数</dt>
+				<dd>
+					<a href="index1.html" tppabs="https://ziyan2017.gitee.io/ygsz/index1.html">-&gt; 属性图鉴</a>
+					<a href="skill.html" tppabs="https://ziyan2017.gitee.io/ygsz/skill.html">-&gt; 技能图鉴</a>
+					<a href="loveship.html" tppabs="https://ziyan2017.gitee.io/ygsz/loveship.html">-&gt; 情缘图鉴</a>
+					<a href="test.html" tppabs="https://ziyan2017.gitee.io/ygsz/test.html">-&gt; 整合图鉴（测试）</a>
+					<a href="material.html" tppabs="https://ziyan2017.gitee.io/ygsz/material.html">-&gt; 素材一览</a>
+					<a href="food.html" tppabs="https://ziyan2017.gitee.io/ygsz/food.html">-&gt; 神庙的各种饭</a>
+				</dd>
+				<dt>秘店奖池</dt>
+				<dd>
+					<a href="secretbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/secretbox.html">-&gt; 秘店图鉴</a>
+					<a href="goldbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/goldbox.html">-&gt; 金币池</a>
+					<a href="jadebox.html" tppabs="https://ziyan2017.gitee.io/ygsz/jadebox.html">-&gt; 玉璧池</a>
+					<!--<a href="package.html">-&gt; 礼包怪</a>-->
+					<a href="newbox.html" tppabs="https://ziyan2017.gitee.io/ygsz/newbox.html">-&gt; 属性奖池</a>
+					<a href="hop.html" tppabs="https://ziyan2017.gitee.io/ygsz/hop.html">-&gt; 妖王特效怪</a>
+					<a href="month.html" tppabs="https://ziyan2017.gitee.io/ygsz/month.html">-&gt; 月签到记录</a>
+				</dd>
+				<dt>开船探险</dt>
+				<dd>
+					<a href="sailboat.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat.html">-&gt; 开船图鉴-条件</a>
+					<a href="sailboat1.html" tppabs="https://ziyan2017.gitee.io/ygsz/sailboat1.html">-&gt; 开船图鉴-素材</a>
+				</dd>
+				<dt>科普娱乐</dt>
+				<dd>
+					<a href="kepu01.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu01.html">-&gt; 二十八星宿</a>
+					<a class="short" href="kepu02.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu02.html">-&gt; 麻将</a>
+					<a class="short" href="kepu03.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu03.html">-&gt; 象棋</a>
+					<a href="kepu04.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu04.html">-&gt; 水浒一百单八将</a>
+					<a href="kepu05.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu05.html">-&gt; 北斗七星</a>
+					<a href="kepu06.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu06.html">-&gt; 天龙八部</a>
+					<a href="kepu07.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu07.html">-&gt; 龙生九子</a>
+					<a href="kepu08.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu08.html">-&gt; 二十四节气</a>
+					<a href="kepu09.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu09.html">-&gt; 十二星座</a>
+				</dd>
+			</dl>
+		</div>
+	</div>
+	<!--导航 结束-->
+	<p>
+		<a href="kepu01.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu01.html">二十八星宿</a>
+		<a href="kepu02.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu02.html">麻将</a>
+		<a href="kepu03.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu03.html">象棋</a>
+		<a href="kepu04.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu04.html">水浒一百单八将</a>
+		<a href="kepu05.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu05.html">北斗七星</a>
+		<a class="cur" href="kepu06.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu06.html">天龙八部</a>
+		<a href="kepu07.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu07.html">龙生九子</a>
+		<a href="kepu08.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu08.html">二十四节气</a>
+		<a href="kepu09.html" tppabs="https://ziyan2017.gitee.io/ygsz/kepu09.html">十二星座</a>
+		<a href="index.html" tppabs="https://ziyan2017.gitee.io/ygsz/index.html">返回索引</a>
+	</p>
+	<div class="picinfo"></div>
+	<div class="content">
+		<table class="kp">
+			<tr><td>一</td><td>二</td><td>三</td><td>四</td></tr>
+			<tr>
+				<td width="300"><img src="image576.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image576.png" tag="574,575,576" alt="金杵,帝天,帝释天" /></td>
+				<td width="300"><img src="image600.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image600.png" tag="598,599,600" alt="坛仔,那家,小娜迦" /></td>
+				<td width="300"><img src="image666.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image666.png" tag="664,665,666" alt="九婴,盲女,母夜叉" /></td>
+				<td width="300"><img src="image579.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image579.png" tag="577,578,579" alt="魂散,乐神,乾达婆" /></td>
+			</tr>
+			<tr class="name"><td>天众</td><td>龙众</td><td>夜叉</td><td>乾达婆</td></tr>
+			<tr><td>五</td><td>六</td><td>七</td><td>八</td></tr>
+			<tr>
+				<td><img src="image675.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image675.png" tag="673,674,675" alt="明珠,玄戒,阿修罗" /></td>
+				<td><img src="image636.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image636.png" tag="634,635,636" alt="轻音,角鹰,迦罗逻" /></td>
+				<td><img src="image603.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image603.png" tag="601,602,603" alt="心鼓,传音马,紧那罗" /></td>
+				<td><img src="image678.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image678.png" tag="676,677,678" alt="青荷,愚蛇,摩呼罗迦" /></td>
+			</tr>
+			<tr class="name"><td>阿修罗</td><td>迦楼罗</td><td>紧那罗</td><td>摩呼罗迦</td></tr>
+		</table>
+		<table>
+			<tr><th colspan="5" style="font-size:1.2em; border-top:0; padding:12px 0 10px;">天龙八部相关数据</th></tr>
+			<tr class="title Au" id="tl574">
+				<td style="padding:4px;"><img src="image574.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image574.png" /></td>
+				<td>574</td><td>金杵</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td>神仙</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 146， 智 50， 速 20， 魅 62， 运 66， 技 70<br>
+					全队妖怪力量×150%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl575">
+				<td style="padding:4px;"><img src="image575.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image575.png" /></td>
+				<td>575</td><td>帝天</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td>神仙人形</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 234， 智 80， 速 32， 魅 100， 运 106， 技 114<br>
+					全队妖怪力量×150%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl576">
+				<td style="padding:4px;"><img src="image576.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image576.png" /></td>
+				<td>576</td><td>帝释天</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td>神仙人形神勇</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 348， 智 118， 速 48， 魅 148， 运 158， 技 168<br>
+					全队妖怪力量×150%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl577">
+				<td style="padding:4px;"><img src="image577.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image577.png" /></td>
+				<td>577</td><td>魂散</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td>呆萌</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 20， 智 48， 速 70， 魅 144， 运 62， 技 70<br>
+					全队妖怪魅力×150%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl578">
+				<td style="padding:4px;"><img src="image578.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image578.png" /></td>
+				<td>578</td><td>乐神</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td>呆萌妹纸</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 32， 智 80， 速 112， 魅 232， 运 100， 技 112<br>
+					全队妖怪魅力×150%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl579">
+				<td style="padding:4px;"><img src="image579.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image579.png" /></td>
+				<td>579</td><td>乾达婆</td><td><a class="shui" href="javascript:void(0)">水</a></td>
+				<td>呆萌妹纸乐器</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 48， 智 118， 速 166， 魅 344， 运 146， 技 166<br>
+					全队妖怪魅力×150%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl598">
+				<td style="padding:4px;"><img src="image598.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image598.png" /></td>
+				<td>598</td><td>坛仔</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td>娇小</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 62， 智 38， 速 92， 魅 194， 运 234， 技 46<br>
+					全队的木属性妖怪运气×130%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl599">
+				<td style="padding:4px;"><img src="image599.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image599.png" /></td>
+				<td>599</td><td>那家</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td>娇小妖怪</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 82， 智 50， 速 124， 魅 258， 运 310， 技 62<br>
+					全队的木属性妖怪运气×160%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl600">
+				<td style="padding:4px;"><img src="image600.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image600.png" /></td>
+				<td>600</td><td>小娜迦</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td>娇小妖怪妹纸</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 92， 智 56， 速 138， 魅 288， 运 346， 技 68<br>
+					全队的木属性妖怪运气×200%
+				</td>
+			</tr>
+			<tr class="title Ag" id="tl601">
+				<td style="padding:4px;"><img src="image601.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image601.png" /></td>
+				<td>601</td><td>心鼓</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td>乐器</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 36， 智 36， 速 54， 魅 54， 运 26， 技 90<br>
+					全队的火属性妖怪技巧+15
+				</td>
+			</tr>
+			<tr class="title Ag" id="tl602">
+				<td style="padding:4px;"><img src="image602.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image602.png" /></td>
+				<td>602</td><td>传音马</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td>乐器善良</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 66， 智 66， 速 99， 魅 100， 运 50， 技 166<br>
+					全队的火属性妖怪技巧+30
+				</td>
+			</tr>
+			<tr class="title Ag" id="tl603">
+				<td style="padding:4px;"><img src="image603.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image603.png" /></td>
+				<td>603</td><td>紧那罗</td><td><a class="huo" href="javascript:void(0)">火</a></td>
+				<td>乐器善良神仙</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 81， 智 81， 速 207， 魅 124， 运 62， 技 208<br>
+					全队的火属性妖怪技巧+50
+				</td>
+			</tr>
+			<tr class="title Au" id="tl634">
+				<td style="padding:4px;"><img src="image634.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image634.png" /></td>
+				<td>634</td><td>轻音</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td>呆萌</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 38， 智 24， 速 146， 魅 122， 运 28， 技 58<br>
+					全队的光属性妖怪速度×130%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl635">
+				<td style="padding:4px;"><img src="image635.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image635.png" /></td>
+				<td>635</td><td>角鹰</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td>呆萌飞翔</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 62， 智 38， 速 234， 魅 194， 运 46， 技 92<br>
+					全队的光属性妖怪速度×160%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl636">
+				<td style="padding:4px;"><img src="image636.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image636.png" /></td>
+				<td>636</td><td>迦罗逻</td><td><a class="guang" href="javascript:void(0)">光</a></td>
+				<td>呆萌飞翔乐器</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 92， 智 56， 速 346， 魅 288， 运 68， 技 138<br>
+					全队的光属性妖怪速度×200%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl664">
+				<td style="padding:4px;"><img src="image664.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image664.png" /></td>
+				<td>664</td><td>九婴</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td>邪恶</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 90， 智 22， 速 90， 魅 134， 运 26， 技 54<br>
+					全队的暗属性妖怪魅力×130%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl665">
+				<td style="padding:4px;"><img src="image665.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image665.png" /></td>
+				<td>665</td><td>盲女</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td>邪恶妹纸</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 144， 智 36， 速 144， 魅 216， 运 42， 技 86<br>
+					全队的暗属性妖怪魅力×130%<br>
+					全队的暗属性妖怪力量×130%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl666">
+				<td style="padding:4px;"><img src="image666.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image666.png" /></td>
+				<td>666</td><td>母夜叉</td><td><a class="an" href="javascript:void(0)">暗</a></td>
+				<td>邪恶妹纸妖怪</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 212， 智 52， 速 212， 魅 320， 运 64， 技 128<br>
+					全队的暗属性妖怪魅力×160%<br>
+					全队的暗属性妖怪力量×130%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl673">
+				<td style="padding:4px;"><img src="image673.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image673.png" /></td>
+				<td>673</td><td>明珠</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td>自然</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 234， 智 38， 速 194， 魅 92， 运 46， 技 62<br>
+					全队的地属性妖怪力量×130%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl674">
+				<td style="padding:4px;"><img src="image674.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image674.png" /></td>
+				<td>674</td><td>玄戒</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td>自然人形</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 310， 智 50， 速 258， 魅 124， 运 62， 技 82<br>
+					全队的地属性妖怪力量×130%<br>
+					全队的地属性妖怪速度×130%
+				</td>
+			</tr>
+			<tr class="title Au" id="tl675">
+				<td style="padding:4px;"><img src="image675.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image675.png" /></td>
+				<td>675</td><td>阿修罗</td><td><a class="tu" href="javascript:void(0)">土</a></td>
+				<td>自然人形神勇</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 346， 智 56， 速 288， 魅 138， 运 68， 技 92<br>
+					全队的地属性妖怪力量×160%<br>
+					全队的地属性妖怪速度×160%
+				</td>
+			</tr>
+			<tr class="title Ag" id="tl676">
+				<td style="padding:4px;"><img src="image676.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image676.png" /></td>
+				<td>676</td><td>青荷</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td>美食</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 90， 智 188， 速 74， 魅 74， 运 60， 技 60<br>
+					全队的木属性妖怪智慧+15
+				</td>
+			</tr>
+			<tr class="title Ag" id="tl677">
+				<td style="padding:4px;"><img src="image677.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image677.png" /></td>
+				<td>677</td><td>愚蛇</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td>美食呆萌</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 126， 智 264， 速 104， 魅 104， 运 84， 技 84<br>
+					全队的木属性妖怪智慧+30
+				</td>
+			</tr>
+			<tr class="title Ag" id="tl678">
+				<td style="padding:4px;"><img src="image678.png" tppabs="https://ziyan2017.gitee.io/ygsz/images/image678.png" /></td>
+				<td>678</td><td>摩呼罗迦</td><td><a class="mu" href="javascript:void(0)">木</a></td>
+				<td>美食呆萌神仙</td>
+			</tr>
+			<tr class="info">
+				<td colspan="5">
+					力 142， 智 298， 速 118， 魅 118， 运 94， 技 94<br>
+					全队的木属性妖怪智慧+50
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+</body>
+</html>
